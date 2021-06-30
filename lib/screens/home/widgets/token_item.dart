@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/shared/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TokenItem extends StatelessWidget {
   const TokenItem({Key? key, required this.label, required this.amount})
@@ -22,6 +23,7 @@ class TokenItem extends StatelessWidget {
             color: AppColors.greyTextColor,
           ),
         ),
+        SizedBox(height: 5.0.w),
         Text(
           '${amount.toString()}',
           style: GoogleFonts.montserrat(

@@ -140,7 +140,7 @@ class TransactionItem extends StatelessWidget {
         tempList = ['From Member123'];
         break;
       case 'Transfer Out':
-        tempList = ['From Member123'];
+        tempList = ['To Member123'];
         break;
         case 'Withdraw':
         tempList = ['Bank ABC', '1234 5678 9012 3456'];

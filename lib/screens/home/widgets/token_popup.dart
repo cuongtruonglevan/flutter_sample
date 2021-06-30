@@ -17,31 +17,31 @@ class TokenPopupDialog extends StatelessWidget {
         backgroundColor: Colors.transparent,
         body: Container(
           margin: EdgeInsets.symmetric(horizontal: 40.0.w)
-              .copyWith(top: (topPadding + 20.0).w),
+              .copyWith(top: (topPadding + 30.0.w)),
           padding: EdgeInsets.fromLTRB(16.0.w, 12.0.w, 16.0.w, 18.0.w),
           decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.8),
+              color: Colors.black.withOpacity(0.9),
               borderRadius: BorderRadius.circular(5.0.w)),
           child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Live',
+                  'LOCKED',
                   style: GoogleFonts.montserrat(
                     fontSize: 12.0.sp,
                     fontWeight: FontWeight.w600,
                     height: 14.5 / 12.0,
-                    color: AppColors.greyTextColor,
+                    color: AppColors.whiteTextColor,
                   ),
                 ),
                 Text(
-                  'Live The amount of LiveToken being\nreserved in any Game Mode',
+                  'The amount of LiveToken being\nreserved in any Game Mode',
                   style: GoogleFonts.montserrat(
                     fontSize: 12.0.sp,
                     fontWeight: FontWeight.w400,
                     height: 14.5 / 12.0,
-                    color: AppColors.greyTextColor,
+                    color: AppColors.whiteTextColor,
                   ),
                 ),
                 SizedBox(height: 10.0.w),
@@ -51,7 +51,7 @@ class TokenPopupDialog extends StatelessWidget {
                     fontSize: 12.0.sp,
                     fontWeight: FontWeight.w600,
                     height: 14.5 / 12.0,
-                    color: AppColors.greyTextColor,
+                    color: AppColors.whiteTextColor,
                   ),
                 ),
                 Text(
@@ -60,7 +60,7 @@ class TokenPopupDialog extends StatelessWidget {
                     fontSize: 12.0.sp,
                     fontWeight: FontWeight.w400,
                     height: 14.5 / 12.0,
-                    color: AppColors.greyTextColor,
+                    color: AppColors.whiteTextColor,
                   ),
                 ),
                 SizedBox(height: 10.0.w),
@@ -70,7 +70,7 @@ class TokenPopupDialog extends StatelessWidget {
                     fontSize: 12.0.sp,
                     fontWeight: FontWeight.w600,
                     height: 14.5 / 12.0,
-                    color: AppColors.greyTextColor,
+                    color: AppColors.whiteTextColor,
                   ),
                 ),
                 Text(
@@ -79,7 +79,7 @@ class TokenPopupDialog extends StatelessWidget {
                     fontSize: 12.0.sp,
                     fontWeight: FontWeight.w400,
                     height: 14.5 / 12.0,
-                    color: AppColors.greyTextColor,
+                    color: AppColors.whiteTextColor,
                   ),
                 ),
               ]),

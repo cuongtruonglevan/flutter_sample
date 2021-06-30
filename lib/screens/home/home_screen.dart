@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/models/model.dart';
 import 'package:flutter_sample/screens/home/widgets/announcement_item.dart';
 import 'package:flutter_sample/screens/home/widgets/bottom_bar.dart';
 import 'package:flutter_sample/screens/home/widgets/token_item.dart';
@@ -7,6 +6,8 @@ import 'package:flutter_sample/screens/home/widgets/token_popup.dart';
 import 'package:flutter_sample/screens/home/widgets/transaction_item.dart';
 import 'package:flutter_sample/shared/app_assets.dart';
 import 'package:flutter_sample/shared/app_colors.dart';
+import 'package:flutter_sample/shared/routes/routes.dart';
+import 'package:flutter_sample/shared/widgets/app_top_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
@@ -23,8 +24,7 @@ class HomeScreen extends StatelessWidget {
     Transaction('4', 'Withdraw', -700, DateTime.now(), false.obs),
     Transaction('3', 'Live Store', 500, DateTime.now(), false.obs),
     Transaction('2', 'Live Praise', 500, DateTime.now(), false.obs),
-    Transaction(
-        '1', 'Live Stream', 500, DateTime.now(), false.obs),
+    Transaction('1', 'Live Stream', 500, DateTime.now(), false.obs),
   ];
 
   final List<Announcement> announcementsList = [
@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: HomeBottomBar(),
       body: Column(
         children: [
-          _buildAppBar(context),
+          AppTopBar(title: 'LiveWallet'),
           Expanded(
               child: SingleChildScrollView(
             child: Column(
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                 _buildAvailableTokens(context),
                 _buildAction(),
                 _buildActionsRow(),
-                _buildTransactionHistory(),
+                _buildTransactionHistory(context),
                 _buildAnnouncements(),
               ],
             ),
@@ -58,56 +58,6 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
-  Widget _buildAppBar(BuildContext context) => Container(
-        padding: EdgeInsets.fromLTRB(20.0.w,
-            (MediaQuery.of(context).padding.top + 18.0).w, 20.0.w, 20.0.w),
-        child: Stack(children: [
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.zero,
-                elevation: 10.0,
-                shape: CircleBorder()),
-            child: Ink(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        AppColors.greyButtonColor,
-                        AppColors.darkGreyButtonColor
-                      ]),
-                  borderRadius: BorderRadius.circular(100.0)),
-              child: Container(
-                width: 40.0.w,
-                height: 40.0.w,
-                alignment: Alignment.center,
-                child: Image.asset(
-                  AppAssets.icBack,
-                  width: 10.0.w,
-                  height: 13.5.w,
-                ),
-              ),
-            ),
-          ),
-          Container(
-            height: 40.0.w,
-            child: Center(
-              child: Text(
-                'LiveWallet',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.montserrat(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w600,
-                  height: 28 / 20,
-                  color: AppColors.whiteTextColor,
-                ),
-              ),
-            ),
-          )
-        ]),
-      );
 
   Widget _buildAvailableTokens(BuildContext context) => Container(
         child: Column(
@@ -238,32 +188,34 @@ class HomeScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(100.0))),
                 child: Ink(
+                  height: 44.0.w,
                   decoration: BoxDecoration(
                       gradient: AppColors.greyButtonGradient,
                       borderRadius: BorderRadius.circular(100.0)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        AppAssets.icWithdraw,
-                        width: 15.0.w,
-                        height: 15.0.w,
-                      ),
-                      SizedBox(width: 5.0.w),
-                      Container(
-                        height: 44.0.w,
-                        alignment: Alignment.center,
-                        child: Text(
-                          'WITHDRAW',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w600,
-                            height: 22.4 / 16,
-                            color: AppColors.whiteTextColor,
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: 2.0.w),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            AppAssets.icWithdraw,
+                            width: 15.0.w,
+                            height: 15.0.w,
                           ),
-                        ),
+                          SizedBox(width: 5.0.w),
+                          Text(
+                            'WITHDRAW',
+                            style: GoogleFonts.montserrat(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w600,
+                              height: 22.4 / 16,
+                              color: AppColors.whiteTextColor,
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
@@ -279,22 +231,22 @@ class HomeScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(100.0))),
                 child: Ink(
+                  height: 44.0.w,
                   decoration: BoxDecoration(
                       gradient: AppColors.greyButtonGradient,
                       borderRadius: BorderRadius.circular(100.0)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        AppAssets.icTransfer,
-                        width: 16.0.w,
-                        height: 16.0.w,
-                      ),
-                      SizedBox(width: 5.0.w),
-                      Container(
-                        height: 44.0.w,
-                        alignment: Alignment.center,
-                        child: Text(
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 2.0.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          AppAssets.icTransfer,
+                          width: 16.0.w,
+                          height: 16.0.w,
+                        ),
+                        SizedBox(width: 5.0.w),
+                        Text(
                           'TRANSFER',
                           style: GoogleFonts.montserrat(
                             fontSize: 16.0,
@@ -303,8 +255,8 @@ class HomeScreen extends StatelessWidget {
                             color: AppColors.whiteTextColor,
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -313,46 +265,74 @@ class HomeScreen extends StatelessWidget {
         ),
       );
 
-  Widget _buildTransactionHistory() => Container(
-        padding: EdgeInsets.fromLTRB(10.0.w, 23.0.w, 10.0.w, 29.0.w),
-        decoration: BoxDecoration(
-          color: AppColors.transHistoryColor,
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Transaction History',
-              style: GoogleFonts.montserrat(
-                fontSize: 16.0,
-                fontWeight: FontWeight.w600,
-                height: 18 / 16,
-                color: AppColors.whiteTextColor,
+  Widget _buildTransactionHistory(BuildContext context) {
+    final tempList = transList.sublist(0, 5);
+    return Container(
+      padding: EdgeInsets.fromLTRB(10.0.w, 23.0.w, 10.0.w, 29.0.w),
+      decoration: BoxDecoration(
+        color: AppColors.transHistoryColor,
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Transaction History',
+                style: GoogleFonts.montserrat(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w600,
+                  height: 18 / 16,
+                  color: AppColors.whiteTextColor,
+                ),
               ),
-            ),
-            ListView(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.zero,
-              children: transList
-                  .map((trans) => TransactionItem(
-                        trans: trans,
-                        expanded: trans.selected,
-                        onPressed: () {
-                          if (!trans.selected.value) {
-                            transList.forEach((trans) {
-                              trans.selected.value = false;
-                            });
-                          }
-                          trans.selected.value = !trans.selected.value;
-                        },
-                      ))
-                  .toList(),
-            )
-          ],
-        ),
-      );
+              InkWell(
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () {
+                  Navigator.of(context).pushNamed(Routes.transactionHistory,
+                      arguments: transList);
+                },
+                child: Text(
+                  'See All',
+                  style: GoogleFonts.montserrat(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.w400,
+                    height: 18 / 14,
+                    color: AppColors.whiteTextColor,
+                    letterSpacing: -0.17,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          ListView(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            padding: EdgeInsets.zero,
+            children: tempList
+                .map((trans) => TransactionItem(
+                      trans: trans,
+                      expanded: trans.selected,
+                      onPressed: () {
+                        if (!trans.selected.value) {
+                          transList.forEach((trans) {
+                            trans.selected.value = false;
+                          });
+                        }
+                        trans.selected.value = !trans.selected.value;
+                      },
+                    ))
+                .toList(),
+          )
+        ],
+      ),
+    );
+  }
 
   Widget _buildAnnouncements() => Container(
         margin: EdgeInsets.fromLTRB(0.0, 20.0.w, 0.0, 20.0.w),

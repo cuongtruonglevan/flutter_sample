@@ -15,29 +15,14 @@ class AppColors {
   static const Color blackTextColor = Color(0xff151A24);
 
   static const LinearGradient redButtonGradient = LinearGradient(
-      begin: Alignment(-1.0, -1.0),
-      end: Alignment(-1.0, 1.0),
-      colors: [redButtonColor, darkRedButtonColor]);
+    begin: Alignment(-1.0, -1.0),
+    end: Alignment(-1.0, 1.0),
+    colors: [redButtonColor, darkRedButtonColor],
+  );
 
   static const LinearGradient greyButtonGradient = LinearGradient(
-      begin: Alignment(-1.0, -1.0),
-      end: Alignment(-1.0, 1.0),
-      colors: [
-        Color(0xFF505d75),
-        Color(0xFF404B5F),
-        Color(0xFF404A5E),
-        Color(0xFF3F4A5D),
-        Color(0xFF3F495C),
-        Color(0xFF313A4A),
-        Color(0xFF1B202B),
-      ],
-      stops: [
-        0.0,
-        0.3175,
-        0.3176,
-        0.3177,
-        0.3178,
-        0.5729,
-        1.0,
-      ]);
+    begin: Alignment(-1.0, -1.0),
+    end: Alignment(-1.0, 1.0),
+    colors: [greyButtonColor, darkGreyButtonColor],
+  );
 }

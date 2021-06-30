@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/shared/app_assets.dart';
 import 'package:flutter_sample/shared/app_colors.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,7 +19,7 @@ class HomeBottomBar extends StatelessWidget {
           ),
         ],
       ),
-      height: 75.0.w,
+      height: GetPlatform.isIOS ? 75.0.w : kBottomNavigationBarHeight,
       child: BottomNavigationBar(
         backgroundColor: AppColors.backgroundColor,
         selectedItemColor: AppColors.whiteTextColor,
