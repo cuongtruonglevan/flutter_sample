@@ -27,7 +27,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Stream<AuthState> _mapRestoreSessionEventToState() async* {
     final authenticated =
         await Future.delayed(Duration(milliseconds: 2000), () {
-      return true;
+      return false;
     });
 
     if (authenticated) {

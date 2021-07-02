@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sample/models/model.dart';
 import 'package:flutter_sample/screens/auth/auth_bloc.dart';
+import 'package:flutter_sample/screens/splash_screen/splash_screen.dart';
 import 'package:flutter_sample/shared/routes/app_routes_factory.dart';
+import 'package:flutter_sample/shared/routes/auth_routes_factory.dart';
 import 'package:flutter_sample/shared/routes/routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -21,8 +24,10 @@ class MyApp extends StatelessWidget {
           Widget _child;
           if (state is Authenticated) {
             _child = _buildFeaturesApp(context, state.user);
+          } else if (state is UnAuthenticated) {
+            _child = _buildAuthenticationApp(context);
           } else {
-            _child = Container();
+            _child = SplashScreen();
           }
           return AnimatedSwitcher(
             child: _child,
@@ -31,6 +36,29 @@ class MyApp extends StatelessWidget {
             duration: Duration(milliseconds: 250),
           );
         },
+      ),
+    );
+  }
+
+  Widget _buildAuthenticationApp(BuildContext context) {
+    final _routesFactory = AuthRoutesFactory(sharedPreferences);
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus &&
+            currentFocus.focusedChild != null) {
+          currentFocus.focusedChild!.unfocus();
+        }
+      },
+      child: ScreenUtilInit(
+        designSize: Size(375.0, 667.0),
+        builder: () => MaterialApp(
+          debugShowCheckedModeBanner: false,
+          navigatorKey: _routesFactory.navigatorKey,
+          onGenerateRoute: (settings) =>
+              _routesFactory.generateRoute(context, settings),
+          initialRoute: Routes.signIn,
+        ),
       ),
     );
   }
@@ -46,7 +74,7 @@ class MyApp extends StatelessWidget {
         }
       },
       child: ScreenUtilInit(
-        designSize: Size(375, 667),
+        designSize: Size(375.0, 667.0),
         builder: () => MaterialApp(
           debugShowCheckedModeBanner: false,
           navigatorKey: _routesFactory.navigatorKey,

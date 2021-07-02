@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/shared/app_assets.dart';
 import 'package:flutter_sample/shared/app_colors.dart';
+import 'package:flutter_sample/shared/widgets/app_circular_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +16,7 @@ class AppTopBar extends StatelessWidget {
     return Container(
       padding: EdgeInsets.fromLTRB(10.0.w, topPadding, 10.0.w, 10.0.w),
       child: Stack(children: [
-        ElevatedButton(
+        AppCircularButton(
           onPressed: () {
             if (title == 'LiveWallet') {
               return;
@@ -23,27 +24,14 @@ class AppTopBar extends StatelessWidget {
               Navigator.of(context).pop();
             }
           },
-          style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.zero, elevation: 10.0, shape: CircleBorder()),
-          child: Ink(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      AppColors.greyButtonColor,
-                      AppColors.darkGreyButtonColor
-                    ]),
-                borderRadius: BorderRadius.circular(100.0)),
-            child: Container(
-              width: 40.0.w,
-              height: 40.0.w,
-              alignment: Alignment.center,
-              child: Image.asset(
-                AppAssets.icBack,
-                width: 10.0.w,
-                height: 13.5.w,
-              ),
+          child: Container(
+            width: 40.0.w,
+            height: 40.0.w,
+            alignment: Alignment.center,
+            child: Image.asset(
+              AppAssets.icBack,
+              width: 10.0.w,
+              height: 13.5.w,
             ),
           ),
         ),
