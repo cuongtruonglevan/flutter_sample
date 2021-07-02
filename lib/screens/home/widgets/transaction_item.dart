@@ -142,23 +142,29 @@ class TransactionItem extends StatelessWidget {
       case 'Transfer Out':
         tempList = ['To Member123'];
         break;
-        case 'Withdraw':
-        tempList = ['Bank ABC', '1234 5678 9012 3456'];
+      case 'Withdraw':
+        tempList = ['Bank ABC', 'Bank Account Number'];
         break;
       case 'Live Stream':
         tempList = [
           'Seller_Username',
           'Stream ID: 12345',
           'Invoice ID: 123456789',
-          'Product Name x5',
-          'Auction High'
+          'Product_Name',
+          'Game Mode',
+          'Quantity',
         ];
         break;
       case 'Live Store':
-        tempList = ['Invoice ID: 123456789', 'Product Name x5', 'Auction High'];
+        tempList = [
+          'Invoice ID: 123456789',
+          'Product_Name',
+          'Game Mode',
+          'Quantity'
+        ];
         break;
       case 'Live Praise':
-        tempList = ['Seller_Username'];
+        tempList = ['Stream ID', 'Seller_Username'];
         break;
       default:
     }

@@ -7,6 +7,7 @@ import 'package:flutter_sample/screens/home/widgets/transaction_item.dart';
 import 'package:flutter_sample/shared/app_assets.dart';
 import 'package:flutter_sample/shared/app_colors.dart';
 import 'package:flutter_sample/shared/routes/routes.dart';
+import 'package:flutter_sample/shared/widgets/app_button.dart';
 import 'package:flutter_sample/shared/widgets/app_top_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -47,7 +48,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               children: [
                 _buildAvailableTokens(context),
-                _buildAction(),
+                _buildAction(context),
                 _buildActionsRow(),
                 _buildTransactionHistory(context),
                 _buildAnnouncements(),
@@ -143,31 +144,23 @@ class HomeScreen extends StatelessWidget {
         ),
       );
 
-  Widget _buildAction() => Padding(
+  Widget _buildAction(BuildContext context) => Padding(
         padding: EdgeInsets.fromLTRB(21.0.w, 20.0.w, 21.0.w, 0.0.w),
-        child: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.zero,
-              elevation: 10.0,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(100.0))),
-          child: Ink(
-            decoration: BoxDecoration(
-                gradient: AppColors.redButtonGradient,
-                borderRadius: BorderRadius.circular(100.0),
-                border: Border.all(color: Colors.black)),
-            child: Container(
-              height: 44.0.w,
-              alignment: Alignment.center,
-              child: Text(
-                'RELOAD LIVEWALLET',
-                style: GoogleFonts.montserrat(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w600,
-                  height: 22.4 / 16,
-                  color: AppColors.whiteTextColor,
-                ),
+        child: AppButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed(Routes.reload);
+          },
+          gradient: AppColors.redButtonGradient,
+          child: Container(
+            height: 44.0.w,
+            alignment: Alignment.center,
+            child: Text(
+              'RELOAD LIVEWALLET',
+              style: GoogleFonts.montserrat(
+                fontSize: 16.0,
+                fontWeight: FontWeight.w600,
+                height: 22.4 / 16,
+                color: AppColors.whiteTextColor,
               ),
             ),
           ),
@@ -179,85 +172,55 @@ class HomeScreen extends StatelessWidget {
         child: Row(
           children: [
             Expanded(
-              child: ElevatedButton(
+              child: AppButton(
                 onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    elevation: 10.0,
-                    shadowColor: Colors.black.withOpacity(0.4),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100.0))),
-                child: Ink(
-                  height: 44.0.w,
-                  decoration: BoxDecoration(
-                      gradient: AppColors.greyButtonGradient,
-                      borderRadius: BorderRadius.circular(100.0)),
-                  child: Center(
-                    child: Padding(
-                      padding: EdgeInsets.only(bottom: 2.0.w),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            AppAssets.icWithdraw,
-                            width: 15.0.w,
-                            height: 15.0.w,
-                          ),
-                          SizedBox(width: 5.0.w),
-                          Text(
-                            'WITHDRAW',
-                            style: GoogleFonts.montserrat(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w600,
-                              height: 22.4 / 16,
-                              color: AppColors.whiteTextColor,
-                            ),
-                          ),
-                        ],
+                gradient: AppColors.greyButtonGradient,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      AppAssets.icWithdraw,
+                      width: 15.0.w,
+                      height: 15.0.w,
+                    ),
+                    SizedBox(width: 5.0.w),
+                    Text(
+                      'WITHDRAW',
+                      style: GoogleFonts.montserrat(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600,
+                        height: 22.4 / 16,
+                        color: AppColors.whiteTextColor,
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ),
             ),
             SizedBox(width: 10.0),
             Expanded(
-              child: ElevatedButton(
+              child: AppButton(
                 onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    elevation: 10.0,
-                    shadowColor: Colors.black.withOpacity(0.4),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100.0))),
-                child: Ink(
-                  height: 44.0.w,
-                  decoration: BoxDecoration(
-                      gradient: AppColors.greyButtonGradient,
-                      borderRadius: BorderRadius.circular(100.0)),
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 2.0.w),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          AppAssets.icTransfer,
-                          width: 16.0.w,
-                          height: 16.0.w,
-                        ),
-                        SizedBox(width: 5.0.w),
-                        Text(
-                          'TRANSFER',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w600,
-                            height: 22.4 / 16,
-                            color: AppColors.whiteTextColor,
-                          ),
-                        ),
-                      ],
+                gradient: AppColors.greyButtonGradient,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      AppAssets.icTransfer,
+                      width: 16.0.w,
+                      height: 16.0.w,
                     ),
-                  ),
+                    SizedBox(width: 5.0.w),
+                    Text(
+                      'TRANSFER',
+                      style: GoogleFonts.montserrat(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600,
+                        height: 22.4 / 16,
+                        color: AppColors.whiteTextColor,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             )
@@ -270,7 +233,7 @@ class HomeScreen extends StatelessWidget {
     return Container(
       padding: EdgeInsets.fromLTRB(10.0.w, 23.0.w, 10.0.w, 29.0.w),
       decoration: BoxDecoration(
-        color: AppColors.transHistoryColor,
+        color: AppColors.darkBackGroundColor,
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: Column(

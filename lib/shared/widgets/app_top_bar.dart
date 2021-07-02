@@ -17,7 +17,9 @@ class AppTopBar extends StatelessWidget {
       child: Stack(children: [
         ElevatedButton(
           onPressed: () {
-            if (title == 'Transaction History') {
+            if (title == 'LiveWallet') {
+              return;
+            } else {
               Navigator.of(context).pop();
             }
           },

@@ -21,7 +21,7 @@ class TransactionHistoryScreen extends StatelessWidget {
               child: Container(
             padding: EdgeInsets.fromLTRB(10.0.w, 8.0.w, 10.0.w, 10.0.w),
             decoration: BoxDecoration(
-              color: AppColors.transHistoryColor,
+              color: AppColors.darkBackGroundColor,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20.0),
                 topRight: Radius.circular(20.0),

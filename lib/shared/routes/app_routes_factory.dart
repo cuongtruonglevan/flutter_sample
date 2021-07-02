@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_sample/models/model.dart';
 import 'package:flutter_sample/screens/home/home_screen.dart';
 import 'package:flutter_sample/screens/home/widgets/transaction_item.dart';
+import 'package:flutter_sample/screens/reload/reload_screen.dart';
 import 'package:flutter_sample/screens/transaction_history/transaction_history_screen.dart';
 import 'package:flutter_sample/shared/routes/routes.dart';
 import 'package:flutter_sample/shared/utils.dart';
@@ -28,6 +28,11 @@ class AppRoutesFactory {
           settings: settings,
           builder: (context) => TransactionHistoryScreen(
               transList: settings.arguments as List<Transaction>),
+        );
+      case Routes.reload:
+        return CupertinoPageRoute(
+          settings: settings,
+          builder: (context) => ReloadScreen(),
         );
       default:
         return defaultPageRoute(context, settings);
