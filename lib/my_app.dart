@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sample/models/model.dart';
 import 'package:flutter_sample/screens/auth/auth_bloc.dart';
@@ -57,7 +56,7 @@ class MyApp extends StatelessWidget {
           navigatorKey: _routesFactory.navigatorKey,
           onGenerateRoute: (settings) =>
               _routesFactory.generateRoute(context, settings),
-          initialRoute: Routes.signIn,
+          initialRoute: Routes.languagePicker,
         ),
       ),
     );

@@ -19,6 +19,7 @@ class SignInScreen extends StatelessWidget {
   final RxBool _obscureText = true.obs;
   final TextEditingController emailFieldController = TextEditingController();
   final TextEditingController passwordFieldController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -76,97 +77,103 @@ class SignInScreen extends StatelessWidget {
                           color: AppColors.borderColor.withOpacity(0.2),
                         ),
                       ]),
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        controller: emailFieldController,
-                        enabled: true,
-                        keyboardType: TextInputType.emailAddress,
-                        textInputAction: TextInputAction.next,
-                        autocorrect: false,
-                        style: GoogleFonts.montserrat(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w400,
-                          height: 18 / 14,
-                          color: AppColors.whiteColor,
+                  child: Form(
+                    key: formKey,
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          controller: emailFieldController,
+                          enabled: true,
+                          keyboardType: TextInputType.emailAddress,
+                          textInputAction: TextInputAction.next,
+                          autocorrect: false,
+                          style: GoogleFonts.montserrat(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w400,
+                            height: 18 / 14,
+                            color: AppColors.whiteColor,
+                          ),
+                          validator: (value) =>
+                              EmailFieldValidator.validate(context, value!),
+                          decoration: getInputOutlineDecoration(
+                              'Enter your email here'),
                         ),
-                        validator: (value) =>
-                            EmailFieldValidator.validate(context, value!),
-                        decoration:
-                            getInputOutlineDecoration('Enter your email here'),
-                      ),
-                      SizedBox(height: 20.0.w),
-                      Obx(() => TextFormField(
-                            controller: passwordFieldController,
-                            enabled: true,
-                            obscureText: _obscureText.value,
-                            style: GoogleFonts.montserrat(
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w400,
-                              height: 18 / 14,
-                              color: AppColors.whiteColor,
-                            ),
-                            validator: (value) =>
-                                RequiredFieldValidator.validate(context, value),
-                            decoration:
-                                getInputOutlineDecoration('Password').copyWith(
-                                    suffixIcon: IconButton(
-                              padding: EdgeInsets.symmetric(horizontal: 19.0),
-                              icon: Icon(_obscureText.value
-                                  ? Icons.remove_red_eye_outlined
-                                  : Icons.remove_red_eye),
-                              color: AppColors.whiteColor,
-                              onPressed: () {
-                                _obscureText.value = !_obscureText.value;
-                              },
-                            )),
-                          )),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(
-                            89.0.w, 50.0.w, 89.0.w, 20.49.w),
-                        child: AppButton(
-                          onPressed: () {},
-                          gradient: AppColors.redButtonGradient,
-                          child: Container(
-                            height: 44.0.w,
-                            alignment: Alignment.center,
-                            child: Text(
-                              'LOGIN',
+                        SizedBox(height: 20.0.w),
+                        Obx(() => TextFormField(
+                              controller: passwordFieldController,
+                              enabled: true,
+                              obscureText: _obscureText.value,
                               style: GoogleFonts.montserrat(
                                 fontSize: 14.0,
-                                fontWeight: FontWeight.w600,
-                                height: 19.6 / 14,
-                                color: AppColors.whiteTextColor,
+                                fontWeight: FontWeight.w400,
+                                height: 18 / 14,
+                                color: AppColors.whiteColor,
+                              ),
+                              validator: (value) =>
+                                  RequiredFieldValidator.validate(
+                                      context, value),
+                              decoration: getInputOutlineDecoration('Password')
+                                  .copyWith(
+                                      suffixIcon: IconButton(
+                                padding: EdgeInsets.symmetric(horizontal: 19.0),
+                                icon: Icon(_obscureText.value
+                                    ? Icons.remove_red_eye_outlined
+                                    : Icons.remove_red_eye),
+                                color: AppColors.whiteColor,
+                                onPressed: () {
+                                  _obscureText.value = !_obscureText.value;
+                                },
+                              )),
+                            )),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(
+                              89.0.w, 50.0.w, 89.0.w, 20.49.w),
+                          child: AppButton(
+                            onPressed: () {
+                              formKey.currentState!.validate();
+                            },
+                            gradient: AppColors.redButtonGradient,
+                            child: Container(
+                              height: 44.0.w,
+                              alignment: Alignment.center,
+                              child: Text(
+                                'LOGIN',
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.w600,
+                                  height: 19.6 / 14,
+                                  color: AppColors.whiteTextColor,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                      InkWell(
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        splashColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () {
-                          Navigator.of(context).push(
-                            PageRouteBuilder(
-                              pageBuilder: (context, _, __) =>
-                                  ForgotPasswordScreen(),
-                              opaque: false,
+                        InkWell(
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          splashColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () {
+                            Navigator.of(context).push(
+                              PageRouteBuilder(
+                                pageBuilder: (context, _, __) =>
+                                    ForgotPasswordScreen(),
+                                opaque: false,
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Forgot Password?',
+                            style: GoogleFonts.montserrat(
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                              height: 1.2,
+                              color: AppColors.whiteTextColor1,
                             ),
-                          );
-                        },
-                        child: Text(
-                          'Forgot Password?',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w400,
-                            height: 1.2,
-                            color: AppColors.whiteTextColor1,
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 Spacer(flex: 4),

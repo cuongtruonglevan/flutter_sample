@@ -16,10 +16,8 @@ class AppAssets {
   static const String icGoogle = 'assets/icons/ic_google.png';
 
   /// Images
-  static const String imAppLogo =
-      'assets/images/im_app_logo.png';
-      static const String imAppLogoSplash =
-      'assets/images/im_app_logo_splash.png';
+  static const String imAppLogo = 'assets/images/im_app_logo.png';
+  static const String imAppLogoSplash = 'assets/images/im_app_logo_splash.png';
   static const String imgAnnouncementOne =
       'assets/images/im_announcement_one.png';
   static const String imgAnnouncementTwo =
@@ -30,4 +28,5 @@ class AppAssets {
       'assets/images/im_phone_otp_header.png';
   static const String imSplashBackground =
       'assets/images/im_splash_background.png';
+  static const String imCheckCircle = 'assets/images/im_check_circle.png';
 }

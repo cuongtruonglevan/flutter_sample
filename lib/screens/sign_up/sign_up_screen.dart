@@ -17,6 +17,7 @@ class SignUpScreen extends StatelessWidget {
 
   final RxBool _obscureText = true.obs;
   final RxBool _currentObscureText = true.obs;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController emailFieldController = TextEditingController();
   final TextEditingController phoneFieldController = TextEditingController();
   final TextEditingController passwordFieldController = TextEditingController();
@@ -75,121 +76,127 @@ class SignUpScreen extends StatelessWidget {
                         color: AppColors.borderColor.withOpacity(0.2),
                       ),
                     ]),
-                child: Column(
-                  children: [
-                    TextFormField(
-                      controller: emailFieldController,
-                      enabled: true,
-                      keyboardType: TextInputType.emailAddress,
-                      textInputAction: TextInputAction.next,
-                      autocorrect: false,
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w400,
-                        height: 18 / 14,
-                        color: AppColors.whiteColor,
+                child: Form(
+                  key: formKey,
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        controller: emailFieldController,
+                        enabled: true,
+                        keyboardType: TextInputType.emailAddress,
+                        textInputAction: TextInputAction.next,
+                        autocorrect: false,
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w400,
+                          height: 18 / 14,
+                          color: AppColors.whiteColor,
+                        ),
+                        validator: (value) =>
+                            EmailFieldValidator.validate(context, value!),
+                        decoration:
+                            getInputOutlineDecoration('Enter your email here'),
                       ),
-                      validator: (value) =>
-                          EmailFieldValidator.validate(context, value!),
-                      decoration:
-                          getInputOutlineDecoration('Enter your email here'),
-                    ),
-                    SizedBox(height: 20.0.w),
-                    TextFormField(
-                      controller: emailFieldController,
-                      enabled: true,
-                      keyboardType: TextInputType.emailAddress,
-                      textInputAction: TextInputAction.next,
-                      autocorrect: false,
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w400,
-                        height: 18 / 14,
-                        color: AppColors.whiteColor,
+                      SizedBox(height: 20.0.w),
+                      TextFormField(
+                        controller: phoneFieldController,
+                        enabled: true,
+                        keyboardType: TextInputType.phone,
+                        textInputAction: TextInputAction.next,
+                        autocorrect: false,
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w400,
+                          height: 18 / 14,
+                          color: AppColors.whiteColor,
+                        ),
+                        validator: (value) =>
+                            RequiredFieldValidator.validate(context, value),
+                        decoration: getInputOutlineDecoration('Mobile number'),
                       ),
-                      validator: (value) =>
-                          EmailFieldValidator.validate(context, value!),
-                      decoration: getInputOutlineDecoration('Mobile number'),
-                    ),
-                    SizedBox(height: 20.0.w),
-                    Obx(() => TextFormField(
-                          controller: passwordFieldController,
-                          enabled: true,
-                          obscureText: _obscureText.value,
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w400,
-                            height: 18 / 14,
-                            color: AppColors.whiteColor,
-                          ),
-                          validator: (value) =>
-                              RequiredFieldValidator.validate(context, value),
-                          decoration:
-                              getInputOutlineDecoration('Password').copyWith(
-                                  suffixIcon: IconButton(
-                            padding: EdgeInsets.symmetric(horizontal: 19.0),
-                            icon: Icon(_obscureText.value
-                                ? Icons.remove_red_eye_outlined
-                                : Icons.remove_red_eye),
-                            color: AppColors.whiteColor,
-                            onPressed: () {
-                              _obscureText.value = !_obscureText.value;
-                            },
-                          )),
-                        )),
-                    SizedBox(height: 20.0.w),
-                    Obx(() => TextFormField(
-                          controller: confirmPasswordFieldController,
-                          enabled: true,
-                          obscureText: _currentObscureText.value,
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w400,
-                            height: 18 / 14,
-                            color: AppColors.whiteColor,
-                          ),
-                          validator: (value) =>
-                              RequiredFieldValidator.validate(context, value),
-                          decoration:
-                              getInputOutlineDecoration('Confirm Password')
-                                  .copyWith(
-                                      suffixIcon: IconButton(
-                            padding: EdgeInsets.symmetric(horizontal: 19.0),
-                            icon: Icon(_currentObscureText.value
-                                ? Icons.remove_red_eye_outlined
-                                : Icons.remove_red_eye),
-                            color: AppColors.whiteColor,
-                            onPressed: () {
-                              _currentObscureText.value =
-                                  !_currentObscureText.value;
-                            },
-                          )),
-                        )),
-                    Padding(
-                      padding:
-                          EdgeInsets.fromLTRB(89.0.w, 50.0.w, 89.0.w, 0.0.w),
-                      child: AppButton(
-                        onPressed: () {
-                          Navigator.of(context)
-                              .pushNamed(Routes.verifyCodeScreen);
-                        },
-                        gradient: AppColors.redButtonGradient,
-                        child: Container(
-                          height: 44.0.w,
-                          alignment: Alignment.center,
-                          child: Text(
-                            'SIGN UP',
+                      SizedBox(height: 20.0.w),
+                      Obx(() => TextFormField(
+                            controller: passwordFieldController,
+                            enabled: true,
+                            obscureText: _obscureText.value,
                             style: GoogleFonts.montserrat(
                               fontSize: 14.0,
-                              fontWeight: FontWeight.w600,
-                              height: 19.6 / 14,
-                              color: AppColors.whiteTextColor,
+                              fontWeight: FontWeight.w400,
+                              height: 18 / 14,
+                              color: AppColors.whiteColor,
+                            ),
+                            validator: (value) =>
+                                RequiredFieldValidator.validate(context, value),
+                            decoration:
+                                getInputOutlineDecoration('Password').copyWith(
+                                    suffixIcon: IconButton(
+                              padding: EdgeInsets.symmetric(horizontal: 19.0),
+                              icon: Icon(_obscureText.value
+                                  ? Icons.remove_red_eye_outlined
+                                  : Icons.remove_red_eye),
+                              color: AppColors.whiteColor,
+                              onPressed: () {
+                                _obscureText.value = !_obscureText.value;
+                              },
+                            )),
+                          )),
+                      SizedBox(height: 20.0.w),
+                      Obx(() => TextFormField(
+                            controller: confirmPasswordFieldController,
+                            enabled: true,
+                            obscureText: _currentObscureText.value,
+                            style: GoogleFonts.montserrat(
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                              height: 18 / 14,
+                              color: AppColors.whiteColor,
+                            ),
+                            validator: (value) =>
+                                RequiredConfirmFieldValidator.validate(context,
+                                    value, passwordFieldController.text),
+                            decoration:
+                                getInputOutlineDecoration('Confirm Password')
+                                    .copyWith(
+                                        suffixIcon: IconButton(
+                              padding: EdgeInsets.symmetric(horizontal: 19.0),
+                              icon: Icon(_currentObscureText.value
+                                  ? Icons.remove_red_eye_outlined
+                                  : Icons.remove_red_eye),
+                              color: AppColors.whiteColor,
+                              onPressed: () {
+                                _currentObscureText.value =
+                                    !_currentObscureText.value;
+                              },
+                            )),
+                          )),
+                      Padding(
+                        padding:
+                            EdgeInsets.fromLTRB(89.0.w, 50.0.w, 89.0.w, 0.0.w),
+                        child: AppButton(
+                          onPressed: () {
+                            if (formKey.currentState!.validate()) {
+                              Navigator.of(context)
+                                  .pushNamed(Routes.verifyCode);
+                            }
+                          },
+                          gradient: AppColors.redButtonGradient,
+                          child: Container(
+                            height: 44.0.w,
+                            alignment: Alignment.center,
+                            child: Text(
+                              'SIGN UP',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w600,
+                                height: 19.6 / 14,
+                                color: AppColors.whiteTextColor,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: 40.0.w),

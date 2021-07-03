@@ -13,20 +13,30 @@ class SplashScreen extends StatelessWidget {
       builder: () => MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          backgroundColor: AppColors.whiteTextColor,
-          body: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(AppAssets.imSplashBackground),
+          body: Stack(
+            children: [
+              Positioned.fill(
+                child: Container(
+                  child: Image.asset(
+                    AppAssets.imSplashBackground,
+                    fit: BoxFit.cover,
+                    color: Color(0xFFC4C4C4),
+                    colorBlendMode: BlendMode.colorBurn,
+                  ),
+                ),
               ),
-            ),
-            child: Center(
-                child: Image.asset(
-              AppAssets.imAppLogoSplash,
-              width: 249.33.w,
-              height: 34.0.w,
-            )),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(0.7),
+                ),
+              ),
+              Center(
+                  child: Image.asset(
+                AppAssets.imAppLogoSplash,
+                width: 249.33.w,
+                height: 34.0.w,
+              )),
+            ],
           ),
         ),
       ),

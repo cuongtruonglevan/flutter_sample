@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/screens/forgot_password/forgot_password_screen.dart';
+import 'package:flutter_sample/screens/language_picker/language_picker_screen.dart';
 import 'package:flutter_sample/screens/sign_in/sign_in_screen.dart';
 import 'package:flutter_sample/screens/sign_up/sign_up_screen.dart';
 import 'package:flutter_sample/screens/verify_code/verify_code_screen.dart';
@@ -16,6 +17,11 @@ class AuthRoutesFactory {
 
   Route<dynamic> generateRoute(BuildContext context, RouteSettings settings) {
     switch (settings.name) {
+      case Routes.languagePicker:
+        return CupertinoPageRoute(
+          settings: settings,
+          builder: (context) => LanguagePickerScreen(),
+        );
       case Routes.signIn:
         return CupertinoPageRoute(
           settings: settings,
@@ -31,7 +37,7 @@ class AuthRoutesFactory {
           settings: settings,
           builder: (context) => ForgotPasswordScreen(),
         );
-      case Routes.verifyCodeScreen:
+      case Routes.verifyCode:
         return CupertinoPageRoute(
           settings: settings,
           builder: (context) => VerifyCodeScreen(),

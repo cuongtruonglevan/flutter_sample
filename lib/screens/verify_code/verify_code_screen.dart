@@ -76,6 +76,17 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                 color: AppColors.whiteTextColor,
               ),
             ),
+            SizedBox(height: 15.0.w),
+            Text(
+              'JUST 1 MORE STEP!',
+              style: GoogleFonts.bebasNeue(
+                fontSize: 30.0,
+                fontWeight: FontWeight.w700,
+                height: 0.6,
+                letterSpacing: 1.0,
+                color: AppColors.whiteTextColor,
+              ),
+            ),
           ],
         ),
         replacement: Column(
@@ -139,9 +150,9 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(25.0.w, 18.0.w, 25.0.w, 17.0.w),
+            padding: EdgeInsets.fromLTRB(25.0.w, 18.0.w, 25.0.w, 14.0.w),
             margin:
-                EdgeInsets.symmetric(horizontal: 20.0.w).copyWith(top: 12.0.w),
+                EdgeInsets.symmetric(horizontal: 20.0.w).copyWith(top: 12.0.w, bottom: 59.0.w),
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
