@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_sample/screens/auth/auth_bloc.dart';
 import 'package:flutter_sample/shared/app_assets.dart';
 import 'package:flutter_sample/shared/app_colors.dart';
 import 'package:flutter_sample/shared/widgets/app_circular_button.dart';
@@ -19,7 +21,7 @@ class AppTopBar extends StatelessWidget {
         AppCircularButton(
           onPressed: () {
             if (title == 'LiveWallet') {
-              return;
+              BlocProvider.of<AuthBloc>(context).add(LogOut());
             } else {
               Navigator.of(context).pop();
             }
