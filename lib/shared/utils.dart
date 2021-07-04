@@ -14,21 +14,21 @@ PageRoute defaultPageRoute(BuildContext context, RouteSettings settings) =>
 InputDecoration getInputOutlineDecoration(String label,
     {bool showHint = true, bool showLabel = false}) {
   final _defaultBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(40.0.w)),
+    borderRadius: BorderRadius.all(Radius.circular(40.w)),
     borderSide: BorderSide(color: AppColors.whiteColor, width: 1.0),
   );
 
   final _focusedBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(40.0.w)),
+    borderRadius: BorderRadius.all(Radius.circular(40.w)),
     borderSide: BorderSide(color: AppColors.whiteColor, width: 1.0),
   );
 
   final _errorBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(40.0.w)),
+    borderRadius: BorderRadius.all(Radius.circular(40.w)),
     borderSide: BorderSide(color: AppColors.redButtonColor, width: 1.0),
   );
   return InputDecoration(
-    contentPadding: EdgeInsets.symmetric(horizontal: 27.0.w, vertical: 15.0.w),
+    contentPadding: EdgeInsets.symmetric(horizontal: 27.w, vertical: 15.w),
     labelText: showLabel ? label.toString() : null,
     hintText: showHint ? label.toString() : null,
     labelStyle: GoogleFonts.montserrat(

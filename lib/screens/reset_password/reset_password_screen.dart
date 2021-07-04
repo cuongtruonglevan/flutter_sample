@@ -4,20 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_sample/shared/app_assets.dart';
 import 'package:flutter_sample/shared/app_colors.dart';
-import 'package:flutter_sample/shared/routes/routes.dart';
 import 'package:flutter_sample/shared/utils.dart';
-import 'package:flutter_sample/shared/validators/email_field_validator.dart';
+import 'package:flutter_sample/shared/validators/password_field_validator.dart';
+import 'package:flutter_sample/shared/validators/required_field_validator.dart';
 import 'package:flutter_sample/shared/widgets/app_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
-  ForgotPasswordScreen({Key? key}) : super(key: key);
+class ResetPasswordScreen extends StatelessWidget {
+  ResetPasswordScreen({Key? key}) : super(key: key);
 
-  final RxBool succeededForgot = false.obs;
+  final RxBool succeededReset = false.obs;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final TextEditingController emailFieldController = TextEditingController();
+  final TextEditingController newPasswordController = TextEditingController();
+  final TextEditingController confirmNewPasswordFieldController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class ForgotPasswordScreen extends StatelessWidget {
         body: Center(
           child: Obx(
             () => Visibility(
-              visible: succeededForgot.value,
+              visible: succeededReset.value,
               child: _buildSucceedMessage(context),
               replacement: _buildEmailInput(context),
             ),
@@ -81,7 +83,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20.w),
                   Text(
-                    'The Reset Password link has\nbeen sent to your registerd\n email.',
+                    'Your request to update your\npassword is successful. Please\nlogin with your new password.',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.montserrat(
                       fontSize: 16.sp,
@@ -170,6 +172,10 @@ class ForgotPasswordScreen extends StatelessWidget {
   }
 
   Widget _buildEmailInput(BuildContext context) {
+    print(ScreenUtil().textScaleFactor);
+    print(ScreenUtil().scaleHeight);
+    print(ScreenUtil().scaleText);
+    print(ScreenUtil().scaleWidth);
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 30.w),
       child: ClipRRect(
@@ -205,23 +211,12 @@ class ForgotPasswordScreen extends StatelessWidget {
             child: Column(mainAxisSize: MainAxisSize.min, children: [
               SizedBox(height: 26.w),
               Text(
-                'Forgot Password?',
+                'RESET PASSWORD',
                 style: GoogleFonts.montserrat(
                   fontSize: 28.sp,
                   fontWeight: FontWeight.w600,
                   height: 1.0,
-                  color: AppColors.whiteTextColor,
-                ),
-              ),
-              SizedBox(height: 20.w),
-              Text(
-                'A reset password email link\nwill be sent to your registered\nemail account.',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.montserrat(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w400,
-                  height: 20 / 16,
-                  color: AppColors.whiteTextColor,
+                  color: AppColors.whiteColor,
                 ),
               ),
               SizedBox(height: 30.w),
@@ -229,22 +224,47 @@ class ForgotPasswordScreen extends StatelessWidget {
                 key: formKey,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 9.w),
-                  child: TextFormField(
-                    controller: emailFieldController,
-                    enabled: true,
-                    keyboardType: TextInputType.emailAddress,
-                    textInputAction: TextInputAction.next,
-                    autocorrect: false,
-                    style: GoogleFonts.montserrat(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400,
-                      height: 18 / 14,
-                      color: AppColors.whiteColor,
-                    ),
-                    validator: (value) =>
-                        EmailFieldValidator.validate(context, value!),
-                    decoration:
-                        getInputOutlineDecoration('Enter your email here'),
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        controller: newPasswordController,
+                        enabled: true,
+                        obscureText: true,
+                        textInputAction: TextInputAction.next,
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          height: 18 / 14,
+                          color: AppColors.whiteColor,
+                        ),
+                        validator: (value) =>
+                            PasswordFieldValidator.validate(context, value!),
+                        decoration:
+                            getInputOutlineDecoration('Enter your new password')
+                                .copyWith(errorMaxLines: 3),
+                      ),
+                      SizedBox(height: 20.w),
+                      TextFormField(
+                        controller: confirmNewPasswordFieldController,
+                        enabled: true,
+                        obscureText: true,
+                        textInputAction: TextInputAction.done,
+                        onFieldSubmitted: (_) {
+                          formKey.currentState!.validate();
+                        },
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          height: 18 / 14,
+                          color: AppColors.whiteColor,
+                        ),
+                        validator: (value) =>
+                            RequiredConfirmFieldValidator.validate(
+                                context, value, newPasswordController.text),
+                        decoration: getInputOutlineDecoration(
+                            'Confirm your new password'),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -252,7 +272,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(98.w, 50.w, 98.w, 32.w),
                 child: AppButton(
                   onPressed: () {
-                    succeededForgot.value = formKey.currentState!.validate();
+                    succeededReset.value = formKey.currentState!.validate();
                   },
                   gradient: AppColors.redButtonGradient,
                   child: Container(

@@ -27,14 +27,14 @@ class AppButton extends StatelessWidget {
         ),
       ),
       child: Ink(
-        height: 44.0.w,
+        height: 44.w,
         decoration: BoxDecoration(
           gradient: gradient,
           borderRadius: BorderRadius.circular(100.0),
         ),
         child: Center(
           child: Padding(
-            padding: EdgeInsets.only(bottom: 2.0.w),
+            padding: EdgeInsets.only(bottom: 2.w),
             child: child,
           ),
         ),

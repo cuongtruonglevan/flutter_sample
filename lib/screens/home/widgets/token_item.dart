@@ -23,7 +23,7 @@ class TokenItem extends StatelessWidget {
             color: AppColors.greyTextColor,
           ),
         ),
-        SizedBox(height: 5.0.w),
+        SizedBox(height: 5.w),
         Text(
           '${amount.toString()}',
           style: GoogleFonts.montserrat(

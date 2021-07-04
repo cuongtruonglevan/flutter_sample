@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/screens/forgot_password/forgot_password_screen.dart';
 import 'package:flutter_sample/screens/language_picker/language_picker_screen.dart';
+import 'package:flutter_sample/screens/reset_password/reset_password_screen.dart';
 import 'package:flutter_sample/screens/sign_in/sign_in_screen.dart';
 import 'package:flutter_sample/screens/sign_up/sign_up_screen.dart';
 import 'package:flutter_sample/screens/verify_code/verify_code_screen.dart';
@@ -33,9 +34,14 @@ class AuthRoutesFactory {
           builder: (context) => SignUpScreen(),
         );
       case Routes.forgotPassword:
-        return CupertinoPageRoute(
-          settings: settings,
-          builder: (context) => ForgotPasswordScreen(),
+        return PageRouteBuilder(
+          pageBuilder: (context, _, __) => ForgotPasswordScreen(),
+          opaque: false,
+        );
+      case Routes.resetPassword:
+        return PageRouteBuilder(
+          pageBuilder: (context, _, __) => ResetPasswordScreen(),
+          opaque: false,
         );
       case Routes.verifyCode:
         return CupertinoPageRoute(

@@ -53,7 +53,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
           _buildPackages(),
           Expanded(
             child: Container(
-              padding: EdgeInsets.fromLTRB(20.0.w, 17.0.w, 20.0.w, 44.0.w),
+              padding: EdgeInsets.fromLTRB(20.w, 17.w, 20.w, 44.w),
               decoration: BoxDecoration(
                 color: AppColors.darkBackGroundColor,
                 borderRadius: BorderRadius.only(
@@ -76,7 +76,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
 
   Widget _buildPackages() {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.0.w, 10.0.w, 20.0.w, 0.0),
+      padding: EdgeInsets.fromLTRB(20.w, 10.w, 20.w, 0.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -90,14 +90,14 @@ class _ReloadScreenState extends State<ReloadScreen> {
               color: AppColors.whiteTextColor,
             ),
           ),
-          SizedBox(height: 20.0.w),
+          SizedBox(height: 20.w),
           SizedBox(
-            height: 172.0.w,
+            height: 172.w,
             child: ListView.separated(
               padding: EdgeInsets.zero,
               controller: scrollController,
               itemCount: tokenPackages.length,
-              separatorBuilder: (context, index) => SizedBox(height: 20.0.w),
+              separatorBuilder: (context, index) => SizedBox(height: 20.w),
               itemBuilder: (context, index) {
                 final e = tokenPackages.elementAt(index);
                 return AppToggleButton(
@@ -113,7 +113,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                     e.selected.value = !e.selected.value;
                   },
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.0.w),
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -122,7 +122,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                           child: Stack(
                             children: [
                               Padding(
-                                padding: EdgeInsets.only(right: 12.0.w),
+                                padding: EdgeInsets.only(right: 12.w),
                                 child: Text(
                                   '${e.value}',
                                   textAlign: TextAlign.center,
@@ -139,8 +139,8 @@ class _ReloadScreenState extends State<ReloadScreen> {
                                 top: 0.0,
                                 child: Image.asset(
                                   AppAssets.icToken,
-                                  width: 12.0.w,
-                                  height: 12.0.w,
+                                  width: 12.w,
+                                  height: 12.w,
                                 ),
                               ),
                             ],
@@ -170,7 +170,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
               () => Icon(
                 up.value ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
                 color: AppColors.greyColor,
-                size: 24.0.w,
+                size: 24.w,
               ),
             ),
           ),
@@ -193,7 +193,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
             color: AppColors.whiteTextColor,
           ),
         ),
-        SizedBox(height: 20.0.w),
+        SizedBox(height: 20.w),
         Expanded(
           child: ListView(
             padding: EdgeInsets.zero,
@@ -214,7 +214,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                       width: 24.2.w,
                       height: 16.15.w,
                     ),
-                    SizedBox(width: 5.0.w),
+                    SizedBox(width: 5.w),
                     Text(
                       '9190',
                       style: GoogleFonts.montserrat(
@@ -227,7 +227,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 20.0.w),
+              SizedBox(height: 20.w),
               AppToggleButton(
                 gradient: AppColors.greyButtonGradient,
                 reverseGradient: AppColors.greyButtonGradientRevesre,
@@ -247,7 +247,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20.0.w),
+              SizedBox(height: 20.w),
               AppToggleButton(
                 gradient: AppColors.greyButtonGradient,
                 reverseGradient: AppColors.greyButtonGradientRevesre,
@@ -264,7 +264,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20.0.w),
+              SizedBox(height: 20.w),
               AppButton(
                 onPressed: () {},
                 gradient: AppColors.greyButtonGradient,
@@ -273,10 +273,10 @@ class _ReloadScreenState extends State<ReloadScreen> {
                   children: [
                     Image.asset(
                       AppAssets.icAdd,
-                      width: 19.0.w,
-                      height: 19.0.w,
+                      width: 19.w,
+                      height: 19.w,
                     ),
-                    SizedBox(width: 5.0.w),
+                    SizedBox(width: 5.w),
                     Text(
                       'ADD PAYMENT CARD',
                       style: GoogleFonts.montserrat(
@@ -289,7 +289,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 30.0.w),
+              SizedBox(height: 30.w),
             ],
           ),
         ),
@@ -303,12 +303,12 @@ class _ReloadScreenState extends State<ReloadScreen> {
             height: 0.5.w,
             color: AppColors.borderColor,
           ),
-          SizedBox(height: 20.0.w),
+          SizedBox(height: 20.w),
           AppButton(
             onPressed: () {},
             gradient: AppColors.redButtonGradient,
             child: Container(
-              height: 44.0.w,
+              height: 44.w,
               alignment: Alignment.center,
               child: Text(
                 'RELOAD',

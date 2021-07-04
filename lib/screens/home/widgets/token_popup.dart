@@ -16,12 +16,12 @@ class TokenPopupDialog extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 40.0.w)
-              .copyWith(top: (topPadding + 30.0.w)),
-          padding: EdgeInsets.fromLTRB(16.0.w, 12.0.w, 16.0.w, 18.0.w),
+          margin: EdgeInsets.symmetric(horizontal: 40.w)
+              .copyWith(top: (topPadding + 30.w)),
+          padding: EdgeInsets.fromLTRB(16.w, 12.w, 16.w, 18.w),
           decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.9),
-              borderRadius: BorderRadius.circular(5.0.w)),
+              borderRadius: BorderRadius.circular(5.w)),
           child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,7 +44,7 @@ class TokenPopupDialog extends StatelessWidget {
                     color: AppColors.whiteTextColor,
                   ),
                 ),
-                SizedBox(height: 10.0.w),
+                SizedBox(height: 10.w),
                 Text(
                   'UNLOCKED',
                   style: GoogleFonts.montserrat(
@@ -63,7 +63,7 @@ class TokenPopupDialog extends StatelessWidget {
                     color: AppColors.whiteTextColor,
                   ),
                 ),
-                SizedBox(height: 10.0.w),
+                SizedBox(height: 10.w),
                 Text(
                   'FREE',
                   style: GoogleFonts.montserrat(

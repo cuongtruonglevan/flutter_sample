@@ -86,7 +86,7 @@ class _DialCodeDropdownState extends State<DialCodeDropdown> {
             child: Row(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(3.0.w),
+                  borderRadius: BorderRadius.circular(3.w),
                   child: SizedBox(
                     width: 12.w,
                     height: 8.67.w,

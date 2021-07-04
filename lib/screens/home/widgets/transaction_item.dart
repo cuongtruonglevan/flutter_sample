@@ -67,8 +67,8 @@ class TransactionItem extends StatelessWidget {
                         children: [
                           Image.asset(
                             AppAssets.icToken,
-                            width: 15.0.w,
-                            height: 15.0.w,
+                            width: 15.w,
+                            height: 15.w,
                           ),
                           Spacer(),
                           Text(
@@ -80,14 +80,14 @@ class TransactionItem extends StatelessWidget {
                               color: AppColors.whiteTextColor,
                             ),
                           ),
-                          SizedBox(width: 17.0.w),
+                          SizedBox(width: 17.w),
                           RotatableWidget(
                             rotate: expanded.value,
                             child: RotatedBox(
                               quarterTurns: 2,
                               child: Image.asset(
                                 AppAssets.icBack,
-                                width: 10.0.w,
+                                width: 10.w,
                                 height: 13.5.w,
                               ),
                             ),
@@ -118,7 +118,7 @@ class TransactionItem extends StatelessWidget {
                         .toList(),
                   ),
                 )),
-            SizedBox(height: 15.0.w),
+            SizedBox(height: 15.w),
             Container(
               width: double.infinity,
               height: 0.5.w,

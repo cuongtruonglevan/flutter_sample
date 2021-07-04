@@ -141,8 +141,8 @@ class SignInScreen extends StatelessWidget {
                               },
                             )),
                         Padding(
-                          padding: EdgeInsets.fromLTRB(
-                              89.w, 50.w, 89.w, 20.49.w),
+                          padding:
+                              EdgeInsets.fromLTRB(89.w, 50.w, 89.w, 20.49.w),
                           child: AppButton(
                             onPressed: () {
                               if (formKey.currentState!.validate()) {
@@ -175,14 +175,12 @@ class SignInScreen extends StatelessWidget {
                           hoverColor: Colors.transparent,
                           splashColor: Colors.transparent,
                           highlightColor: Colors.transparent,
-                          onTap: () {
-                            Navigator.of(context).push(
-                              PageRouteBuilder(
-                                pageBuilder: (context, _, __) =>
-                                    ForgotPasswordScreen(),
-                                opaque: false,
-                              ),
-                            );
+                          onTap: () async {
+                            await Navigator.of(context)
+                                .pushNamed(Routes.forgotPassword);
+                            await Future.delayed(Duration(milliseconds: 500));
+                            Navigator.of(context)
+                                .pushNamed(Routes.resetPassword);
                           },
                           child: Text(
                             'Forgot Password?',

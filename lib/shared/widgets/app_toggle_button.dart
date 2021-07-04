@@ -33,7 +33,7 @@ class AppToggleButton extends StatelessWidget {
       ),
       child: Obx(
         () => Ink(
-          height: 44.0.w,
+          height: 44.w,
           decoration: BoxDecoration(
             gradient: selected.value ? reverseGradient : gradient,
             borderRadius: BorderRadius.circular(100.0),

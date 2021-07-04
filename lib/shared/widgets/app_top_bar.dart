@@ -16,7 +16,7 @@ class AppTopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final topPadding = (MediaQuery.of(context).padding.top + 18.0).w;
     return Container(
-      padding: EdgeInsets.fromLTRB(10.0.w, topPadding, 10.0.w, 10.0.w),
+      padding: EdgeInsets.fromLTRB(10.w, topPadding, 10.w, 10.w),
       child: Stack(children: [
         AppCircularButton(
           onPressed: () {
@@ -27,18 +27,18 @@ class AppTopBar extends StatelessWidget {
             }
           },
           child: Container(
-            width: 40.0.w,
-            height: 40.0.w,
+            width: 40.w,
+            height: 40.w,
             alignment: Alignment.center,
             child: Image.asset(
               AppAssets.icBack,
-              width: 10.0.w,
+              width: 10.w,
               height: 13.5.w,
             ),
           ),
         ),
         Container(
-          height: 40.0.w,
+          height: 40.w,
           child: Center(
             child: Text(
               '$title',

@@ -76,7 +76,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                 color: AppColors.whiteTextColor,
               ),
             ),
-            SizedBox(height: 15.0.w),
+            SizedBox(height: 15.w),
             Text(
               'JUST 1 MORE STEP!',
               style: GoogleFonts.bebasNeue(
@@ -127,14 +127,14 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 45.0)
-                .copyWith(top: 37.0.w, bottom: 85.0.w),
+                .copyWith(top: 37.w, bottom: 85.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
                     Icon(Icons.check, color: Color(0xFF1ADB96)),
-                    SizedBox(width: 8.0.w),
+                    SizedBox(width: 8.w),
                     Text(
                       'Verify your email address',
                       style: GoogleFonts.montserrat(
@@ -150,24 +150,24 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(25.0.w, 18.0.w, 25.0.w, 14.0.w),
+            padding: EdgeInsets.fromLTRB(25.w, 18.w, 25.w, 14.w),
             margin:
-                EdgeInsets.symmetric(horizontal: 20.0.w).copyWith(top: 12.0.w, bottom: 59.0.w),
+                EdgeInsets.symmetric(horizontal: 20.w).copyWith(top: 12.w, bottom: 59.w),
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
               gradient: AppColors.blackGradient,
               boxShadow: [
                 BoxShadow(
-                  blurRadius: 20.0.w,
-                  spreadRadius: 5.0.w,
-                  offset: Offset(5.0.w, 5.0.w),
+                  blurRadius: 20.w,
+                  spreadRadius: 5.w,
+                  offset: Offset(5.w, 5.w),
                   color: Colors.black.withOpacity(0.4),
                 ),
                 BoxShadow(
-                  blurRadius: 20.0.w,
-                  spreadRadius: 7.0.w,
-                  offset: Offset(-7.0.w, -7.0.w),
+                  blurRadius: 20.w,
+                  spreadRadius: 7.w,
+                  offset: Offset(-7.w, -7.w),
                   color: AppColors.borderColor.withOpacity(0.2),
                 ),
               ],
@@ -186,7 +186,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                         color: AppColors.whiteTextColor,
                       ),
                     ),
-                    SizedBox(width: 8.0.w),
+                    SizedBox(width: 8.w),
                     Text(
                       'Verify your mobile number',
                       style: GoogleFonts.montserrat(
@@ -207,7 +207,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                     color: AppColors.whiteTextColor,
                   ),
                 ),
-                SizedBox(height: 17.0.w),
+                SizedBox(height: 17.w),
                 PinCodeTextField(
                     appContext: context,
                     length: 6,
@@ -223,7 +223,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                       shape: PinCodeFieldShape.box,
                       borderWidth: 1.0,
                       fieldWidth: 40.63.w,
-                      fieldHeight: 60.0.w,
+                      fieldHeight: 60.w,
                       borderRadius: BorderRadius.circular(5.0),
                       // activeFillColor: AppColors.whiteColor,
                       // inactiveFillColor: AppColors.whiteColor,
@@ -287,24 +287,24 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
   Widget _buildEmailInput() => Column(
         children: [
           Container(
-            padding: EdgeInsets.fromLTRB(25.0.w, 18.0.w, 25.0.w, 17.0.w),
+            padding: EdgeInsets.fromLTRB(25.w, 18.w, 25.w, 17.w),
             margin:
-                EdgeInsets.symmetric(horizontal: 20.0.w).copyWith(top: 12.0.w),
+                EdgeInsets.symmetric(horizontal: 20.w).copyWith(top: 12.w),
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
               gradient: AppColors.blackGradient,
               boxShadow: [
                 BoxShadow(
-                  blurRadius: 20.0.w,
-                  spreadRadius: 5.0.w,
-                  offset: Offset(5.0.w, 5.0.w),
+                  blurRadius: 20.w,
+                  spreadRadius: 5.w,
+                  offset: Offset(5.w, 5.w),
                   color: Colors.black.withOpacity(0.4),
                 ),
                 BoxShadow(
-                  blurRadius: 20.0.w,
-                  spreadRadius: 7.0.w,
-                  offset: Offset(-7.0.w, -7.0.w),
+                  blurRadius: 20.w,
+                  spreadRadius: 7.w,
+                  offset: Offset(-7.w, -7.w),
                   color: AppColors.borderColor.withOpacity(0.2),
                 ),
               ],
@@ -323,7 +323,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                         color: AppColors.whiteTextColor,
                       ),
                     ),
-                    SizedBox(width: 8.0.w),
+                    SizedBox(width: 8.w),
                     Text(
                       'Verify your email address',
                       style: GoogleFonts.montserrat(
@@ -344,7 +344,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                     color: AppColors.whiteTextColor,
                   ),
                 ),
-                SizedBox(height: 17.0.w),
+                SizedBox(height: 17.w),
                 PinCodeTextField(
                     appContext: context,
                     length: 6,
@@ -360,7 +360,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                       shape: PinCodeFieldShape.box,
                       borderWidth: 1.0,
                       fieldWidth: 40.63.w,
-                      fieldHeight: 60.0.w,
+                      fieldHeight: 60.w,
                       borderRadius: BorderRadius.circular(5.0),
                       // activeFillColor: AppColors.whiteColor,
                       // inactiveFillColor: AppColors.whiteColor,
@@ -419,7 +419,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
           ),
           Padding(
             padding:
-                EdgeInsets.symmetric(horizontal: 45.0).copyWith(top: 40.0.w),
+                EdgeInsets.symmetric(horizontal: 45.0).copyWith(top: 40.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -434,7 +434,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                         color: AppColors.greyTextColor,
                       ),
                     ),
-                    SizedBox(width: 8.0.w),
+                    SizedBox(width: 8.w),
                     Text(
                       'Verify your mobile number',
                       style: GoogleFonts.montserrat(

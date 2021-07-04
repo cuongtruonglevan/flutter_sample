@@ -64,11 +64,11 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 25.0.w),
+            SizedBox(height: 25.w),
             Stack(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Text(
                     '2000',
                     style: GoogleFonts.bebasNeue(
@@ -84,8 +84,8 @@ class HomeScreen extends StatelessWidget {
                   top: 0.0,
                   child: Image.asset(
                     AppAssets.icToken,
-                    width: 15.0.w,
-                    height: 15.0.w,
+                    width: 15.w,
+                    height: 15.w,
                   ),
                 ),
               ],
@@ -120,17 +120,17 @@ class HomeScreen extends StatelessWidget {
                       color: AppColors.greyTextColor,
                     ),
                   ),
-                  SizedBox(width: 5.0.w),
+                  SizedBox(width: 5.w),
                   Icon(
                     Icons.help_outline,
-                    size: 15.0.w,
+                    size: 15.w,
                     color: AppColors.greyTextColor,
                   )
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(40.0.w, 30.0.w, 40.0.w, 0.0.w),
+              padding: EdgeInsets.fromLTRB(40.w, 30.w, 40.w, 0.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -145,14 +145,14 @@ class HomeScreen extends StatelessWidget {
       );
 
   Widget _buildAction(BuildContext context) => Padding(
-        padding: EdgeInsets.fromLTRB(21.0.w, 20.0.w, 21.0.w, 0.0.w),
+        padding: EdgeInsets.fromLTRB(21.w, 20.w, 21.w, 0.w),
         child: AppButton(
           onPressed: () {
             Navigator.of(context).pushNamed(Routes.reload);
           },
           gradient: AppColors.redButtonGradient,
           child: Container(
-            height: 44.0.w,
+            height: 44.w,
             alignment: Alignment.center,
             child: Text(
               'RELOAD LIVEWALLET',
@@ -168,7 +168,7 @@ class HomeScreen extends StatelessWidget {
       );
 
   Widget _buildActionsRow() => Padding(
-        padding: EdgeInsets.fromLTRB(21.0.w, 20.0.w, 21.0.w, 30.0.w),
+        padding: EdgeInsets.fromLTRB(21.w, 20.w, 21.w, 30.w),
         child: Row(
           children: [
             Expanded(
@@ -180,10 +180,10 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Image.asset(
                       AppAssets.icWithdraw,
-                      width: 15.0.w,
-                      height: 15.0.w,
+                      width: 15.w,
+                      height: 15.w,
                     ),
-                    SizedBox(width: 5.0.w),
+                    SizedBox(width: 5.w),
                     Text(
                       'WITHDRAW',
                       style: GoogleFonts.montserrat(
@@ -207,10 +207,10 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Image.asset(
                       AppAssets.icTransfer,
-                      width: 16.0.w,
-                      height: 16.0.w,
+                      width: 16.w,
+                      height: 16.w,
                     ),
-                    SizedBox(width: 5.0.w),
+                    SizedBox(width: 5.w),
                     Text(
                       'TRANSFER',
                       style: GoogleFonts.montserrat(
@@ -231,7 +231,7 @@ class HomeScreen extends StatelessWidget {
   Widget _buildTransactionHistory(BuildContext context) {
     final tempList = transList.sublist(0, 5);
     return Container(
-      padding: EdgeInsets.fromLTRB(10.0.w, 23.0.w, 10.0.w, 29.0.w),
+      padding: EdgeInsets.fromLTRB(10.w, 23.w, 10.w, 29.w),
       decoration: BoxDecoration(
         color: AppColors.darkBackGroundColor,
         borderRadius: BorderRadius.circular(20.0),
@@ -298,12 +298,12 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildAnnouncements() => Container(
-        margin: EdgeInsets.fromLTRB(0.0, 20.0.w, 0.0, 20.0.w),
-        height: 95.0.w,
+        margin: EdgeInsets.fromLTRB(0.0, 20.w, 0.0, 20.w),
+        height: 95.w,
         alignment: Alignment.topLeft,
         child: ListView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 11.0.w),
+            padding: EdgeInsets.only(left: 11.w),
             children: announcementsList.map((announcement) {
               final isOdd = announcementsList.indexOf(announcement).isOdd;
               return AnnouncementItem(

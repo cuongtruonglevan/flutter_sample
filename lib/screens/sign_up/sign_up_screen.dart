@@ -79,11 +79,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                        height: 44.0.w + MediaQuery.of(context).padding.top),
+                        height: 44.w + MediaQuery.of(context).padding.top),
                     Center(
                         child: Image.asset(
                       AppAssets.imAppLogo,
-                      width: 175.0.w,
+                      width: 175.w,
                       height: 28.6.w,
                     )),
                     SizedBox(height: 25.14.w),
@@ -99,26 +99,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 30.0.w),
+                    SizedBox(height: 30.w),
                     Container(
                       padding:
-                          EdgeInsets.fromLTRB(20.0.w, 30.0.w, 20.0.w, 30.0.w),
-                      margin: EdgeInsets.symmetric(horizontal: 20.0.w),
+                          EdgeInsets.fromLTRB(20.w, 30.w, 20.w, 30.w),
+                      margin: EdgeInsets.symmetric(horizontal: 20.w),
                       width: double.infinity,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
                           gradient: AppColors.blackGradient,
                           boxShadow: [
                             BoxShadow(
-                              blurRadius: 20.0.w,
-                              spreadRadius: 5.0.w,
-                              offset: Offset(5.0.w, 5.0.w),
+                              blurRadius: 20.w,
+                              spreadRadius: 5.w,
+                              offset: Offset(5.w, 5.w),
                               color: Colors.black.withOpacity(0.4),
                             ),
                             BoxShadow(
-                              blurRadius: 20.0.w,
-                              spreadRadius: 7.0.w,
-                              offset: Offset(-7.0.w, -7.0.w),
+                              blurRadius: 20.w,
+                              spreadRadius: 7.w,
+                              offset: Offset(-7.w, -7.w),
                               color: AppColors.borderColor.withOpacity(0.2),
                             ),
                           ]),
@@ -143,7 +143,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               decoration: getInputOutlineDecoration(
                                   'Enter your email here'),
                             ),
-                            SizedBox(height: 20.0.w),
+                            SizedBox(height: 20.w),
                             Container(
                               key: phoneFieldKey,
                               decoration: BoxDecoration(
@@ -221,7 +221,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20.0.w),
+                            SizedBox(height: 20.w),
                             Obx(() => TextFormField(
                                   controller: passwordFieldController,
                                   enabled: true,
@@ -254,7 +254,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                                 },
                                               )),
                                 )),
-                            SizedBox(height: 20.0.w),
+                            SizedBox(height: 20.w),
                             Obx(() => TextFormField(
                                   controller: confirmPasswordFieldController,
                                   enabled: true,
@@ -295,7 +295,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 )),
                             Padding(
                               padding: EdgeInsets.fromLTRB(
-                                  89.0.w, 50.0.w, 89.0.w, 0.0.w),
+                                  89.w, 50.w, 89.w, 0.w),
                               child: AppButton(
                                 onPressed: () {
                                   if (formKey.currentState!.validate()) {
@@ -305,7 +305,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 },
                                 gradient: AppColors.redButtonGradient,
                                 child: Container(
-                                  height: 44.0.w,
+                                  height: 44.w,
                                   alignment: Alignment.center,
                                   child: Text(
                                     'SIGN UP',
@@ -323,9 +323,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 40.0.w),
+                    SizedBox(height: 40.w),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.0.w),
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -338,7 +338,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 22.79.w)
-                                .copyWith(bottom: 2.0.w),
+                                .copyWith(bottom: 2.w),
                             child: Text(
                               'or login with',
                               style: GoogleFonts.montserrat(
@@ -360,54 +360,54 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(20.0.w, 20.0.w, 20.0.w, 0.0),
+                      padding: EdgeInsets.fromLTRB(20.w, 20.w, 20.w, 0.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           AppCircularButton(
                             onPressed: () {},
                             child: Container(
-                              width: 57.0.w,
-                              height: 57.0.w,
+                              width: 57.w,
+                              height: 57.w,
                               alignment: Alignment.center,
                               child: Image.asset(
                                 AppAssets.icFacebook,
-                                width: 15.0.w,
-                                height: 26.0.w,
+                                width: 15.w,
+                                height: 26.w,
                               ),
                             ),
                           ),
                           AppCircularButton(
                             onPressed: () {},
                             child: Container(
-                              width: 57.0.w,
-                              height: 57.0.w,
+                              width: 57.w,
+                              height: 57.w,
                               alignment: Alignment.center,
                               child: Image.asset(
                                 AppAssets.icGoogle,
                                 width: 25.48.w,
-                                height: 26.0.w,
+                                height: 26.w,
                               ),
                             ),
                           ),
                           AppCircularButton(
                             onPressed: () {},
                             child: Container(
-                              width: 57.0.w,
-                              height: 57.0.w,
-                              padding: EdgeInsets.only(bottom: 5.0.w),
+                              width: 57.w,
+                              height: 57.w,
+                              padding: EdgeInsets.only(bottom: 5.w),
                               alignment: Alignment.center,
                               child: Image.asset(
                                 AppAssets.icApple,
-                                width: 21.0.w,
-                                height: 26.0.w,
+                                width: 21.w,
+                                height: 26.w,
                               ),
                             ),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 18.0.w),
+                    SizedBox(height: 18.w),
                     InkWell(
                       focusColor: Colors.transparent,
                       hoverColor: Colors.transparent,
@@ -428,7 +428,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 36.0.w),
+                    SizedBox(height: 36.w),
                   ],
                 ),
               ),
@@ -462,7 +462,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   children: [
                                     ClipRRect(
                                       borderRadius:
-                                          BorderRadius.circular(3.0.w),
+                                          BorderRadius.circular(3.w),
                                       child: SizedBox(
                                         width: 12.w,
                                         height: 8.67.w,

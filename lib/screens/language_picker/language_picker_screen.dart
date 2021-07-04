@@ -48,31 +48,31 @@ class LanguagePickerScreen extends StatelessWidget {
                 Image.asset(
                   AppAssets.imAppLogoSplash,
                   width: 249.33.w,
-                  height: 34.0.w,
+                  height: 34.w,
                 ),
                 Spacer(flex: 134),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30.0.w),
+                  padding: EdgeInsets.symmetric(horizontal: 30.w),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0.w),
+                    borderRadius: BorderRadius.circular(10.w),
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0.w),
+                          borderRadius: BorderRadius.circular(10.w),
                           border:
                               Border.all(color: Colors.white.withOpacity(0.2)),
                           boxShadow: [
                             BoxShadow(
-                              blurRadius: 20.0.w,
-                              spreadRadius: 5.0.w,
-                              offset: Offset(5.0.w, 5.0.w),
+                              blurRadius: 20.w,
+                              spreadRadius: 5.w,
+                              offset: Offset(5.w, 5.w),
                               color: Colors.black.withOpacity(0.4),
                             ),
                             BoxShadow(
-                              blurRadius: 20.0.w,
-                              spreadRadius: 7.0.w,
-                              offset: Offset(-7.0.w, -7.0.w),
+                              blurRadius: 20.w,
+                              spreadRadius: 7.w,
+                              offset: Offset(-7.w, -7.w),
                               color: AppColors.borderColor.withOpacity(0.2),
                             ),
                           ],
@@ -86,7 +86,7 @@ class LanguagePickerScreen extends StatelessWidget {
                         ),
                         child:
                             Column(mainAxisSize: MainAxisSize.min, children: [
-                          SizedBox(height: 26.0.w),
+                          SizedBox(height: 26.w),
                           Text(
                             'Select Language',
                             textAlign: TextAlign.center,
@@ -100,7 +100,7 @@ class LanguagePickerScreen extends StatelessWidget {
                           ...languages
                               .map((e) => Padding(
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 48.0.w),
+                                        horizontal: 48.w),
                                     child: TextButton(
                                       style: TextButton.styleFrom(
                                           padding: EdgeInsets.zero),
@@ -115,7 +115,7 @@ class LanguagePickerScreen extends StatelessWidget {
                                         }
                                       },
                                       child: SizedBox(
-                                        height: 59.0.w,
+                                        height: 59.w,
                                         child: Column(
                                           children: [
                                             Expanded(
@@ -160,18 +160,18 @@ class LanguagePickerScreen extends StatelessWidget {
                               .toList(),
                           Padding(
                             padding: EdgeInsets.fromLTRB(
-                                100.0.w, 20.0.w, 100.0.w, 20.0.w),
+                                100.w, 20.w, 100.w, 20.w),
                             child: AppButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamed(Routes.signIn);
                               },
                               gradient: AppColors.redButtonGradient,
                               child: Container(
-                                height: 44.0.w,
+                                height: 44.w,
                                 alignment: Alignment.center,
                                 child: Padding(
                                   padding:
-                                      EdgeInsets.symmetric(horizontal: 18.0.w),
+                                      EdgeInsets.symmetric(horizontal: 18.w),
                                   child: Text(
                                     'CONTINUE',
                                     style: GoogleFonts.montserrat(

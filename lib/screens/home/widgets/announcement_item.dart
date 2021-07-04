@@ -16,9 +16,9 @@ class AnnouncementItem extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          width: 158.0.w,
-          height: 85.0.w,
-          margin: EdgeInsets.only(right: 10.0.w),
+          width: 158.w,
+          height: 85.w,
+          margin: EdgeInsets.only(right: 10.w),
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
@@ -35,8 +35,8 @@ class AnnouncementItem extends StatelessWidget {
           ),
         ),
         Container(
-          width: 158.0.w,
-          height: 85.0.w,
+          width: 158.w,
+          height: 85.w,
           child: Padding(
             padding: EdgeInsets.only(left: 13.34.w, top: 39.46.w),
             child: Text(
