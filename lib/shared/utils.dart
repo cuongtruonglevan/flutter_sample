@@ -12,7 +12,7 @@ PageRoute defaultPageRoute(BuildContext context, RouteSettings settings) =>
     );
 
 InputDecoration getInputOutlineDecoration(String label,
-    {bool showHint = false, bool showLabel = true}) {
+    {bool showHint = true, bool showLabel = false}) {
   final _defaultBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(40.0.w)),
     borderSide: BorderSide(color: AppColors.whiteColor, width: 1.0),
@@ -20,7 +20,7 @@ InputDecoration getInputOutlineDecoration(String label,
 
   final _focusedBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(40.0.w)),
-    borderSide: BorderSide(color: AppColors.backgroundColor, width: 1.0),
+    borderSide: BorderSide(color: AppColors.whiteColor, width: 1.0),
   );
 
   final _errorBorder = OutlineInputBorder(

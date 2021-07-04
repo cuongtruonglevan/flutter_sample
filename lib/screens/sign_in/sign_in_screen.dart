@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_sample/models/model.dart';
+import 'package:flutter_sample/screens/auth/auth_bloc.dart';
 import 'package:flutter_sample/screens/forgot_password/forgot_password_screen.dart';
 import 'package:flutter_sample/shared/app_assets.dart';
 import 'package:flutter_sample/shared/app_colors.dart';
@@ -39,7 +42,7 @@ class SignInScreen extends StatelessWidget {
                 Center(
                     child: Image.asset(
                   AppAssets.imAppLogo,
-                  width: 175.0.w,
+                  width: 175.w,
                   height: 28.6.w,
                 )),
                 SizedBox(height: 29.26.w),
@@ -57,23 +60,23 @@ class SignInScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 29.92.w),
                 Container(
-                  padding: EdgeInsets.fromLTRB(20.0.w, 30.0.w, 20.0.w, 25.33.w),
-                  margin: EdgeInsets.symmetric(horizontal: 20.0.w),
+                  padding: EdgeInsets.fromLTRB(20.w, 30.w, 20.w, 25.33.w),
+                  margin: EdgeInsets.symmetric(horizontal: 20.w),
                   width: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
                       gradient: AppColors.blackGradient,
                       boxShadow: [
                         BoxShadow(
-                          blurRadius: 20.0.w,
-                          spreadRadius: 5.0.w,
-                          offset: Offset(5.0.w, 5.0.w),
+                          blurRadius: 20.w,
+                          spreadRadius: 5.w,
+                          offset: Offset(5.w, 5.w),
                           color: Colors.black.withOpacity(0.4),
                         ),
                         BoxShadow(
-                          blurRadius: 20.0.w,
-                          spreadRadius: 7.0.w,
-                          offset: Offset(-7.0.w, -7.0.w),
+                          blurRadius: 20.w,
+                          spreadRadius: 7.w,
+                          offset: Offset(-7.w, -7.w),
                           color: AppColors.borderColor.withOpacity(0.2),
                         ),
                       ]),
@@ -99,7 +102,7 @@ class SignInScreen extends StatelessWidget {
                           decoration: getInputOutlineDecoration(
                               'Enter your email here'),
                         ),
-                        SizedBox(height: 20.0.w),
+                        SizedBox(height: 20.w),
                         Obx(() => TextFormField(
                               controller: passwordFieldController,
                               enabled: true,
@@ -126,17 +129,34 @@ class SignInScreen extends StatelessWidget {
                                   _obscureText.value = !_obscureText.value;
                                 },
                               )),
+                              onFieldSubmitted: (_) {
+                                if (formKey.currentState!.validate()) {
+                                  final user = User('01', 'test.test@gmail.com',
+                                      'Test', 'Test');
+                                  BlocProvider.of<AuthBloc>(context)
+                                      .add(DidAuthenticate(user));
+                                } else {
+                                  return;
+                                }
+                              },
                             )),
                         Padding(
                           padding: EdgeInsets.fromLTRB(
-                              89.0.w, 50.0.w, 89.0.w, 20.49.w),
+                              89.w, 50.w, 89.w, 20.49.w),
                           child: AppButton(
                             onPressed: () {
-                              formKey.currentState!.validate();
+                              if (formKey.currentState!.validate()) {
+                                final user = User('01', 'test.test@gmail.com',
+                                    'Test', 'Test');
+                                BlocProvider.of<AuthBloc>(context)
+                                    .add(DidAuthenticate(user));
+                              } else {
+                                return;
+                              }
                             },
                             gradient: AppColors.redButtonGradient,
                             child: Container(
-                              height: 44.0.w,
+                              height: 44.w,
                               alignment: Alignment.center,
                               child: Text(
                                 'LOGIN',
@@ -180,7 +200,7 @@ class SignInScreen extends StatelessWidget {
                 ),
                 Spacer(flex: 4),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0.w),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -193,7 +213,7 @@ class SignInScreen extends StatelessWidget {
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 22.79.w)
-                            .copyWith(bottom: 2.0.w),
+                            .copyWith(bottom: 2.w),
                         child: Text(
                           'or login with',
                           style: GoogleFonts.montserrat(
@@ -215,47 +235,47 @@ class SignInScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(20.0.w, 20.0.w, 20.0.w, 0.0),
+                  padding: EdgeInsets.fromLTRB(20.w, 20.w, 20.w, 0.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       AppCircularButton(
                         onPressed: () {},
                         child: Container(
-                          width: 57.0.w,
-                          height: 57.0.w,
+                          width: 57.w,
+                          height: 57.w,
                           alignment: Alignment.center,
                           child: Image.asset(
                             AppAssets.icFacebook,
-                            width: 15.0.w,
-                            height: 26.0.w,
+                            width: 15.w,
+                            height: 26.w,
                           ),
                         ),
                       ),
                       AppCircularButton(
                         onPressed: () {},
                         child: Container(
-                          width: 57.0.w,
-                          height: 57.0.w,
+                          width: 57.w,
+                          height: 57.w,
                           alignment: Alignment.center,
                           child: Image.asset(
                             AppAssets.icGoogle,
                             width: 25.48.w,
-                            height: 26.0.w,
+                            height: 26.w,
                           ),
                         ),
                       ),
                       AppCircularButton(
                         onPressed: () {},
                         child: Container(
-                          width: 57.0.w,
-                          height: 57.0.w,
-                          padding: EdgeInsets.only(bottom: 5.0.w),
+                          width: 57.w,
+                          height: 57.w,
+                          padding: EdgeInsets.only(bottom: 5.w),
                           alignment: Alignment.center,
                           child: Image.asset(
                             AppAssets.icApple,
-                            width: 21.0.w,
-                            height: 26.0.w,
+                            width: 21.w,
+                            height: 26.w,
                           ),
                         ),
                       ),

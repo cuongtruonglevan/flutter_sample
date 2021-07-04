@@ -30,7 +30,7 @@ class LanguagePickerScreen extends StatelessWidget {
               child: Container(
                 child: Image.asset(
                   AppAssets.imSplashBackground,
-                  fit: BoxFit.contain,
+                  fit: BoxFit.cover,
                   color: Color(0xFFC4C4C4),
                   colorBlendMode: BlendMode.colorBurn,
                 ),

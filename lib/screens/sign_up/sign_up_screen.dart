@@ -9,9 +9,11 @@ import 'package:flutter_sample/shared/app_colors.dart';
 import 'package:flutter_sample/shared/routes/routes.dart';
 import 'package:flutter_sample/shared/utils.dart';
 import 'package:flutter_sample/shared/validators/email_field_validator.dart';
+import 'package:flutter_sample/shared/validators/password_field_validator.dart';
 import 'package:flutter_sample/shared/validators/required_field_validator.dart';
 import 'package:flutter_sample/shared/widgets/app_button.dart';
 import 'package:flutter_sample/shared/widgets/app_circular_button.dart';
+import 'package:flutter_sample/shared/widgets/rotatable_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -142,60 +144,81 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   'Enter your email here'),
                             ),
                             SizedBox(height: 20.0.w),
-                            TextFormField(
+                            Container(
                               key: phoneFieldKey,
-                              controller: phoneFieldController,
-                              enabled: true,
-                              keyboardType: TextInputType.phone,
-                              textInputAction: TextInputAction.next,
-                              autocorrect: false,
-                              style: GoogleFonts.montserrat(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w400,
-                                height: 18 / 14,
-                                color: AppColors.whiteColor,
+                              decoration: BoxDecoration(
+                                color: AppColors.textFieldFillColor,
+                                borderRadius: BorderRadius.circular(40.w),
+                                border: Border.all(
+                                    color: AppColors.whiteColor, width: 1.0),
                               ),
-                              validator: (value) =>
-                                  RequiredFieldValidator.validate(
-                                      context, value),
-                              decoration:
-                                  getInputOutlineDecoration('Mobile number')
-                                      .copyWith(
-                                prefixIcon: InkWell(
-                                  onTap: () {
-                                    final RenderBox renderBox = phoneFieldKey
-                                        .currentContext
-                                        ?.findRenderObject() as RenderBox;
-                                    final offset =
-                                        renderBox.localToGlobal(Offset.zero);
-                                    leftCor.value = offset.dx;
-                                    topCor.value = offset.dy;
-                                    showDialCodeList.value =
-                                        !showDialCodeList.value;
-                                  },
-                                  child: SizedBox(
-                                    width: 70.w,
-                                    height: 40.w,
-                                    child: Row(
-                                      children: [
-                                        SizedBox(width: 8.w),
-                                        Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: AppColors.whiteColor,
-                                        ),
-                                        Text(
-                                          '+ 60',
-                                          style: GoogleFonts.montserrat(
-                                            fontSize: 14.sp,
-                                            fontWeight: FontWeight.w400,
-                                            height: 18 / 14,
-                                            color: AppColors.whiteTextColor,
+                              child: Row(
+                                children: [
+                                  InkWell(
+                                    onTap: () {
+                                      final RenderBox renderBox = phoneFieldKey
+                                          .currentContext
+                                          ?.findRenderObject() as RenderBox;
+                                      final offset =
+                                          renderBox.localToGlobal(Offset.zero);
+                                      leftCor.value = offset.dx;
+                                      topCor.value = offset.dy;
+                                      showDialCodeList.value =
+                                          !showDialCodeList.value;
+                                    },
+                                    child: SizedBox(
+                                      width: 70.w,
+                                      height: 40.w,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          SizedBox(width: 8.w),
+                                          Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: AppColors.whiteColor,
                                           ),
-                                        ),
-                                      ],
+                                          Text(
+                                            '+60',
+                                            style: GoogleFonts.montserrat(
+                                              fontSize: 14.sp,
+                                              fontWeight: FontWeight.w400,
+                                              height: 18 / 14,
+                                              color: AppColors.whiteTextColor,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
+                                  Expanded(
+                                    child: TextFormField(
+                                      controller: phoneFieldController,
+                                      enabled: true,
+                                      keyboardType: TextInputType.phone,
+                                      textInputAction: TextInputAction.next,
+                                      autocorrect: false,
+                                      style: GoogleFonts.montserrat(
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w400,
+                                        height: 18 / 14,
+                                        color: AppColors.whiteColor,
+                                      ),
+                                      decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: 'Mobile Number',
+                                        hintStyle: GoogleFonts.montserrat(
+                                          fontSize: 14.0.sp,
+                                          fontWeight: FontWeight.w400,
+                                          height: 18 / 14,
+                                          color: AppColors.greyTextColor,
+                                        ),
+                                        contentPadding: EdgeInsets.symmetric(
+                                            vertical: 15.w),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                             SizedBox(height: 20.0.w),
@@ -203,6 +226,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   controller: passwordFieldController,
                                   enabled: true,
                                   obscureText: _obscureText.value,
+                                  textInputAction: TextInputAction.next,
                                   style: GoogleFonts.montserrat(
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w400,
@@ -210,28 +234,38 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     color: AppColors.whiteColor,
                                   ),
                                   validator: (value) =>
-                                      RequiredFieldValidator.validate(
-                                          context, value),
+                                      PasswordFieldValidator.validate(
+                                          context, value!),
                                   decoration:
                                       getInputOutlineDecoration('Password')
                                           .copyWith(
+                                              errorMaxLines: 3,
                                               suffixIcon: IconButton(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 19.0),
-                                    icon: Icon(_obscureText.value
-                                        ? Icons.remove_red_eye_outlined
-                                        : Icons.remove_red_eye),
-                                    color: AppColors.whiteColor,
-                                    onPressed: () {
-                                      _obscureText.value = !_obscureText.value;
-                                    },
-                                  )),
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 19.0),
+                                                icon: Icon(_obscureText.value
+                                                    ? Icons
+                                                        .remove_red_eye_outlined
+                                                    : Icons.remove_red_eye),
+                                                color: AppColors.whiteColor,
+                                                onPressed: () {
+                                                  _obscureText.value =
+                                                      !_obscureText.value;
+                                                },
+                                              )),
                                 )),
                             SizedBox(height: 20.0.w),
                             Obx(() => TextFormField(
                                   controller: confirmPasswordFieldController,
                                   enabled: true,
                                   obscureText: _currentObscureText.value,
+                                  textInputAction: TextInputAction.done,
+                                  onFieldSubmitted: (_) {
+                                    if (formKey.currentState!.validate()) {
+                                      Navigator.of(context)
+                                          .pushNamed(Routes.verifyCode);
+                                    }
+                                  },
                                   style: GoogleFonts.montserrat(
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w400,
@@ -400,69 +434,70 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               Obx(
                 () => Positioned(
-                    top: topCor.value + 50.w,
-                    left: leftCor.value + 8.w,
-                    child: Visibility(
-                      visible: showDialCodeList.value,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(5.w),
-                        child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.5),
-                              borderRadius: BorderRadius.circular(5.w),
-                            ),
-                            width: 67.w,
-                            height: 163.w,
-                            child: RawScrollbar(
-                              thickness: 5.w,
-                              thumbColor: AppColors.greyColor,
-                              child: ListView.separated(
-                                padding: EdgeInsets.zero,
-                                itemCount: 10,
-                                itemBuilder: (context, index) => Container(
-                                  height: 32.w,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(3.0.w),
-                                        child: SizedBox(
-                                          width: 12.w,
-                                          height: 8.67.w,
-                                          child: SvgPicture.network(
-                                            country.flag!,
-                                            fit: BoxFit.contain,
-                                          ),
+                  top: topCor.value + 55.w,
+                  left: leftCor.value + 8.w,
+                  child: Visibility(
+                    visible: showDialCodeList.value,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(5.w),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.5),
+                            borderRadius: BorderRadius.circular(5.w),
+                          ),
+                          width: 67.w,
+                          height: 163.w,
+                          child: RawScrollbar(
+                            thickness: 5.w,
+                            thumbColor: AppColors.greyColor,
+                            child: ListView.separated(
+                              padding: EdgeInsets.zero,
+                              itemCount: 20,
+                              itemBuilder: (context, index) => Container(
+                                height: 32.w,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius:
+                                          BorderRadius.circular(3.0.w),
+                                      child: SizedBox(
+                                        width: 12.w,
+                                        height: 8.67.w,
+                                        child: SvgPicture.network(
+                                          country.flag!,
+                                          fit: BoxFit.contain,
                                         ),
                                       ),
-                                      SizedBox(width: 5.w),
-                                      Text(
-                                        '+ ${country.callingCodes!.first}',
-                                        style: GoogleFonts.montserrat(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w600,
-                                            color: AppColors.whiteTextColor),
-                                      )
-                                    ],
-                                  ),
+                                    ),
+                                    SizedBox(width: 5.w),
+                                    Text(
+                                      '+ ${country.callingCodes!.first}',
+                                      style: GoogleFonts.montserrat(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          color: AppColors.whiteTextColor),
+                                    )
+                                  ],
                                 ),
-                                separatorBuilder:
-                                    (BuildContext context, int index) =>
-                                        Container(
-                                  margin: EdgeInsets.symmetric(horizontal: 5.w),
-                                  height: 0.5.w,
-                                  color: AppColors.borderColor,
-                                ),
+                              ),
+                              separatorBuilder:
+                                  (BuildContext context, int index) =>
+                                      Container(
+                                margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                height: 0.5.w,
+                                color: AppColors.borderColor,
                               ),
                             ),
                           ),
                         ),
                       ),
-                      replacement: SizedBox(),
-                    )),
+                    ),
+                    replacement: SizedBox(),
+                  ),
+                ),
               ),
             ],
           ),

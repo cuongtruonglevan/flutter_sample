@@ -11,7 +11,9 @@ class HomeBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(top: GetPlatform.isIOS ? 8.w : 0.0),
       decoration: BoxDecoration(
+        color: AppColors.backgroundColor,
         boxShadow: <BoxShadow>[
           BoxShadow(
             color: Colors.black.withOpacity(0.75),
@@ -19,24 +21,22 @@ class HomeBottomBar extends StatelessWidget {
           ),
         ],
       ),
-      height: GetPlatform.isIOS ? 75.0.w : kBottomNavigationBarHeight,
+      height: GetPlatform.isIOS ? 85.w : kBottomNavigationBarHeight,
       child: BottomNavigationBar(
         backgroundColor: AppColors.backgroundColor,
         selectedItemColor: AppColors.whiteTextColor,
         unselectedItemColor: AppColors.whiteTextColor,
         selectedLabelStyle: GoogleFonts.montserrat(
-            fontSize: 10.0.sp,
+            fontSize: 10.sp,
             fontWeight: FontWeight.w400,
             height: 1.6,
             color: AppColors.whiteTextColor),
         unselectedLabelStyle: GoogleFonts.montserrat(
-            fontSize: 10.0.sp,
+            fontSize: 10.sp,
             fontWeight: FontWeight.w400,
             height: 1.6,
             color: AppColors.whiteTextColor),
-        onTap: (index) {
-          print(index);
-        },
+        onTap: (index) {},
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Image.asset(
