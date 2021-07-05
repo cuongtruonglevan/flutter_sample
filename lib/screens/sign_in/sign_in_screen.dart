@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sample/models/model.dart';
 import 'package:flutter_sample/screens/auth/auth_bloc.dart';
-import 'package:flutter_sample/screens/forgot_password/forgot_password_screen.dart';
 import 'package:flutter_sample/shared/app_assets.dart';
 import 'package:flutter_sample/shared/app_colors.dart';
 import 'package:flutter_sample/shared/routes/routes.dart';
@@ -124,7 +123,7 @@ class SignInScreen extends StatelessWidget {
                                 icon: Icon(_obscureText.value
                                     ? Icons.remove_red_eye_outlined
                                     : Icons.remove_red_eye),
-                                color: AppColors.whiteColor,
+                                color: AppColors.greyColor,
                                 onPressed: () {
                                   _obscureText.value = !_obscureText.value;
                                 },
@@ -142,7 +141,7 @@ class SignInScreen extends StatelessWidget {
                             )),
                         Padding(
                           padding:
-                              EdgeInsets.fromLTRB(89.w, 50.w, 89.w, 20.49.w),
+                              EdgeInsets.fromLTRB(80.w, 50.w, 80.w, 20.49.w),
                           child: AppButton(
                             onPressed: () {
                               if (formKey.currentState!.validate()) {
@@ -154,9 +153,10 @@ class SignInScreen extends StatelessWidget {
                                 return;
                               }
                             },
-                            gradient: AppColors.redButtonGradient,
+                            gradient: AppColors.redGradient,
                             child: Container(
-                              height: 44.w,
+                              padding:
+                                  EdgeInsets.fromLTRB(40.w, 8.w, 40.w, 8.w),
                               alignment: Alignment.center,
                               child: Text(
                                 'LOGIN',
@@ -206,7 +206,7 @@ class SignInScreen extends StatelessWidget {
                         child: Container(
                           width: double.infinity,
                           height: 1.0,
-                          color: AppColors.borderColor,
+                          color: AppColors.greyColor,
                         ),
                       ),
                       Padding(
@@ -215,10 +215,10 @@ class SignInScreen extends StatelessWidget {
                         child: Text(
                           'or login with',
                           style: GoogleFonts.montserrat(
-                            fontSize: 16.sp,
+                            fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
                             height: 1.25,
-                            color: AppColors.greyTextColor,
+                            color: AppColors.greyColor,
                           ),
                         ),
                       ),
@@ -226,7 +226,7 @@ class SignInScreen extends StatelessWidget {
                         child: Container(
                           width: double.infinity,
                           height: 1.0,
-                          color: AppColors.borderColor,
+                          color: AppColors.greyColor,
                         ),
                       ),
                     ],
@@ -294,9 +294,8 @@ class SignInScreen extends StatelessWidget {
                     style: GoogleFonts.montserrat(
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
-                      height: 5 / 3,
-                      color: AppColors.whiteTextColor,
-                      letterSpacing: -0.17,
+                      height: 20 / 12,
+                      color: AppColors.whiteColor,
                       decoration: TextDecoration.underline,
                     ),
                   ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_sample/shared/app_assets.dart';
-import 'package:flutter_sample/shared/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -8,11 +8,11 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: Size(375.0, 667.0),
-      builder: () => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light,
+        child: Scaffold(
           body: Stack(
             children: [
               Positioned.fill(
@@ -31,11 +31,12 @@ class SplashScreen extends StatelessWidget {
                 ),
               ),
               Center(
-                  child: Image.asset(
-                AppAssets.imAppLogoSplash,
-                width: 249.33.w,
-                height: 34.w,
-              )),
+                child: Image.asset(
+                  AppAssets.imAppLogoSplash,
+                  width: 249.33.w,
+                  height: 34.w,
+                ),
+              ),
             ],
           ),
         ),

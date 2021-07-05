@@ -5,6 +5,8 @@ import 'package:flutter_sample/screens/home/home_screen.dart';
 import 'package:flutter_sample/screens/home/widgets/transaction_item.dart';
 import 'package:flutter_sample/screens/reload/reload_screen.dart';
 import 'package:flutter_sample/screens/transaction_history/transaction_history_screen.dart';
+import 'package:flutter_sample/screens/welcome/welcome_detail_screen.dart';
+import 'package:flutter_sample/screens/welcome/welcome_screen.dart';
 import 'package:flutter_sample/shared/routes/routes.dart';
 import 'package:flutter_sample/shared/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -33,6 +35,16 @@ class AppRoutesFactory {
         return CupertinoPageRoute(
           settings: settings,
           builder: (context) => ReloadScreen(),
+        );
+      case Routes.welcome:
+        return PageRouteBuilder(
+          pageBuilder: (context, _, __) => WelcomeScreen(),
+          opaque: false,
+        );
+      case Routes.welcomeDetail:
+        return CupertinoPageRoute(
+          settings: settings,
+          builder: (context) => WelcomeDetailScreen(),
         );
       default:
         return defaultPageRoute(context, settings);

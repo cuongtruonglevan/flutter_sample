@@ -52,7 +52,7 @@ class LanguagePickerScreen extends StatelessWidget {
                 ),
                 Spacer(flex: 134),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30.w),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10.w),
                     child: BackdropFilter(
@@ -62,6 +62,7 @@ class LanguagePickerScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.w),
                           border:
                               Border.all(color: Colors.white.withOpacity(0.2)),
+                          color: Colors.white.withOpacity(0.5),
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 20.w,
@@ -76,17 +77,11 @@ class LanguagePickerScreen extends StatelessWidget {
                               color: AppColors.borderColor.withOpacity(0.2),
                             ),
                           ],
-                          gradient: LinearGradient(
-                              begin: Alignment(-1.0, -1.0),
-                              end: Alignment(-1.0, 1.0),
-                              colors: [
-                                Color(0xFFD7DDE8).withOpacity(0.25),
-                                Color(0xFF7889A9).withOpacity(0.25),
-                              ]),
+                          gradient: AppColors.lightGreyGradient,
                         ),
                         child:
                             Column(mainAxisSize: MainAxisSize.min, children: [
-                          SizedBox(height: 26.w),
+                          SizedBox(height: 20.w),
                           Text(
                             'Select Language',
                             textAlign: TextAlign.center,
@@ -99,8 +94,8 @@ class LanguagePickerScreen extends StatelessWidget {
                           ),
                           ...languages
                               .map((e) => Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 48.w),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 48.w),
                                     child: TextButton(
                                       style: TextButton.styleFrom(
                                           padding: EdgeInsets.zero),
@@ -115,7 +110,7 @@ class LanguagePickerScreen extends StatelessWidget {
                                         }
                                       },
                                       child: SizedBox(
-                                        height: 59.w,
+                                        height: 49.w,
                                         child: Column(
                                           children: [
                                             Expanded(
@@ -159,27 +154,22 @@ class LanguagePickerScreen extends StatelessWidget {
                                   ))
                               .toList(),
                           Padding(
-                            padding: EdgeInsets.fromLTRB(
-                                100.w, 20.w, 100.w, 20.w),
+                            padding: EdgeInsets.symmetric(vertical: 20.w),
                             child: AppButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamed(Routes.signIn);
                               },
-                              gradient: AppColors.redButtonGradient,
-                              child: Container(
-                                height: 44.w,
-                                alignment: Alignment.center,
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 18.w),
-                                  child: Text(
-                                    'CONTINUE',
-                                    style: GoogleFonts.montserrat(
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.w600,
-                                      height: 19.6 / 14,
-                                      color: AppColors.whiteTextColor,
-                                    ),
+                              gradient: AppColors.redGradient,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 18.w, vertical: 8.w),
+                                child: Text(
+                                  'CONTINUE',
+                                  style: GoogleFonts.montserrat(
+                                    fontSize: 14.0,
+                                    fontWeight: FontWeight.w600,
+                                    height: 19.6 / 14,
+                                    color: AppColors.whiteTextColor,
                                   ),
                                 ),
                               ),

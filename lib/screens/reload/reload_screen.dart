@@ -101,8 +101,8 @@ class _ReloadScreenState extends State<ReloadScreen> {
               itemBuilder: (context, index) {
                 final e = tokenPackages.elementAt(index);
                 return AppToggleButton(
-                  gradient: AppColors.greyButtonGradient,
-                  reverseGradient: AppColors.greyButtonGradientRevesre,
+                  gradient: AppColors.greyGradient,
+                  reverseGradient: AppColors.greyGradientRevesre,
                   selected: e.selected,
                   onPressed: () {
                     if (!e.selected.value) {
@@ -199,8 +199,8 @@ class _ReloadScreenState extends State<ReloadScreen> {
             padding: EdgeInsets.zero,
             children: [
               AppToggleButton(
-                gradient: AppColors.greyButtonGradient,
-                reverseGradient: AppColors.greyButtonGradientRevesre,
+                gradient: AppColors.greyGradient,
+                reverseGradient: AppColors.greyGradientRevesre,
                 selected: mastercardSelected,
                 onPressed: () {
                   fpxSelected.value = false;
@@ -229,8 +229,8 @@ class _ReloadScreenState extends State<ReloadScreen> {
               ),
               SizedBox(height: 20.w),
               AppToggleButton(
-                gradient: AppColors.greyButtonGradient,
-                reverseGradient: AppColors.greyButtonGradientRevesre,
+                gradient: AppColors.greyGradient,
+                reverseGradient: AppColors.greyGradientRevesre,
                 selected: fpxSelected,
                 onPressed: () {
                   mastercardSelected.value = false;
@@ -249,8 +249,8 @@ class _ReloadScreenState extends State<ReloadScreen> {
               ),
               SizedBox(height: 20.w),
               AppToggleButton(
-                gradient: AppColors.greyButtonGradient,
-                reverseGradient: AppColors.greyButtonGradientRevesre,
+                gradient: AppColors.greyGradient,
+                reverseGradient: AppColors.greyGradientRevesre,
                 selected: false.obs,
                 onPressed: null,
                 child: Text(
@@ -267,26 +267,29 @@ class _ReloadScreenState extends State<ReloadScreen> {
               SizedBox(height: 20.w),
               AppButton(
                 onPressed: () {},
-                gradient: AppColors.greyButtonGradient,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      AppAssets.icAdd,
-                      width: 19.w,
-                      height: 19.w,
-                    ),
-                    SizedBox(width: 5.w),
-                    Text(
-                      'ADD PAYMENT CARD',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w600,
-                        height: 22.4 / 16,
-                        color: AppColors.whiteTextColor,
+                gradient: AppColors.greyGradient,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(40.w, 7.w, 40.w, 7.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        AppAssets.icAdd,
+                        width: 19.w,
+                        height: 19.w,
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 5.w),
+                      Text(
+                        'ADD PAYMENT CARD',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w600,
+                          height: 22.4 / 16,
+                          color: AppColors.whiteTextColor,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: 30.w),
@@ -306,9 +309,10 @@ class _ReloadScreenState extends State<ReloadScreen> {
           SizedBox(height: 20.w),
           AppButton(
             onPressed: () {},
-            gradient: AppColors.redButtonGradient,
+            gradient: AppColors.redGradient,
             child: Container(
-              height: 44.w,
+              padding: EdgeInsets.fromLTRB(40.w, 10.w, 40.w, 10.w),
+              width: MediaQuery.of(context).size.width - 42.w,
               alignment: Alignment.center,
               child: Text(
                 'RELOAD',

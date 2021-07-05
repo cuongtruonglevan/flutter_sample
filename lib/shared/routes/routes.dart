@@ -9,6 +9,8 @@ class Routes {
   static const String resetPassword = 'reset_password';
   static const String verifyCode = 'verify_code';
   static const String home = 'home';
+  static const String welcome = 'welcome';
+  static const String welcomeDetail = 'welcomeDetail';
   static const String transactionHistory = 'transaction_history';
   static const String reload = 'reload';
   static const String transfer = 'transfer';

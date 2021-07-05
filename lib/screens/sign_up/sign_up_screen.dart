@@ -13,7 +13,6 @@ import 'package:flutter_sample/shared/validators/password_field_validator.dart';
 import 'package:flutter_sample/shared/validators/required_field_validator.dart';
 import 'package:flutter_sample/shared/widgets/app_button.dart';
 import 'package:flutter_sample/shared/widgets/app_circular_button.dart';
-import 'package:flutter_sample/shared/widgets/rotatable_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -78,8 +77,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                        height: 44.w + MediaQuery.of(context).padding.top),
+                    SizedBox(height: 44.w + MediaQuery.of(context).padding.top),
                     Center(
                         child: Image.asset(
                       AppAssets.imAppLogo,
@@ -101,8 +99,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     SizedBox(height: 30.w),
                     Container(
-                      padding:
-                          EdgeInsets.fromLTRB(20.w, 30.w, 20.w, 30.w),
+                      padding: EdgeInsets.fromLTRB(20.w, 30.w, 20.w, 30.w),
                       margin: EdgeInsets.symmetric(horizontal: 20.w),
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -239,20 +236,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   decoration:
                                       getInputOutlineDecoration('Password')
                                           .copyWith(
-                                              errorMaxLines: 3,
                                               suffixIcon: IconButton(
-                                                padding: EdgeInsets.symmetric(
-                                                    horizontal: 19.0),
-                                                icon: Icon(_obscureText.value
-                                                    ? Icons
-                                                        .remove_red_eye_outlined
-                                                    : Icons.remove_red_eye),
-                                                color: AppColors.whiteColor,
-                                                onPressed: () {
-                                                  _obscureText.value =
-                                                      !_obscureText.value;
-                                                },
-                                              )),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 19.0),
+                                    icon: Icon(_obscureText.value
+                                        ? Icons.remove_red_eye_outlined
+                                        : Icons.remove_red_eye),
+                                    color: AppColors.greyColor,
+                                    onPressed: () {
+                                      _obscureText.value = !_obscureText.value;
+                                    },
+                                  )),
                                 )),
                             SizedBox(height: 20.w),
                             Obx(() => TextFormField(
@@ -286,7 +280,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     icon: Icon(_currentObscureText.value
                                         ? Icons.remove_red_eye_outlined
                                         : Icons.remove_red_eye),
-                                    color: AppColors.whiteColor,
+                                    color: AppColors.greyColor,
                                     onPressed: () {
                                       _currentObscureText.value =
                                           !_currentObscureText.value;
@@ -294,8 +288,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   )),
                                 )),
                             Padding(
-                              padding: EdgeInsets.fromLTRB(
-                                  89.w, 50.w, 89.w, 0.w),
+                              padding:
+                                  EdgeInsets.fromLTRB(0.w, 50.w, 0.w, 0.w),
                               child: AppButton(
                                 onPressed: () {
                                   if (formKey.currentState!.validate()) {
@@ -303,9 +297,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                         .pushNamed(Routes.verifyCode);
                                   }
                                 },
-                                gradient: AppColors.redButtonGradient,
+                                gradient: AppColors.redGradient,
                                 child: Container(
-                                  height: 44.w,
+                                  padding:
+                                      EdgeInsets.fromLTRB(40.w, 11.w, 40.w, 11.w),
                                   alignment: Alignment.center,
                                   child: Text(
                                     'SIGN UP',
@@ -333,7 +328,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             child: Container(
                               width: double.infinity,
                               height: 1.0,
-                              color: AppColors.borderColor,
+                              color: AppColors.greyColor,
                             ),
                           ),
                           Padding(
@@ -342,10 +337,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             child: Text(
                               'or login with',
                               style: GoogleFonts.montserrat(
-                                fontSize: 16.0,
+                                fontSize: 12.sp,
                                 fontWeight: FontWeight.w400,
                                 height: 1.25,
-                                color: AppColors.greyTextColor,
+                                color: AppColors.greyColor,
                               ),
                             ),
                           ),
@@ -353,7 +348,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             child: Container(
                               width: double.infinity,
                               height: 1.0,
-                              color: AppColors.borderColor,
+                              color: AppColors.greyColor,
                             ),
                           ),
                         ],
@@ -428,7 +423,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 36.w),
+                    SizedBox(height: 23.71.w),
                   ],
                 ),
               ),
@@ -461,8 +456,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     ClipRRect(
-                                      borderRadius:
-                                          BorderRadius.circular(3.w),
+                                      borderRadius: BorderRadius.circular(3.w),
                                       child: SizedBox(
                                         width: 12.w,
                                         height: 8.67.w,

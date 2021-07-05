@@ -16,26 +16,39 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.zero,
-        elevation: 10.0,
-        shadowColor: Colors.black.withOpacity(0.4),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(100.0),
+    return FittedBox(
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.zero,
+          elevation: 0.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(100.0),
+          ),
         ),
-      ),
-      child: Ink(
-        height: 44.w,
-        decoration: BoxDecoration(
-          gradient: gradient,
-          borderRadius: BorderRadius.circular(100.0),
-        ),
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.only(bottom: 2.w),
-            child: child,
+        child: Container(
+          decoration: BoxDecoration(
+              gradient: gradient,
+              borderRadius: BorderRadius.circular(100.0),
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 20.w,
+                  spreadRadius: 5.w,
+                  offset: Offset(5.w, 5.w),
+                  color: Colors.black.withOpacity(0.4),
+                ),
+                BoxShadow(
+                  blurRadius: 20.w,
+                  spreadRadius: 7.w,
+                  offset: Offset(-7.w, -7.w),
+                  color: AppColors.borderColor.withOpacity(0.2),
+                ),
+              ]),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 2.w),
+              child: child,
+            ),
           ),
         ),
       ),

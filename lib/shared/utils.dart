@@ -50,5 +50,6 @@ InputDecoration getInputOutlineDecoration(String label,
     focusedBorder: _focusedBorder,
     errorBorder: _errorBorder,
     focusedErrorBorder: _errorBorder,
+    errorMaxLines: 3,
   );
 }

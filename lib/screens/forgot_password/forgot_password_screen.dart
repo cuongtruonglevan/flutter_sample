@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_sample/shared/app_assets.dart';
 import 'package:flutter_sample/shared/app_colors.dart';
-import 'package:flutter_sample/shared/routes/routes.dart';
 import 'package:flutter_sample/shared/utils.dart';
 import 'package:flutter_sample/shared/validators/email_field_validator.dart';
 import 'package:flutter_sample/shared/widgets/app_button.dart';
@@ -50,6 +49,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
               child: Container(
                 padding: EdgeInsets.only(top: 105.w),
+                width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.w),
                   border: Border.all(color: Colors.white.withOpacity(0.2)),
@@ -61,13 +61,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       color: Colors.black.withOpacity(0.4),
                     ),
                   ],
-                  gradient: LinearGradient(
-                      begin: Alignment(-1.0, -1.0),
-                      end: Alignment(-1.0, 1.0),
-                      colors: [
-                        Color(0xFFD7DDE8).withOpacity(0.25),
-                        Color(0xFF7889A9).withOpacity(0.25),
-                      ]),
+                  gradient: AppColors.lightGreyGradient,
                 ),
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
                   Text(
@@ -90,28 +84,27 @@ class ForgotPasswordScreen extends StatelessWidget {
                       color: AppColors.whiteTextColor,
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(98.w, 30.w, 98.w, 25.w),
-                    child: AppButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      gradient: AppColors.redButtonGradient,
-                      child: Container(
-                        height: 44.w,
-                        alignment: Alignment.center,
-                        child: Text(
-                          'OK',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
-                            height: 19.6 / 14,
-                            color: AppColors.whiteTextColor,
-                          ),
+                  SizedBox(height: 30.w),
+                  AppButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    gradient: AppColors.redGradient,
+                    child: Container(
+                      padding: EdgeInsets.fromLTRB(50.w, 8.w, 50.w, 8.w),
+                      alignment: Alignment.center,
+                      child: Text(
+                        'OK',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          height: 19.6 / 14,
+                          color: AppColors.whiteTextColor,
                         ),
                       ),
                     ),
                   ),
+                  SizedBox(height: 25.w),
                 ]),
               ),
             ),
@@ -149,13 +142,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(color: Colors.white.withOpacity(0.2)),
-                    gradient: LinearGradient(
-                        begin: Alignment(-1.0, -1.0),
-                        end: Alignment(-1.0, 1.0),
-                        colors: [
-                          Color(0xFFD7DDE8).withOpacity(0.25),
-                          Color(0xFF7889A9).withOpacity(0.25),
-                        ]),
+                    gradient: AppColors.lightGreyGradient,
                   ),
                   child: Center(
                     child: Image.asset(AppAssets.imCheckCircle),
@@ -194,13 +181,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   color: AppColors.borderColor.withOpacity(0.2),
                 ),
               ],
-              gradient: LinearGradient(
-                  begin: Alignment(-1.0, -1.0),
-                  end: Alignment(-1.0, 1.0),
-                  colors: [
-                    Color(0xFFD7DDE8).withOpacity(0.25),
-                    Color(0xFF7889A9).withOpacity(0.25),
-                  ]),
+              gradient: AppColors.lightGreyGradient,
             ),
             child: Column(mainAxisSize: MainAxisSize.min, children: [
               SizedBox(height: 26.w),
@@ -249,14 +230,14 @@ class ForgotPasswordScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(98.w, 50.w, 98.w, 32.w),
+                padding: EdgeInsets.fromLTRB(0.w, 50.w, 0.w, 32.w),
                 child: AppButton(
                   onPressed: () {
                     succeededForgot.value = formKey.currentState!.validate();
                   },
-                  gradient: AppColors.redButtonGradient,
+                  gradient: AppColors.redGradient,
                   child: Container(
-                    height: 44.w,
+                    padding: EdgeInsets.fromLTRB(45.w, 8.w, 45.w, 8.w),
                     alignment: Alignment.center,
                     child: Text(
                       'OK',

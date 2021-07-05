@@ -28,11 +28,21 @@ class MyApp extends StatelessWidget {
           } else {
             _child = SplashScreen();
           }
-          return AnimatedSwitcher(
-            child: _child,
-            switchInCurve: Curves.easeInCirc,
-            switchOutCurve: Curves.easeOutCirc,
-            duration: Duration(milliseconds: 250),
+          return GestureDetector(
+            onTap: () {
+              FocusScopeNode currentFocus = FocusScope.of(context);
+              if (!currentFocus.hasPrimaryFocus &&
+                  currentFocus.focusedChild != null) {
+                currentFocus.focusedChild!.unfocus();
+              }
+            },
+            child: AnimatedSwitcher(
+              child: ScreenUtilInit(
+                  designSize: Size(375.0, 667.0), builder: () => _child),
+              switchInCurve: Curves.easeInCirc,
+              switchOutCurve: Curves.easeOutCirc,
+              duration: Duration(milliseconds: 250),
+            ),
           );
         },
       ),
@@ -41,47 +51,23 @@ class MyApp extends StatelessWidget {
 
   Widget _buildAuthenticationApp(BuildContext context) {
     final _routesFactory = AuthRoutesFactory(sharedPreferences);
-    return GestureDetector(
-      onTap: () {
-        FocusScopeNode currentFocus = FocusScope.of(context);
-        if (!currentFocus.hasPrimaryFocus &&
-            currentFocus.focusedChild != null) {
-          currentFocus.focusedChild!.unfocus();
-        }
-      },
-      child: ScreenUtilInit(
-        designSize: Size(375.0, 667.0),
-        builder: () => MaterialApp(
-          debugShowCheckedModeBanner: false,
-          navigatorKey: _routesFactory.navigatorKey,
-          onGenerateRoute: (settings) =>
-              _routesFactory.generateRoute(context, settings),
-          initialRoute: Routes.languagePicker,
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      navigatorKey: _routesFactory.navigatorKey,
+      onGenerateRoute: (settings) =>
+          _routesFactory.generateRoute(context, settings),
+      initialRoute: Routes.languagePicker,
     );
   }
 
   Widget _buildFeaturesApp(BuildContext context, User user) {
     final _routesFactory = AppRoutesFactory(sharedPreferences, user);
-    return GestureDetector(
-      onTap: () {
-        FocusScopeNode currentFocus = FocusScope.of(context);
-        if (!currentFocus.hasPrimaryFocus &&
-            currentFocus.focusedChild != null) {
-          currentFocus.focusedChild!.unfocus();
-        }
-      },
-      child: ScreenUtilInit(
-        designSize: Size(375.0, 667.0),
-        builder: () => MaterialApp(
-          debugShowCheckedModeBanner: false,
-          navigatorKey: _routesFactory.navigatorKey,
-          onGenerateRoute: (settings) =>
-              _routesFactory.generateRoute(context, settings),
-          initialRoute: Routes.home,
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      navigatorKey: _routesFactory.navigatorKey,
+      onGenerateRoute: (settings) =>
+          _routesFactory.generateRoute(context, settings),
+      initialRoute: Routes.home,
     );
   }
 }

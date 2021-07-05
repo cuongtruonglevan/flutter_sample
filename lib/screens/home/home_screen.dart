@@ -13,9 +13,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
 
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   final availableTokensKey = GlobalKey();
 
   final List<Transaction> transList = [
@@ -34,6 +39,17 @@ class HomeScreen extends StatelessWidget {
     Announcement('Announcement\nThree', AppAssets.imgAnnouncementOne),
     Announcement('Announcement\nFour', AppAssets.imgAnnouncementTwo),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    init();
+  }
+
+  Future init() async {
+    await Future.delayed(Duration(milliseconds: 1000));
+    Navigator.of(context).pushNamed(Routes.welcome);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -145,14 +161,14 @@ class HomeScreen extends StatelessWidget {
       );
 
   Widget _buildAction(BuildContext context) => Padding(
-        padding: EdgeInsets.fromLTRB(21.w, 20.w, 21.w, 0.w),
+        padding: EdgeInsets.fromLTRB(21.w, 40.w, 21.w, 0.w),
         child: AppButton(
           onPressed: () {
             Navigator.of(context).pushNamed(Routes.reload);
           },
-          gradient: AppColors.redButtonGradient,
+          gradient: AppColors.redGradient,
           child: Container(
-            height: 44.w,
+            padding: EdgeInsets.fromLTRB(60.w, 10.w, 60.w, 10.w),
             alignment: Alignment.center,
             child: Text(
               'RELOAD LIVEWALLET',
@@ -174,26 +190,29 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: AppButton(
                 onPressed: () {},
-                gradient: AppColors.greyButtonGradient,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      AppAssets.icWithdraw,
-                      width: 15.w,
-                      height: 15.w,
-                    ),
-                    SizedBox(width: 5.w),
-                    Text(
-                      'WITHDRAW',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w600,
-                        height: 22.4 / 16,
-                        color: AppColors.whiteTextColor,
+                gradient: AppColors.greyGradient,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(40.w, 10.w, 40.w, 10.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        AppAssets.icWithdraw,
+                        width: 15.w,
+                        height: 15.w,
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 5.w),
+                      Text(
+                        'WITHDRAW',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w600,
+                          height: 22.4 / 16,
+                          color: AppColors.whiteTextColor,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -201,26 +220,29 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: AppButton(
                 onPressed: () {},
-                gradient: AppColors.greyButtonGradient,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      AppAssets.icTransfer,
-                      width: 16.w,
-                      height: 16.w,
-                    ),
-                    SizedBox(width: 5.w),
-                    Text(
-                      'TRANSFER',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w600,
-                        height: 22.4 / 16,
-                        color: AppColors.whiteTextColor,
+                gradient: AppColors.greyGradient,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(40.w, 10.w, 40.w, 10.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        AppAssets.icTransfer,
+                        width: 16.w,
+                        height: 16.w,
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 5.w),
+                      Text(
+                        'TRANSFER',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w600,
+                          height: 22.4 / 16,
+                          color: AppColors.whiteTextColor,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             )
