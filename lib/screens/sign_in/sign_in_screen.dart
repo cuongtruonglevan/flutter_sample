@@ -154,18 +154,13 @@ class SignInScreen extends StatelessWidget {
                               }
                             },
                             gradient: AppColors.redGradient,
-                            child: Container(
-                              padding:
-                                  EdgeInsets.fromLTRB(40.w, 8.w, 40.w, 8.w),
-                              alignment: Alignment.center,
-                              child: Text(
-                                'LOGIN',
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 14.0.sp,
-                                  fontWeight: FontWeight.w600,
-                                  height: 19.6 / 14,
-                                  color: AppColors.whiteTextColor,
-                                ),
+                            child: Text(
+                              'LOGIN',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 14.0.sp,
+                                fontWeight: FontWeight.w600,
+                                height: 19.6 / 14,
+                                color: AppColors.whiteTextColor,
                               ),
                             ),
                           ),

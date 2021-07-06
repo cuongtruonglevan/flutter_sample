@@ -143,7 +143,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                                 getInputOutlineDecoration('Address Line 2')
                                     .copyWith(errorMaxLines: 3),
                           ),
-                          SizedBox(height: 40.w),
+                          SizedBox(height: 20.w),
                           InkWell(
                             key: countryKey,
                             onTap: () {
@@ -166,7 +166,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                               ),
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 27.w, vertical: 14.w),
+                                    horizontal: 27.w, vertical: 15.w),
                                 child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -214,7 +214,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                               ),
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 27.w, vertical: 14.w),
+                                    horizontal: 27.w, vertical: 15.w),
                                 child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -273,7 +273,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                             decoration: getInputOutlineDecoration('Zip Code')
                                 .copyWith(errorMaxLines: 3),
                           ),
-                          SizedBox(height: 40.w),
+                          SizedBox(height: 20.w),
                           TextFormField(
                             controller: TextEditingController(),
                             enabled: true,
@@ -290,7 +290,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 50.w),
                           Padding(
-                            padding: EdgeInsets.only(left: 60.w, right: 36.w),
+                            padding: EdgeInsets.only(left: 40.w, right: 16.w),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -305,7 +305,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                                   child: Text(
                                     'BACK',
                                     style: GoogleFonts.montserrat(
-                                      fontSize: 14.0,
+                                      fontSize: 14.sp,
                                       fontWeight: FontWeight.w600,
                                       height: 19.6 / 14,
                                       color: AppColors.whiteColor,
@@ -313,17 +313,13 @@ class WelcomeDetailScreen extends StatelessWidget {
                                   ),
                                 ),
                                 AppButton(
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 40.w, vertical: 8.w),
-                                      child: Text(
-                                        'SAVE',
-                                        style: GoogleFonts.montserrat(
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w600,
-                                          height: 19.6 / 14,
-                                          color: AppColors.whiteColor,
-                                        ),
+                                    child: Text(
+                                      'SAVE',
+                                      style: GoogleFonts.montserrat(
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w600,
+                                        height: 19.6 / 14,
+                                        color: AppColors.whiteColor,
                                       ),
                                     ),
                                     gradient: AppColors.redGradient,

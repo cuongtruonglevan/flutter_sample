@@ -162,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildAction(BuildContext context) => Padding(
         padding: EdgeInsets.fromLTRB(21.w, 40.w, 21.w, 0.w),
-        child: AppButton(
+        child: AppInfiniteButton(
           onPressed: () {
             Navigator.of(context).pushNamed(Routes.reload);
           },
@@ -188,61 +188,55 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Row(
           children: [
             Expanded(
-              child: AppButton(
+              child: AppInfiniteButton(
                 onPressed: () {},
-                gradient: AppColors.greyGradient,
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(40.w, 10.w, 40.w, 10.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        AppAssets.icWithdraw,
-                        width: 15.w,
-                        height: 15.w,
+                gradient: AppColors.infiniteGreyGradient,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      AppAssets.icWithdraw,
+                      width: 15.w,
+                      height: 15.w,
+                    ),
+                    SizedBox(width: 5.w),
+                    Text(
+                      'WITHDRAW',
+                      style: GoogleFonts.montserrat(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600,
+                        height: 22.4 / 16,
+                        color: AppColors.whiteTextColor,
                       ),
-                      SizedBox(width: 5.w),
-                      Text(
-                        'WITHDRAW',
-                        style: GoogleFonts.montserrat(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w600,
-                          height: 22.4 / 16,
-                          color: AppColors.whiteTextColor,
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
             SizedBox(width: 10.0),
             Expanded(
-              child: AppButton(
+              child: AppInfiniteButton(
                 onPressed: () {},
-                gradient: AppColors.greyGradient,
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(40.w, 10.w, 40.w, 10.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        AppAssets.icTransfer,
-                        width: 16.w,
-                        height: 16.w,
+                gradient: AppColors.infiniteGreyGradient,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      AppAssets.icTransfer,
+                      width: 16.w,
+                      height: 16.w,
+                    ),
+                    SizedBox(width: 5.w),
+                    Text(
+                      'TRANSFER',
+                      style: GoogleFonts.montserrat(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600,
+                        height: 22.4 / 16,
+                        color: AppColors.whiteTextColor,
                       ),
-                      SizedBox(width: 5.w),
-                      Text(
-                        'TRANSFER',
-                        style: GoogleFonts.montserrat(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w600,
-                          height: 22.4 / 16,
-                          color: AppColors.whiteTextColor,
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             )

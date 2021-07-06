@@ -288,8 +288,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   )),
                                 )),
                             Padding(
-                              padding:
-                                  EdgeInsets.fromLTRB(0.w, 50.w, 0.w, 0.w),
+                              padding: EdgeInsets.fromLTRB(0.w, 50.w, 0.w, 0.w),
                               child: AppButton(
                                 onPressed: () {
                                   if (formKey.currentState!.validate()) {
@@ -298,18 +297,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   }
                                 },
                                 gradient: AppColors.redGradient,
-                                child: Container(
-                                  padding:
-                                      EdgeInsets.fromLTRB(40.w, 11.w, 40.w, 11.w),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    'SIGN UP',
-                                    style: GoogleFonts.montserrat(
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w600,
-                                      height: 19.6 / 14,
-                                      color: AppColors.whiteTextColor,
-                                    ),
+                                child: Text(
+                                  'SIGN UP',
+                                  style: GoogleFonts.montserrat(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w600,
+                                    height: 19.6 / 14,
+                                    color: AppColors.whiteTextColor,
                                   ),
                                 ),
                               ),

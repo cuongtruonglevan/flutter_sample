@@ -8,10 +8,7 @@ class AppColors {
   static const Color darkBackGroundColor = Color(0xFF181E28);
   static const Color borderColor = Color(0xFF505D75);
 
-  /// 0xFF7889A9
   static const Color greyColor = Color(0xFF7889A9);
-
-  /// 0xFFD7DDE8
   static const Color whiteColor = Color(0xFFD7DDE8);
 
   static const Color textFieldFillColor = Color(0xFF2E394E);
@@ -27,23 +24,31 @@ class AppColors {
   static const Color blackTextColor = Color(0xFF151A24);
 
   static const LinearGradient redGradient = LinearGradient(
-    begin: Alignment(-1.0, 0.0),
-    end: Alignment(1.0, 0.0),
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
     colors: [redButtonColor, darkRedButtonColor],
-    transform: GradientRotation(math.pi * 154.8 / 360),
+    transform: GradientRotation(-0.1),
   );
 
   static const LinearGradient greyGradient = LinearGradient(
     begin: Alignment(0, 0),
     end: Alignment(0, -1),
     colors: [backgroundColor, Color(0xff2f3745)],
+    transform: GradientRotation(math.pi * 154.8 / 360),
+  );
+
+  static const LinearGradient infiniteGreyGradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [greyButtonColor, darkGreyButtonColor],
+    transform: GradientRotation(-0.1),
   );
 
   static const LinearGradient greyGradientRevesre = LinearGradient(
-    begin: Alignment(0, 0),
-    end: Alignment(1, -1),
+    begin: Alignment.bottomCenter,
+    end: Alignment.topCenter,
     colors: [greyButtonColor, darkGreyButtonColor],
-    transform: GradientRotation(math.pi * 154.8 / 360),
+    transform: GradientRotation(-0.1),
   );
 
   static const LinearGradient blackGradient = LinearGradient(
@@ -54,12 +59,11 @@ class AppColors {
   );
 
   static const LinearGradient lightGreyGradient = LinearGradient(
-    begin: Alignment(-1.0, -1.0),
-    end: Alignment(-1.0, 1.0),
+    begin: Alignment.center,
+    end: Alignment.topLeft,
     colors: [
-      Color.fromRGBO(215, 221, 232, 0.25),
       Color.fromRGBO(120, 137, 169, 0.25),
+      Color.fromRGBO(215, 221, 232, 0.25),
     ],
-    transform: GradientRotation(math.pi * 154.8 / 360),
   );
 }

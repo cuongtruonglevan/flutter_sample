@@ -220,10 +220,11 @@ class ResetPasswordScreen extends StatelessWidget {
                               color: AppColors.whiteColor,
                             ),
                             validator: (value) =>
-                                PasswordFieldValidator.validate(context, value!),
-                            decoration:
-                                getInputOutlineDecoration('Enter your new password')
-                                    .copyWith(errorMaxLines: 3),
+                                PasswordFieldValidator.validate(
+                                    context, value!),
+                            decoration: getInputOutlineDecoration(
+                                    'Enter your new password')
+                                .copyWith(errorMaxLines: 3),
                           ),
                           SizedBox(height: 20.w),
                           TextFormField(
@@ -257,17 +258,13 @@ class ResetPasswordScreen extends StatelessWidget {
                         succeededReset.value = formKey.currentState!.validate();
                       },
                       gradient: AppColors.redGradient,
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(45.w, 8.w, 45.w, 8.w),
-                        alignment: Alignment.center,
-                        child: Text(
-                          'OK',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
-                            height: 19.6 / 14,
-                            color: AppColors.whiteTextColor,
-                          ),
+                      child: Text(
+                        'OK',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          height: 19.6 / 14,
+                          color: AppColors.whiteTextColor,
                         ),
                       ),
                     ),

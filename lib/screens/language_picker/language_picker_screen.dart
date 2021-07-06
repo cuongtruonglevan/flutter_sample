@@ -160,17 +160,13 @@ class LanguagePickerScreen extends StatelessWidget {
                                 Navigator.of(context).pushNamed(Routes.signIn);
                               },
                               gradient: AppColors.redGradient,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 18.w, vertical: 8.w),
-                                child: Text(
-                                  'CONTINUE',
-                                  style: GoogleFonts.montserrat(
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.w600,
-                                    height: 19.6 / 14,
-                                    color: AppColors.whiteTextColor,
-                                  ),
+                              child: Text(
+                                'CONTINUE',
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  height: 19.6 / 14,
+                                  color: AppColors.whiteTextColor,
                                 ),
                               ),
                             ),

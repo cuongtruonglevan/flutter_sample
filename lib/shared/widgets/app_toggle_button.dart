@@ -21,29 +21,46 @@ class AppToggleButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.zero,
-        elevation: 10.0,
-        shadowColor: Colors.black.withOpacity(0.4),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(100.0),
-        ),
-      ),
-      child: Obx(
-        () => Ink(
-          height: 44.w,
-          decoration: BoxDecoration(
-            gradient: selected.value ? reverseGradient : gradient,
+    return SizedBox(
+      height: 44.w,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          primary: Colors.transparent,
+          padding: EdgeInsets.zero,
+          elevation: 0.0,
+          shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100.0),
-            border: Border.all(
-                color: selected.value
-                    ? AppColors.redButtonColor
-                    : AppColors.backgroundColor),
           ),
-          child: Center(
-            child: child,
+        ),
+        child: Obx(
+          () => Container(
+            height: 44.w,
+            decoration: BoxDecoration(
+                gradient: selected.value ? reverseGradient : gradient,
+                borderRadius: BorderRadius.circular(100.0),
+                border: Border.all(
+                    color: selected.value
+                        ? AppColors.redButtonColor
+                        : Colors.transparent),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0x33505d74),
+                    blurRadius: 20,
+                    offset: Offset(-7, -7),
+                  ),
+                  BoxShadow(
+                    color: Color(0x66000000),
+                    blurRadius: 20,
+                    offset: Offset(5, 5),
+                  ),
+                ]),
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 2.w),
+                child: child,
+              ),
+            ),
           ),
         ),
       ),

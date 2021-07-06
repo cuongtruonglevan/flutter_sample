@@ -76,32 +76,35 @@ class _ReloadScreenState extends State<ReloadScreen> {
 
   Widget _buildPackages() {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 10.w, 20.w, 0.0),
+      padding: EdgeInsets.fromLTRB(0.0, 10.w, 0.0, 0.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Select Reload Package',
-            style: GoogleFonts.montserrat(
-              fontSize: 16.0,
-              fontWeight: FontWeight.w600,
-              height: 18 / 16,
-              letterSpacing: -0.17,
-              color: AppColors.whiteTextColor,
+          Padding(
+            padding: EdgeInsets.fromLTRB(20.w, 0.0, 20.w, 0.0),
+            child: Text(
+              'Select Reload Package',
+              style: GoogleFonts.montserrat(
+                fontSize: 16.0,
+                fontWeight: FontWeight.w600,
+                height: 18 / 16,
+                letterSpacing: -0.17,
+                color: AppColors.whiteTextColor,
+              ),
             ),
           ),
           SizedBox(height: 20.w),
           SizedBox(
             height: 172.w,
             child: ListView.separated(
-              padding: EdgeInsets.zero,
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               controller: scrollController,
               itemCount: tokenPackages.length,
               separatorBuilder: (context, index) => SizedBox(height: 20.w),
               itemBuilder: (context, index) {
                 final e = tokenPackages.elementAt(index);
                 return AppToggleButton(
-                  gradient: AppColors.greyGradient,
+                  gradient: AppColors.infiniteGreyGradient,
                   reverseGradient: AppColors.greyGradientRevesre,
                   selected: e.selected,
                   onPressed: () {
@@ -199,7 +202,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
             padding: EdgeInsets.zero,
             children: [
               AppToggleButton(
-                gradient: AppColors.greyGradient,
+                gradient: AppColors.infiniteGreyGradient,
                 reverseGradient: AppColors.greyGradientRevesre,
                 selected: mastercardSelected,
                 onPressed: () {
@@ -229,7 +232,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
               ),
               SizedBox(height: 20.w),
               AppToggleButton(
-                gradient: AppColors.greyGradient,
+                gradient: AppColors.infiniteGreyGradient,
                 reverseGradient: AppColors.greyGradientRevesre,
                 selected: fpxSelected,
                 onPressed: () {
@@ -249,7 +252,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
               ),
               SizedBox(height: 20.w),
               AppToggleButton(
-                gradient: AppColors.greyGradient,
+                gradient: AppColors.infiniteGreyGradient,
                 reverseGradient: AppColors.greyGradientRevesre,
                 selected: false.obs,
                 onPressed: null,
@@ -265,9 +268,9 @@ class _ReloadScreenState extends State<ReloadScreen> {
                 ),
               ),
               SizedBox(height: 20.w),
-              AppButton(
+              AppInfiniteButton(
                 onPressed: () {},
-                gradient: AppColors.greyGradient,
+                gradient: AppColors.infiniteGreyGradient,
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(40.w, 7.w, 40.w, 7.w),
                   child: Row(
@@ -307,7 +310,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
             color: AppColors.borderColor,
           ),
           SizedBox(height: 20.w),
-          AppButton(
+          AppInfiniteButton(
             onPressed: () {},
             gradient: AppColors.redGradient,
             child: Container(

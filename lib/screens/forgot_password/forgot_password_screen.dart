@@ -38,21 +38,82 @@ class ForgotPasswordScreen extends StatelessWidget {
   }
 
   Widget _buildSucceedMessage(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topCenter,
+    return Column(
       children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 30.w).copyWith(top: 42.w),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10.w),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-              child: Container(
-                padding: EdgeInsets.only(top: 105.w),
-                width: double.infinity,
+        Spacer(flex: 210),
+        Stack(
+          alignment: Alignment.topCenter,
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 30.w).copyWith(top: 42.w),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10.w),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                  child: Container(
+                    padding: EdgeInsets.only(top: 105.w),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.w),
+                      border: Border.all(color: Colors.white.withOpacity(0.2)),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 20.w,
+                          spreadRadius: 5.w,
+                          offset: Offset(5.w, 5.w),
+                          color: Colors.black.withOpacity(0.4),
+                        ),
+                      ],
+                      gradient: AppColors.lightGreyGradient,
+                    ),
+                    child: Column(mainAxisSize: MainAxisSize.min, children: [
+                      Text(
+                        'RESET PASSWORD',
+                        style: GoogleFonts.bebasNeue(
+                          fontSize: 44.sp,
+                          fontWeight: FontWeight.w400,
+                          height: 1.0,
+                          color: AppColors.whiteTextColor,
+                        ),
+                      ),
+                      SizedBox(height: 20.w),
+                      Text(
+                        'The Reset Password link has\nbeen sent to your registerd\n email.',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.montserrat(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w400,
+                          height: 20 / 16,
+                          color: AppColors.whiteTextColor,
+                        ),
+                      ),
+                      SizedBox(height: 30.w),
+                      AppButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        gradient: AppColors.redGradient,
+                        child: Text(
+                          'OK',
+                          style: GoogleFonts.montserrat(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w600,
+                            height: 19.6 / 14,
+                            color: AppColors.whiteTextColor,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 25.w),
+                    ]),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 0.0,
+              child: DecoratedBox(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.w),
-                  border: Border.all(color: Colors.white.withOpacity(0.2)),
+                  shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 20.w,
@@ -60,98 +121,39 @@ class ForgotPasswordScreen extends StatelessWidget {
                       offset: Offset(5.w, 5.w),
                       color: Colors.black.withOpacity(0.4),
                     ),
+                    BoxShadow(
+                      blurRadius: 20.w,
+                      spreadRadius: 7.w,
+                      offset: Offset(-7.w, -7.w),
+                      color: AppColors.borderColor.withOpacity(0.2),
+                    ),
                   ],
-                  gradient: AppColors.lightGreyGradient,
                 ),
-                child: Column(mainAxisSize: MainAxisSize.min, children: [
-                  Text(
-                    'RESET PASSWORD',
-                    style: GoogleFonts.bebasNeue(
-                      fontSize: 44.sp,
-                      fontWeight: FontWeight.w400,
-                      height: 1.0,
-                      color: AppColors.whiteTextColor,
-                    ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(
+                    127.w,
                   ),
-                  SizedBox(height: 20.w),
-                  Text(
-                    'The Reset Password link has\nbeen sent to your registerd\n email.',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.montserrat(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w400,
-                      height: 20 / 16,
-                      color: AppColors.whiteTextColor,
-                    ),
-                  ),
-                  SizedBox(height: 30.w),
-                  AppButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    gradient: AppColors.redGradient,
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                     child: Container(
-                      padding: EdgeInsets.fromLTRB(50.w, 8.w, 50.w, 8.w),
-                      alignment: Alignment.center,
-                      child: Text(
-                        'OK',
-                        style: GoogleFonts.montserrat(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w600,
-                          height: 19.6 / 14,
-                          color: AppColors.whiteTextColor,
-                        ),
+                      width: 127.w,
+                      height: 127.w,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white.withOpacity(0.2)),
+                        gradient: AppColors.lightGreyGradient,
+                      ),
+                      child: Center(
+                        child: Image.asset(AppAssets.imCheckCircle),
                       ),
                     ),
                   ),
-                  SizedBox(height: 25.w),
-                ]),
+                ),
               ),
             ),
-          ),
+          ],
         ),
-        Positioned(
-          top: 0.0,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 20.w,
-                  spreadRadius: 5.w,
-                  offset: Offset(5.w, 5.w),
-                  color: Colors.black.withOpacity(0.4),
-                ),
-                BoxShadow(
-                  blurRadius: 20.w,
-                  spreadRadius: 7.w,
-                  offset: Offset(-7.w, -7.w),
-                  color: AppColors.borderColor.withOpacity(0.2),
-                ),
-              ],
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(
-                127.w,
-              ),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                child: Container(
-                  width: 127.w,
-                  height: 127.w,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: Colors.white.withOpacity(0.2)),
-                    gradient: AppColors.lightGreyGradient,
-                  ),
-                  child: Center(
-                    child: Image.asset(AppAssets.imCheckCircle),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
+        Spacer(flex: 238),
       ],
     );
   }
@@ -236,17 +238,13 @@ class ForgotPasswordScreen extends StatelessWidget {
                     succeededForgot.value = formKey.currentState!.validate();
                   },
                   gradient: AppColors.redGradient,
-                  child: Container(
-                    padding: EdgeInsets.fromLTRB(45.w, 8.w, 45.w, 8.w),
-                    alignment: Alignment.center,
-                    child: Text(
-                      'OK',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w600,
-                        height: 19.6 / 14,
-                        color: AppColors.whiteTextColor,
-                      ),
+                  child: Text(
+                    'OK',
+                    style: GoogleFonts.montserrat(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w600,
+                      height: 19.6 / 14,
+                      color: AppColors.whiteTextColor,
                     ),
                   ),
                 ),

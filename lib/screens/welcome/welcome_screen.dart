@@ -199,16 +199,13 @@ class WelcomeScreen extends StatelessWidget {
                             .pushNamed(Routes.welcomeDetail) as bool;
                       },
                       gradient: AppColors.redGradient,
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(40.w, 8.w, 40.w, 8.w),
-                        child: Text(
-                          'NEXT',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
-                            height: 19.6 / 14,
-                            color: AppColors.whiteTextColor,
-                          ),
+                      child: Text(
+                        'NEXT',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          height: 19.6 / 14,
+                          color: AppColors.whiteTextColor,
                         ),
                       ),
                     ),
@@ -279,17 +276,13 @@ class WelcomeScreen extends StatelessWidget {
                             Navigator.of(context).pop();
                           },
                           gradient: AppColors.redGradient,
-                          child: Container(
-                            padding: EdgeInsets.fromLTRB(40.w, 8.w, 40.w, 8.w),
-                            alignment: Alignment.center,
-                            child: Text(
-                              'OK',
-                              style: GoogleFonts.montserrat(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w600,
-                                height: 19.6 / 14,
-                                color: AppColors.whiteTextColor,
-                              ),
+                          child: Text(
+                            'OK',
+                            style: GoogleFonts.montserrat(
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w600,
+                              height: 19.6 / 14,
+                              color: AppColors.whiteTextColor,
                             ),
                           ),
                         ),
