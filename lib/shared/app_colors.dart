@@ -31,10 +31,10 @@ class AppColors {
   );
 
   static const LinearGradient greyGradient = LinearGradient(
-    begin: Alignment(0, 0),
-    end: Alignment(0, -1),
-    colors: [backgroundColor, Color(0xff2f3745)],
-    transform: GradientRotation(math.pi * 154.8 / 360),
+    begin: Alignment.topRight,
+    end: Alignment.centerRight,
+    colors: [Color(0xff2e3747), backgroundColor],
+    transform: GradientRotation(1),
   );
 
   static const LinearGradient infiniteGreyGradient = LinearGradient(

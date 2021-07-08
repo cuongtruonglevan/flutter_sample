@@ -86,7 +86,7 @@ class LanguagePickerScreen extends StatelessWidget {
                             'Select Language',
                             textAlign: TextAlign.center,
                             style: GoogleFonts.montserrat(
-                              fontSize: 28.sp,
+                              fontSize: 28.0,
                               fontWeight: FontWeight.w600,
                               height: 1.0,
                               color: AppColors.whiteTextColor,
@@ -163,7 +163,7 @@ class LanguagePickerScreen extends StatelessWidget {
                               child: Text(
                                 'CONTINUE',
                                 style: GoogleFonts.montserrat(
-                                  fontSize: 14,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.w500,
                                   height: 19.6 / 14,
                                   color: AppColors.whiteTextColor,

@@ -70,7 +70,7 @@ class ResetPasswordScreen extends StatelessWidget {
                   Text(
                     'RESET PASSWORD',
                     style: GoogleFonts.bebasNeue(
-                      fontSize: 44.sp,
+                      fontSize: 44.0,
                       fontWeight: FontWeight.w400,
                       height: 1.0,
                       color: AppColors.whiteTextColor,
@@ -81,7 +81,7 @@ class ResetPasswordScreen extends StatelessWidget {
                     'Your request to update your\npassword is successful. Please\nlogin with your new password.',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.montserrat(
-                      fontSize: 16.sp,
+                      fontSize: 16.0,
                       fontWeight: FontWeight.w400,
                       height: 20 / 16,
                       color: AppColors.whiteTextColor,
@@ -100,8 +100,8 @@ class ResetPasswordScreen extends StatelessWidget {
                         child: Text(
                           'OK',
                           style: GoogleFonts.montserrat(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w500,
                             height: 19.6 / 14,
                             color: AppColors.whiteTextColor,
                           ),
@@ -141,6 +141,7 @@ class ResetPasswordScreen extends StatelessWidget {
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                 child: Container(
+                  padding: EdgeInsets.only(top: 14.w, right: 7.w),
                   width: 127.w,
                   height: 127.w,
                   decoration: BoxDecoration(
@@ -195,7 +196,7 @@ class ResetPasswordScreen extends StatelessWidget {
                   Text(
                     'Reset Password',
                     style: GoogleFonts.montserrat(
-                      fontSize: 28.sp,
+                      fontSize: 28.0,
                       fontWeight: FontWeight.w600,
                       height: 1.0,
                       color: AppColors.whiteColor,
@@ -214,7 +215,7 @@ class ResetPasswordScreen extends StatelessWidget {
                             obscureText: true,
                             textInputAction: TextInputAction.next,
                             style: GoogleFonts.montserrat(
-                              fontSize: 14.sp,
+                              fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
                               color: AppColors.whiteColor,
@@ -236,7 +237,7 @@ class ResetPasswordScreen extends StatelessWidget {
                               formKey.currentState!.validate();
                             },
                             style: GoogleFonts.montserrat(
-                              fontSize: 14.sp,
+                              fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
                               color: AppColors.whiteColor,
@@ -261,8 +262,8 @@ class ResetPasswordScreen extends StatelessWidget {
                       child: Text(
                         'OK',
                         style: GoogleFonts.montserrat(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w500,
                           height: 19.6 / 14,
                           color: AppColors.whiteTextColor,
                         ),

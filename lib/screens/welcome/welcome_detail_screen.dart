@@ -20,6 +20,31 @@ class WelcomeDetailScreen extends StatelessWidget {
   final RxBool showStateList = false.obs;
   final RxDouble topCor = 0.0.obs;
   final RxDouble leftCor = 0.0.obs;
+  final RxString countryText = 'Country'.obs;
+  final RxString stateText = 'State'.obs;
+
+  final List<String> countryList = [
+    'Malaysia',
+    'Thailand',
+    'Indonesia',
+    'Laos',
+    'Cambodia',
+    'Singapore',
+    'Philipins',
+    'Myanmar',
+    'Timo-Leste'
+  ];
+  final List<String> stateList = [
+    'State-1',
+    'State-2',
+    'State-3',
+    'State-4',
+    'State-5',
+    'State-6',
+    'State-7',
+    'State-8',
+    'State-9',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +115,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                             child: Text(
                               'Hello,\nwelcome aboard!',
                               style: GoogleFonts.montserrat(
-                                fontSize: 28.sp,
+                                fontSize: 28.0,
                                 fontWeight: FontWeight.w600,
                                 height: 1.0,
                                 color: AppColors.whiteColor,
@@ -101,7 +126,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                           Text(
                             'Let us know a little bit about you.',
                             style: GoogleFonts.montserrat(
-                              fontSize: 16.sp,
+                              fontSize: 16.0,
                               fontWeight: FontWeight.w400,
                               height: 20 / 16,
                               color: AppColors.greyColor,
@@ -113,7 +138,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                             enabled: true,
                             textInputAction: TextInputAction.next,
                             style: GoogleFonts.montserrat(
-                              fontSize: 14.sp,
+                              fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
                               color: AppColors.whiteColor,
@@ -131,7 +156,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                             enabled: true,
                             textInputAction: TextInputAction.next,
                             style: GoogleFonts.montserrat(
-                              fontSize: 14.sp,
+                              fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
                               color: AppColors.whiteColor,
@@ -162,7 +187,10 @@ class WelcomeDetailScreen extends StatelessWidget {
                                 color: AppColors.textFieldFillColor,
                                 borderRadius: BorderRadius.circular(40.w),
                                 border: Border.all(
-                                    color: AppColors.whiteColor, width: 1.0),
+                                    color: countryText.value == 'Country'
+                                        ? AppColors.greyColor
+                                        : AppColors.whiteColor,
+                                    width: 1.0),
                               ),
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
@@ -171,13 +199,18 @@ class WelcomeDetailScreen extends StatelessWidget {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(
-                                        'Country',
-                                        style: GoogleFonts.montserrat(
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w400,
-                                          height: 18 / 14,
-                                          color: AppColors.greyColor,
+                                      Obx(
+                                        () => Text(
+                                          countryText.value,
+                                          style: GoogleFonts.montserrat(
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.w400,
+                                            height: 18 / 14,
+                                            color:
+                                                countryText.value == 'Country'
+                                                    ? AppColors.greyColor
+                                                    : AppColors.whiteColor,
+                                          ),
                                         ),
                                       ),
                                       RotatedBox(
@@ -210,7 +243,10 @@ class WelcomeDetailScreen extends StatelessWidget {
                                 color: AppColors.textFieldFillColor,
                                 borderRadius: BorderRadius.circular(40.w),
                                 border: Border.all(
-                                    color: AppColors.whiteColor, width: 1.0),
+                                    color: stateText.value == 'State'
+                                        ? AppColors.greyColor
+                                        : AppColors.whiteColor,
+                                    width: 1.0),
                               ),
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
@@ -219,13 +255,17 @@ class WelcomeDetailScreen extends StatelessWidget {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(
-                                        'State',
-                                        style: GoogleFonts.montserrat(
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w400,
-                                          height: 18 / 14,
-                                          color: AppColors.greyColor,
+                                      Obx(
+                                        () => Text(
+                                          stateText.value,
+                                          style: GoogleFonts.montserrat(
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.w400,
+                                            height: 18 / 14,
+                                            color: stateText.value == 'State'
+                                                ? AppColors.greyColor
+                                                : AppColors.whiteColor,
+                                          ),
                                         ),
                                       ),
                                       RotatedBox(
@@ -245,7 +285,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                             enabled: true,
                             textInputAction: TextInputAction.next,
                             style: GoogleFonts.montserrat(
-                              fontSize: 14.sp,
+                              fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
                               color: AppColors.whiteColor,
@@ -262,7 +302,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                             enabled: true,
                             textInputAction: TextInputAction.next,
                             style: GoogleFonts.montserrat(
-                              fontSize: 14.sp,
+                              fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
                               color: AppColors.whiteColor,
@@ -279,7 +319,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                             enabled: true,
                             textInputAction: TextInputAction.next,
                             style: GoogleFonts.montserrat(
-                              fontSize: 14.sp,
+                              fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
                               color: AppColors.whiteColor,
@@ -305,8 +345,8 @@ class WelcomeDetailScreen extends StatelessWidget {
                                   child: Text(
                                     'BACK',
                                     style: GoogleFonts.montserrat(
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.w500,
                                       height: 19.6 / 14,
                                       color: AppColors.whiteColor,
                                     ),
@@ -316,8 +356,8 @@ class WelcomeDetailScreen extends StatelessWidget {
                                     child: Text(
                                       'SAVE',
                                       style: GoogleFonts.montserrat(
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w600,
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.w500,
                                         height: 19.6 / 14,
                                         color: AppColors.whiteColor,
                                       ),
@@ -357,19 +397,26 @@ class WelcomeDetailScreen extends StatelessWidget {
                               thumbColor: AppColors.greyColor,
                               child: ListView.separated(
                                 padding: EdgeInsets.zero,
-                                itemCount: 20,
-                                itemBuilder: (context, index) => Container(
-                                  height: 49.w,
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 17.w),
-                                    child: Text(
-                                      'Malaysia',
-                                      style: GoogleFonts.montserrat(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
-                                          color: AppColors.whiteTextColor),
+                                itemCount: countryList.length,
+                                itemBuilder: (context, index) => InkWell(
+                                  onTap: () {
+                                    countryText.value =
+                                        countryList.elementAt(index);
+                                    showCountryList.value = false;
+                                  },
+                                  child: Container(
+                                    height: 49.w,
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 17.w),
+                                      child: Text(
+                                        countryList.elementAt(index),
+                                        style: GoogleFonts.montserrat(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600,
+                                            color: AppColors.whiteTextColor),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -410,19 +457,26 @@ class WelcomeDetailScreen extends StatelessWidget {
                               thumbColor: AppColors.greyColor,
                               child: ListView.separated(
                                 padding: EdgeInsets.zero,
-                                itemCount: 20,
-                                itemBuilder: (context, index) => Container(
-                                  height: 49.w,
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 17.w),
-                                    child: Text(
-                                      'State',
-                                      style: GoogleFonts.montserrat(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
-                                          color: AppColors.whiteTextColor),
+                                itemCount: stateList.length,
+                                itemBuilder: (context, index) => InkWell(
+                                  onTap: () {
+                                    stateText.value =
+                                        stateList.elementAt(index);
+                                    showStateList.value = false;
+                                  },
+                                  child: Container(
+                                    height: 49.w,
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 17.w),
+                                      child: Text(
+                                        stateList.elementAt(index),
+                                        style: GoogleFonts.montserrat(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600,
+                                            color: AppColors.whiteTextColor),
+                                      ),
                                     ),
                                   ),
                                 ),

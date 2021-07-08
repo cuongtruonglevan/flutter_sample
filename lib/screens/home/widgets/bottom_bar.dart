@@ -27,12 +27,12 @@ class HomeBottomBar extends StatelessWidget {
         selectedItemColor: AppColors.whiteTextColor,
         unselectedItemColor: AppColors.whiteTextColor,
         selectedLabelStyle: GoogleFonts.montserrat(
-            fontSize: 10.sp,
+            fontSize: 10.0,
             fontWeight: FontWeight.w400,
             height: 1.6,
             color: AppColors.whiteTextColor),
         unselectedLabelStyle: GoogleFonts.montserrat(
-            fontSize: 10.sp,
+            fontSize: 10.0,
             fontWeight: FontWeight.w400,
             height: 1.6,
             color: AppColors.whiteTextColor),

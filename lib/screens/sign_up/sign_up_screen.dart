@@ -31,6 +31,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final RxBool showDialCodeList = false.obs;
   final RxBool _obscureText = true.obs;
   final RxBool _currentObscureText = true.obs;
+  final RxBool mobileEditing = false.obs;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final GlobalKey phoneFieldKey = GlobalKey();
   final TextEditingController emailFieldController = TextEditingController();
@@ -38,12 +39,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController passwordFieldController = TextEditingController();
   final TextEditingController confirmPasswordFieldController =
       TextEditingController();
+  final FocusNode mobileNode = FocusNode();
   Country country = Country();
 
   @override
   void initState() {
     super.initState();
     _init();
+    mobileNode.addListener(() {
+      mobileEditing.value = mobileNode.hasFocus;
+    });
   }
 
   Future _init() async {
@@ -90,7 +95,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         'Sign up to discover 10,000+\nlivestream video with us',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
-                          fontSize: 16.sp,
+                          fontSize: 16.0,
                           fontWeight: FontWeight.w400,
                           height: 1.25,
                           color: AppColors.whiteTextColor1,
@@ -130,7 +135,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               textInputAction: TextInputAction.next,
                               autocorrect: false,
                               style: GoogleFonts.montserrat(
-                                fontSize: 14.sp,
+                                fontSize: 14.0,
                                 fontWeight: FontWeight.w400,
                                 height: 18 / 14,
                                 color: AppColors.whiteColor,
@@ -141,81 +146,89 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   'Enter your email here'),
                             ),
                             SizedBox(height: 20.w),
-                            Container(
-                              key: phoneFieldKey,
-                              decoration: BoxDecoration(
-                                color: AppColors.textFieldFillColor,
-                                borderRadius: BorderRadius.circular(40.w),
-                                border: Border.all(
-                                    color: AppColors.whiteColor, width: 1.0),
-                              ),
-                              child: Row(
-                                children: [
-                                  InkWell(
-                                    onTap: () {
-                                      final RenderBox renderBox = phoneFieldKey
-                                          .currentContext
-                                          ?.findRenderObject() as RenderBox;
-                                      final offset =
-                                          renderBox.localToGlobal(Offset.zero);
-                                      leftCor.value = offset.dx;
-                                      topCor.value = offset.dy;
-                                      showDialCodeList.value =
-                                          !showDialCodeList.value;
-                                    },
-                                    child: SizedBox(
-                                      width: 70.w,
-                                      height: 40.w,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SizedBox(width: 8.w),
-                                          Icon(
-                                            Icons.keyboard_arrow_down_rounded,
-                                            color: AppColors.whiteColor,
-                                          ),
-                                          Text(
-                                            '+60',
-                                            style: GoogleFonts.montserrat(
-                                              fontSize: 14.sp,
-                                              fontWeight: FontWeight.w400,
-                                              height: 18 / 14,
-                                              color: AppColors.whiteTextColor,
+                            Obx(
+                              () => Container(
+                                key: phoneFieldKey,
+                                decoration: BoxDecoration(
+                                  color: AppColors.textFieldFillColor,
+                                  borderRadius: BorderRadius.circular(40.w),
+                                  border: Border.all(
+                                      color: mobileEditing.value
+                                          ? AppColors.whiteColor
+                                          : AppColors.greyColor,
+                                      width: 1.0),
+                                ),
+                                child: Row(
+                                  children: [
+                                    InkWell(
+                                      onTap: () {
+                                        final RenderBox renderBox =
+                                            phoneFieldKey.currentContext
+                                                    ?.findRenderObject()
+                                                as RenderBox;
+                                        final offset = renderBox
+                                            .localToGlobal(Offset.zero);
+                                        leftCor.value = offset.dx;
+                                        topCor.value = offset.dy;
+                                        showDialCodeList.value =
+                                            !showDialCodeList.value;
+                                      },
+                                      child: SizedBox(
+                                        width: 70.w,
+                                        height: 40.w,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SizedBox(width: 8.w),
+                                            Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color: AppColors.whiteColor,
                                             ),
-                                          ),
-                                        ],
+                                            Text(
+                                              '+60',
+                                              style: GoogleFonts.montserrat(
+                                                fontSize: 14.0,
+                                                fontWeight: FontWeight.w400,
+                                                height: 18 / 14,
+                                                color: AppColors.whiteTextColor,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Expanded(
-                                    child: TextFormField(
-                                      controller: phoneFieldController,
-                                      enabled: true,
-                                      keyboardType: TextInputType.phone,
-                                      textInputAction: TextInputAction.next,
-                                      autocorrect: false,
-                                      style: GoogleFonts.montserrat(
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w400,
-                                        height: 18 / 14,
-                                        color: AppColors.whiteColor,
-                                      ),
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        hintText: 'Mobile Number',
-                                        hintStyle: GoogleFonts.montserrat(
-                                          fontSize: 14.0.sp,
+                                    Expanded(
+                                      child: TextFormField(
+                                        controller: phoneFieldController,
+                                        focusNode: mobileNode,
+                                        enabled: true,
+                                        keyboardType: TextInputType.phone,
+                                        textInputAction: TextInputAction.next,
+                                        autocorrect: false,
+                                        onTap: () {},
+                                        style: GoogleFonts.montserrat(
+                                          fontSize: 14.0,
                                           fontWeight: FontWeight.w400,
                                           height: 18 / 14,
-                                          color: AppColors.greyTextColor,
+                                          color: AppColors.whiteColor,
                                         ),
-                                        contentPadding: EdgeInsets.symmetric(
-                                            vertical: 15.w),
+                                        decoration: InputDecoration(
+                                          border: InputBorder.none,
+                                          hintText: 'Mobile Number',
+                                          hintStyle: GoogleFonts.montserrat(
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.w400,
+                                            height: 18 / 14,
+                                            color: AppColors.greyTextColor,
+                                          ),
+                                          contentPadding: EdgeInsets.symmetric(
+                                              vertical: 15.w),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                             SizedBox(height: 20.w),
@@ -225,7 +238,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   obscureText: _obscureText.value,
                                   textInputAction: TextInputAction.next,
                                   style: GoogleFonts.montserrat(
-                                    fontSize: 14.sp,
+                                    fontSize: 14.0,
                                     fontWeight: FontWeight.w400,
                                     height: 18 / 14,
                                     color: AppColors.whiteColor,
@@ -261,7 +274,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     }
                                   },
                                   style: GoogleFonts.montserrat(
-                                    fontSize: 14.sp,
+                                    fontSize: 14.0,
                                     fontWeight: FontWeight.w400,
                                     height: 18 / 14,
                                     color: AppColors.whiteColor,
@@ -291,17 +304,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               padding: EdgeInsets.fromLTRB(0.w, 50.w, 0.w, 0.w),
                               child: AppButton(
                                 onPressed: () {
-                                  if (formKey.currentState!.validate()) {
-                                    Navigator.of(context)
-                                        .pushNamed(Routes.verifyCode);
-                                  }
+                                  // if (formKey.currentState!.validate()) {
+                                  //   Navigator.of(context)
+                                  //       .pushNamed(Routes.verifyCode);
+                                  // }
+                                  Navigator.of(context)
+                                      .pushNamed(Routes.verifyCode);
                                 },
                                 gradient: AppColors.redGradient,
                                 child: Text(
                                   'SIGN UP',
                                   style: GoogleFonts.montserrat(
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w500,
                                     height: 19.6 / 14,
                                     color: AppColors.whiteTextColor,
                                   ),
@@ -331,7 +346,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             child: Text(
                               'or login with',
                               style: GoogleFonts.montserrat(
-                                fontSize: 12.sp,
+                                fontSize: 12.0,
                                 fontWeight: FontWeight.w400,
                                 height: 1.25,
                                 color: AppColors.greyColor,
@@ -408,7 +423,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: Text(
                         'Already a member? Login',
                         style: GoogleFonts.montserrat(
-                          fontSize: 12.0.sp,
+                          fontSize: 12.0,
                           fontWeight: FontWeight.w400,
                           height: 5 / 3,
                           color: AppColors.whiteTextColor,

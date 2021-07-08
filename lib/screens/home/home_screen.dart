@@ -167,17 +167,13 @@ class _HomeScreenState extends State<HomeScreen> {
             Navigator.of(context).pushNamed(Routes.reload);
           },
           gradient: AppColors.redGradient,
-          child: Container(
-            padding: EdgeInsets.fromLTRB(60.w, 10.w, 60.w, 10.w),
-            alignment: Alignment.center,
-            child: Text(
-              'RELOAD LIVEWALLET',
-              style: GoogleFonts.montserrat(
-                fontSize: 16.0,
-                fontWeight: FontWeight.w600,
-                height: 22.4 / 16,
-                color: AppColors.whiteTextColor,
-              ),
+          child: Text(
+            'RELOAD LIVEWALLET',
+            style: GoogleFonts.montserrat(
+              fontSize: 16.0,
+              fontWeight: FontWeight.w600,
+              height: 22.4 / 16,
+              color: AppColors.whiteTextColor,
             ),
           ),
         ),

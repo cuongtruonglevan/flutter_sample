@@ -29,7 +29,7 @@ class TokenPopupDialog extends StatelessWidget {
                 Text(
                   'LOCKED',
                   style: GoogleFonts.montserrat(
-                    fontSize: 12.0.sp,
+                    fontSize: 12.0,
                     fontWeight: FontWeight.w600,
                     height: 14.5 / 12.0,
                     color: AppColors.whiteTextColor,
@@ -38,7 +38,7 @@ class TokenPopupDialog extends StatelessWidget {
                 Text(
                   'The amount of LiveToken being\nreserved in any Game Mode',
                   style: GoogleFonts.montserrat(
-                    fontSize: 12.0.sp,
+                    fontSize: 12.0,
                     fontWeight: FontWeight.w400,
                     height: 14.5 / 12.0,
                     color: AppColors.whiteTextColor,
@@ -48,7 +48,7 @@ class TokenPopupDialog extends StatelessWidget {
                 Text(
                   'UNLOCKED',
                   style: GoogleFonts.montserrat(
-                    fontSize: 12.0.sp,
+                    fontSize: 12.0,
                     fontWeight: FontWeight.w600,
                     height: 14.5 / 12.0,
                     color: AppColors.whiteTextColor,
@@ -57,7 +57,7 @@ class TokenPopupDialog extends StatelessWidget {
                 Text(
                   'The amount of LiveToken that is free to be used',
                   style: GoogleFonts.montserrat(
-                    fontSize: 12.0.sp,
+                    fontSize: 12.0,
                     fontWeight: FontWeight.w400,
                     height: 14.5 / 12.0,
                     color: AppColors.whiteTextColor,
@@ -67,7 +67,7 @@ class TokenPopupDialog extends StatelessWidget {
                 Text(
                   'FREE',
                   style: GoogleFonts.montserrat(
-                    fontSize: 12.0.sp,
+                    fontSize: 12.0,
                     fontWeight: FontWeight.w600,
                     height: 14.5 / 12.0,
                     color: AppColors.whiteTextColor,
@@ -76,7 +76,7 @@ class TokenPopupDialog extends StatelessWidget {
                 Text(
                   'Complimentary LiveToken distributed by Sellers or Platform. Free LiveTokens cannot be withdrawn or transfered',
                   style: GoogleFonts.montserrat(
-                    fontSize: 12.0.sp,
+                    fontSize: 12.0,
                     fontWeight: FontWeight.w400,
                     height: 14.5 / 12.0,
                     color: AppColors.whiteTextColor,

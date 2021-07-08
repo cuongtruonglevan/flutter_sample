@@ -45,7 +45,8 @@ class ForgotPasswordScreen extends StatelessWidget {
           alignment: Alignment.topCenter,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 30.w).copyWith(top: 42.w),
+              padding:
+                  EdgeInsets.symmetric(horizontal: 30.w).copyWith(top: 42.w),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10.w),
                 child: BackdropFilter(
@@ -70,7 +71,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       Text(
                         'RESET PASSWORD',
                         style: GoogleFonts.bebasNeue(
-                          fontSize: 44.sp,
+                          fontSize: 44.0,
                           fontWeight: FontWeight.w400,
                           height: 1.0,
                           color: AppColors.whiteTextColor,
@@ -81,7 +82,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                         'The Reset Password link has\nbeen sent to your registerd\n email.',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
-                          fontSize: 16.sp,
+                          fontSize: 16.0,
                           fontWeight: FontWeight.w400,
                           height: 20 / 16,
                           color: AppColors.whiteTextColor,
@@ -96,8 +97,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                         child: Text(
                           'OK',
                           style: GoogleFonts.montserrat(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w500,
                             height: 19.6 / 14,
                             color: AppColors.whiteTextColor,
                           ),
@@ -136,11 +137,13 @@ class ForgotPasswordScreen extends StatelessWidget {
                   child: BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                     child: Container(
+                      padding: EdgeInsets.only(top: 14.w, right: 7.w),
                       width: 127.w,
                       height: 127.w,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(color: Colors.white.withOpacity(0.2)),
+                        border:
+                            Border.all(color: Colors.white.withOpacity(0.2)),
                         gradient: AppColors.lightGreyGradient,
                       ),
                       child: Center(
@@ -190,7 +193,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               Text(
                 'Forgot Password?',
                 style: GoogleFonts.montserrat(
-                  fontSize: 28.sp,
+                  fontSize: 28.0,
                   fontWeight: FontWeight.w600,
                   height: 1.0,
                   color: AppColors.whiteTextColor,
@@ -201,7 +204,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 'A reset password email link\nwill be sent to your registered\nemail account.',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.montserrat(
-                  fontSize: 16.sp,
+                  fontSize: 16.0,
                   fontWeight: FontWeight.w400,
                   height: 20 / 16,
                   color: AppColors.whiteTextColor,
@@ -219,7 +222,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     textInputAction: TextInputAction.next,
                     autocorrect: false,
                     style: GoogleFonts.montserrat(
-                      fontSize: 14.sp,
+                      fontSize: 14.0,
                       fontWeight: FontWeight.w400,
                       height: 18 / 14,
                       color: AppColors.whiteColor,
@@ -241,8 +244,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                   child: Text(
                     'OK',
                     style: GoogleFonts.montserrat(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w500,
                       height: 19.6 / 14,
                       color: AppColors.whiteTextColor,
                     ),

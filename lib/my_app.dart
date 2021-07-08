@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
             },
             child: AnimatedSwitcher(
               child: ScreenUtilInit(
-                  designSize: Size(375.0, 667.0), builder: () => _child),
+                  designSize: Size(375.0, 812.0), builder: () => _child),
               switchInCurve: Curves.easeInCirc,
               switchOutCurve: Curves.easeOutCirc,
               duration: Duration(milliseconds: 250),

@@ -91,7 +91,7 @@ class SignInScreen extends StatelessWidget {
                           autocorrect: false,
                           autofocus: false,
                           style: GoogleFonts.montserrat(
-                            fontSize: 14.0.sp,
+                            fontSize: 14.0,
                             fontWeight: FontWeight.w400,
                             height: 18 / 14,
                             color: AppColors.whiteColor,
@@ -108,7 +108,7 @@ class SignInScreen extends StatelessWidget {
                               autofocus: false,
                               obscureText: _obscureText.value,
                               style: GoogleFonts.montserrat(
-                                fontSize: 14.0.sp,
+                                fontSize: 14.0,
                                 fontWeight: FontWeight.w400,
                                 height: 18 / 14,
                                 color: AppColors.whiteColor,
@@ -157,8 +157,8 @@ class SignInScreen extends StatelessWidget {
                             child: Text(
                               'LOGIN',
                               style: GoogleFonts.montserrat(
-                                fontSize: 14.0.sp,
-                                fontWeight: FontWeight.w600,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w500,
                                 height: 19.6 / 14,
                                 color: AppColors.whiteTextColor,
                               ),
@@ -180,7 +180,7 @@ class SignInScreen extends StatelessWidget {
                           child: Text(
                             'Forgot Password?',
                             style: GoogleFonts.montserrat(
-                              fontSize: 14.0.sp,
+                              fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 1.2,
                               color: AppColors.whiteTextColor1,
@@ -210,7 +210,7 @@ class SignInScreen extends StatelessWidget {
                         child: Text(
                           'or login with',
                           style: GoogleFonts.montserrat(
-                            fontSize: 12.sp,
+                            fontSize: 12.0,
                             fontWeight: FontWeight.w400,
                             height: 1.25,
                             color: AppColors.greyColor,
@@ -287,7 +287,7 @@ class SignInScreen extends StatelessWidget {
                   child: Text(
                     'Not a member? Sign up',
                     style: GoogleFonts.montserrat(
-                      fontSize: 12.sp,
+                      fontSize: 12.0,
                       fontWeight: FontWeight.w400,
                       height: 20 / 12,
                       color: AppColors.whiteColor,

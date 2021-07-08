@@ -16,8 +16,8 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 117.w,
-      height: 38.w,
+      width: 120.w,
+      height: 40.w,
       decoration: BoxDecoration(
         gradient: gradient,
         borderRadius: BorderRadius.circular(100.0),

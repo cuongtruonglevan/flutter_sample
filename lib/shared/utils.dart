@@ -15,7 +15,7 @@ InputDecoration getInputOutlineDecoration(String label,
     {bool showHint = true, bool showLabel = false}) {
   final _defaultBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(40.w)),
-    borderSide: BorderSide(color: AppColors.whiteColor, width: 1.0),
+    borderSide: BorderSide(color: AppColors.greyColor, width: 1.0),
   );
 
   final _focusedBorder = OutlineInputBorder(
@@ -32,13 +32,13 @@ InputDecoration getInputOutlineDecoration(String label,
     labelText: showLabel ? label.toString() : null,
     hintText: showHint ? label.toString() : null,
     labelStyle: GoogleFonts.montserrat(
-      fontSize: 14.0.sp,
+      fontSize: 14.0,
       fontWeight: FontWeight.w400,
       height: 18 / 14,
       color: AppColors.greyTextColor,
     ),
     hintStyle: GoogleFonts.montserrat(
-      fontSize: 14.0.sp,
+      fontSize: 14.0,
       fontWeight: FontWeight.w400,
       height: 18 / 14,
       color: AppColors.greyTextColor,

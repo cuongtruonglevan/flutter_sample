@@ -32,7 +32,7 @@ class UserNameDialog extends StatelessWidget {
                 child: Text(
                   'Username word length is a minimum of 4 and maximum of 20 characters. No spacing or repetitive characters are allowed.\n\nMember is advised to come up with a creative and proper Username to be displayed on LiveCom. Usernames with improper, vulgar, racist or obscene wordings will be banned from usage in LiveCom.',
                   style: GoogleFonts.montserrat(
-                    fontSize: 12.0.sp,
+                    fontSize: 12.0,
                     fontWeight: FontWeight.w400,
                     height: 18 / 12.0,
                     color: AppColors.whiteTextColor,

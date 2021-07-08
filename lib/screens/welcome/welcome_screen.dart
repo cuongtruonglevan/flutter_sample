@@ -76,7 +76,7 @@ class WelcomeScreen extends StatelessWidget {
                 child: Text(
                   'Hello,\nwelcome aboard!',
                   style: GoogleFonts.montserrat(
-                    fontSize: 28.sp,
+                    fontSize: 28.0,
                     fontWeight: FontWeight.w600,
                     height: 1.0,
                     color: AppColors.whiteColor,
@@ -87,7 +87,7 @@ class WelcomeScreen extends StatelessWidget {
               Text(
                 'Let us know a little bit about you.',
                 style: GoogleFonts.montserrat(
-                  fontSize: 16.sp,
+                  fontSize: 16.0,
                   fontWeight: FontWeight.w400,
                   height: 20 / 16,
                   color: AppColors.greyColor,
@@ -109,7 +109,7 @@ class WelcomeScreen extends StatelessWidget {
                             enabled: true,
                             textInputAction: TextInputAction.next,
                             style: GoogleFonts.montserrat(
-                              fontSize: 14.sp,
+                              fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
                               color: AppColors.whiteColor,
@@ -156,7 +156,7 @@ class WelcomeScreen extends StatelessWidget {
                           formKey.currentState!.validate();
                         },
                         style: GoogleFonts.montserrat(
-                          fontSize: 14.sp,
+                          fontSize: 14.0,
                           fontWeight: FontWeight.w400,
                           height: 18 / 14,
                           color: AppColors.whiteColor,
@@ -174,7 +174,7 @@ class WelcomeScreen extends StatelessWidget {
                           formKey.currentState!.validate();
                         },
                         style: GoogleFonts.montserrat(
-                          fontSize: 14.sp,
+                          fontSize: 14.0,
                           fontWeight: FontWeight.w400,
                           height: 18 / 14,
                           color: AppColors.whiteColor,
@@ -202,8 +202,8 @@ class WelcomeScreen extends StatelessWidget {
                       child: Text(
                         'NEXT',
                         style: GoogleFonts.montserrat(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w500,
                           height: 19.6 / 14,
                           color: AppColors.whiteTextColor,
                         ),
@@ -252,7 +252,7 @@ class WelcomeScreen extends StatelessWidget {
                       Text(
                         'HI USERNAME',
                         style: GoogleFonts.bebasNeue(
-                          fontSize: 44.sp,
+                          fontSize: 44.0,
                           fontWeight: FontWeight.w400,
                           height: 1.0,
                           color: AppColors.whiteTextColor,
@@ -263,7 +263,7 @@ class WelcomeScreen extends StatelessWidget {
                         'Welcome to LiveCom. We\nhope you have a good time\nshopping here.',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
-                          fontSize: 16.sp,
+                          fontSize: 16.0,
                           fontWeight: FontWeight.w400,
                           height: 20 / 16,
                           color: AppColors.whiteTextColor,
@@ -279,8 +279,8 @@ class WelcomeScreen extends StatelessWidget {
                           child: Text(
                             'OK',
                             style: GoogleFonts.montserrat(
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w500,
                               height: 19.6 / 14,
                               color: AppColors.whiteTextColor,
                             ),

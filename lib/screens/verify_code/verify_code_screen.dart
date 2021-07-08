@@ -127,7 +127,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 45.0)
-                .copyWith(top: 37.w, bottom: 85.w),
+                .copyWith(top: 37.w, bottom: 30.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -151,8 +151,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
           ),
           Container(
             padding: EdgeInsets.fromLTRB(25.w, 18.w, 25.w, 14.w),
-            margin:
-                EdgeInsets.symmetric(horizontal: 20.w).copyWith(top: 12.w, bottom: 59.w),
+            margin: EdgeInsets.symmetric(horizontal: 20.w),
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
@@ -176,6 +175,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       '2',
@@ -187,25 +187,31 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                       ),
                     ),
                     SizedBox(width: 8.w),
-                    Text(
-                      'Verify your mobile number',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w600,
-                        height: 20 / 16,
-                        color: AppColors.whiteTextColor,
-                      ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Verify your mobile number',
+                          style: GoogleFonts.montserrat(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w600,
+                            height: 20 / 16,
+                            color: AppColors.whiteTextColor,
+                          ),
+                        ),
+                        SizedBox(height: 6.w),
+                        Text(
+                          'A 6-digit code will be sent to\n+6012 345 6789',
+                          style: GoogleFonts.montserrat(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w400,
+                            height: 20 / 14,
+                            color: AppColors.whiteTextColor,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
-                ),
-                Text(
-                  'A 6-digit code will be sent to\n+6012 345 6789',
-                  style: GoogleFonts.montserrat(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w400,
-                    height: 20 / 14,
-                    color: AppColors.whiteTextColor,
-                  ),
                 ),
                 SizedBox(height: 17.w),
                 PinCodeTextField(
@@ -225,13 +231,14 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                       fieldWidth: 40.63.w,
                       fieldHeight: 60.w,
                       borderRadius: BorderRadius.circular(5.0),
-                      // activeFillColor: AppColors.whiteColor,
-                      // inactiveFillColor: AppColors.whiteColor,
-                      // selectedFillColor: AppColors.whiteColor,
+                      activeFillColor: AppColors.textFieldFillColor,
+                      inactiveFillColor: AppColors.textFieldFillColor,
+                      selectedFillColor: AppColors.textFieldFillColor,
                       inactiveColor: AppColors.borderColor,
                       activeColor: AppColors.whiteColor,
                       selectedColor: AppColors.whiteColor,
                     ),
+                    enableActiveFill: true,
                     showCursor: false,
                     backgroundColor: Colors.transparent,
                     onChanged: (text) {
@@ -288,8 +295,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
         children: [
           Container(
             padding: EdgeInsets.fromLTRB(25.w, 18.w, 25.w, 17.w),
-            margin:
-                EdgeInsets.symmetric(horizontal: 20.w).copyWith(top: 12.w),
+            margin: EdgeInsets.symmetric(horizontal: 20.w).copyWith(top: 12.w),
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
@@ -313,6 +319,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       '1',
@@ -324,25 +331,30 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                       ),
                     ),
                     SizedBox(width: 8.w),
-                    Text(
-                      'Verify your email address',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w600,
-                        height: 20 / 16,
-                        color: AppColors.whiteTextColor,
-                      ),
-                    ),
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Verify your email address',
+                            style: GoogleFonts.montserrat(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w600,
+                              height: 20 / 16,
+                              color: AppColors.whiteTextColor,
+                            ),
+                          ),
+                          SizedBox(height: 6.w),
+                          Text(
+                            'A 6-digit code will be sent to\nmail@email.com',
+                            style: GoogleFonts.montserrat(
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                              height: 20 / 14,
+                              color: AppColors.whiteTextColor,
+                            ),
+                          ),
+                        ]),
                   ],
-                ),
-                Text(
-                  'A 6-digit code will be sent to\nmail@email.com',
-                  style: GoogleFonts.montserrat(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w400,
-                    height: 20 / 14,
-                    color: AppColors.whiteTextColor,
-                  ),
                 ),
                 SizedBox(height: 17.w),
                 PinCodeTextField(
@@ -362,15 +374,16 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                       fieldWidth: 40.63.w,
                       fieldHeight: 60.w,
                       borderRadius: BorderRadius.circular(5.0),
-                      // activeFillColor: AppColors.whiteColor,
-                      // inactiveFillColor: AppColors.whiteColor,
-                      // selectedFillColor: AppColors.whiteColor,
+                      activeFillColor: AppColors.textFieldFillColor,
+                      inactiveFillColor: AppColors.textFieldFillColor,
+                      selectedFillColor: AppColors.textFieldFillColor,
                       inactiveColor: AppColors.borderColor,
                       activeColor: AppColors.whiteColor,
                       selectedColor: AppColors.whiteColor,
                     ),
                     showCursor: false,
                     backgroundColor: Colors.transparent,
+                    enableActiveFill: true,
                     onChanged: (text) {
                       if (text == '111111') {
                         emailVerified.value = true;
@@ -418,12 +431,12 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
             ),
           ),
           Padding(
-            padding:
-                EdgeInsets.symmetric(horizontal: 45.0).copyWith(top: 40.w),
+            padding: EdgeInsets.symmetric(horizontal: 45.0).copyWith(top: 40.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       '2',
@@ -435,25 +448,31 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                       ),
                     ),
                     SizedBox(width: 8.w),
-                    Text(
-                      'Verify your mobile number',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w600,
-                        height: 20 / 16,
-                        color: AppColors.greyTextColor,
-                      ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Verify your mobile number',
+                          style: GoogleFonts.montserrat(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w600,
+                            height: 20 / 16,
+                            color: AppColors.greyTextColor,
+                          ),
+                        ),
+                        SizedBox(height: 6.w),
+                        Text(
+                          'A 6-digit code will be sent to\n+6012 345 6789',
+                          style: GoogleFonts.montserrat(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w400,
+                            height: 20 / 14,
+                            color: AppColors.greyTextColor,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
-                ),
-                Text(
-                  'A 6-digit code will be sent to\n+6012 345 6789',
-                  style: GoogleFonts.montserrat(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w400,
-                    height: 20 / 14,
-                    color: AppColors.greyTextColor,
-                  ),
                 ),
               ],
             ),
