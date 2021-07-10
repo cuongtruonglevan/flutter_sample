@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.ff252c39,
       bottomNavigationBar: HomeBottomBar(),
       body: Column(
         children: [
@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontSize: 60.0,
                       fontWeight: FontWeight.w400,
                       height: 1.1,
-                      color: AppColors.whiteTextColor,
+                      color: AppColors.ffd7dde8,
                     ),
                   ),
                 ),
@@ -133,14 +133,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontSize: 20.0,
                       fontWeight: FontWeight.w400,
                       height: 1.0,
-                      color: AppColors.greyTextColor,
+                      color: AppColors.ff7889a9,
                     ),
                   ),
                   SizedBox(width: 5.w),
                   Icon(
                     Icons.help_outline,
                     size: 15.w,
-                    color: AppColors.greyTextColor,
+                    color: AppColors.ff7889a9,
                   )
                 ],
               ),
@@ -173,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
               fontSize: 16.0,
               fontWeight: FontWeight.w600,
               height: 22.4 / 16,
-              color: AppColors.whiteTextColor,
+              color: AppColors.ffd7dde8,
             ),
           ),
         ),
@@ -185,7 +185,9 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Expanded(
               child: AppInfiniteButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(Routes.withdraw);
+                },
                 gradient: AppColors.infiniteGreyGradient,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -202,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontSize: 16.0,
                         fontWeight: FontWeight.w600,
                         height: 22.4 / 16,
-                        color: AppColors.whiteTextColor,
+                        color: AppColors.ffd7dde8,
                       ),
                     ),
                   ],
@@ -212,7 +214,9 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(width: 10.0),
             Expanded(
               child: AppInfiniteButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(Routes.searchMember);
+                },
                 gradient: AppColors.infiniteGreyGradient,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -229,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontSize: 16.0,
                         fontWeight: FontWeight.w600,
                         height: 22.4 / 16,
-                        color: AppColors.whiteTextColor,
+                        color: AppColors.ffd7dde8,
                       ),
                     ),
                   ],
@@ -245,7 +249,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       padding: EdgeInsets.fromLTRB(10.w, 23.w, 10.w, 29.w),
       decoration: BoxDecoration(
-        color: AppColors.darkBackGroundColor,
+        color: AppColors.ff181e28,
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: Column(
@@ -260,7 +264,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontSize: 16.0,
                   fontWeight: FontWeight.w600,
                   height: 18 / 16,
-                  color: AppColors.whiteTextColor,
+                  color: AppColors.ffd7dde8,
                 ),
               ),
               InkWell(
@@ -278,7 +282,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 14.0,
                     fontWeight: FontWeight.w400,
                     height: 18 / 14,
-                    color: AppColors.whiteTextColor,
+                    color: AppColors.ffd7dde8,
                     letterSpacing: -0.17,
                   ),
                 ),

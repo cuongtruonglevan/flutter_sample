@@ -41,7 +41,7 @@ class AppToggleButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100.0),
                 border: Border.all(
                     color: selected.value
-                        ? AppColors.redButtonColor
+                        ? AppColors.ffec0000
                         : Colors.transparent),
                 boxShadow: [
                   BoxShadow(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_sample/shared/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppButton extends StatelessWidget {
@@ -48,12 +49,10 @@ class AppButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(Colors.transparent),
           shadowColor: MaterialStateProperty.all(Colors.transparent),
         ),
-        child: Container(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 2.w),
-              child: child,
-            ),
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.only(bottom: 2.w),
+            child: child,
           ),
         ),
       ),
@@ -62,20 +61,22 @@ class AppButton extends StatelessWidget {
 }
 
 class AppInfiniteButton extends StatelessWidget {
-  const AppInfiniteButton(
-      {Key? key,
-      required this.child,
-      required this.gradient,
-      required this.onPressed})
-      : super(key: key);
+  const AppInfiniteButton({
+    Key? key,
+    required this.child,
+    required this.gradient,
+    required this.onPressed,
+    this.enable = true,
+  }) : super(key: key);
   final Widget child;
   final LinearGradient gradient;
   final VoidCallback onPressed;
+  final bool enable;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: onPressed,
+      onPressed: enable ? onPressed : null,
       style: ElevatedButton.styleFrom(
         primary: Colors.transparent,
         padding: EdgeInsets.zero,
@@ -87,7 +88,7 @@ class AppInfiniteButton extends StatelessWidget {
       child: Container(
         height: 44.w,
         decoration: BoxDecoration(
-            gradient: gradient,
+            gradient: enable ? gradient : AppColors.whiteGradient,
             borderRadius: BorderRadius.circular(100.0),
             boxShadow: [
               BoxShadow(

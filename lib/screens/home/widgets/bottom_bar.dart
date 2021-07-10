@@ -13,7 +13,7 @@ class HomeBottomBar extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(top: GetPlatform.isIOS ? 8.w : 0.0),
       decoration: BoxDecoration(
-        color: AppColors.backgroundColor,
+        color: AppColors.ff252c39,
         boxShadow: <BoxShadow>[
           BoxShadow(
             color: Colors.black.withOpacity(0.75),
@@ -21,21 +21,21 @@ class HomeBottomBar extends StatelessWidget {
           ),
         ],
       ),
-      height: GetPlatform.isIOS ? 85.w : kBottomNavigationBarHeight,
+      height: GetPlatform.isIOS ? 91.w : kBottomNavigationBarHeight,
       child: BottomNavigationBar(
-        backgroundColor: AppColors.backgroundColor,
-        selectedItemColor: AppColors.whiteTextColor,
-        unselectedItemColor: AppColors.whiteTextColor,
+        backgroundColor: AppColors.ff252c39,
+        selectedItemColor: AppColors.ffd7dde8,
+        unselectedItemColor: AppColors.ffd7dde8,
         selectedLabelStyle: GoogleFonts.montserrat(
             fontSize: 10.0,
             fontWeight: FontWeight.w400,
             height: 1.6,
-            color: AppColors.whiteTextColor),
+            color: AppColors.ffd7dde8),
         unselectedLabelStyle: GoogleFonts.montserrat(
             fontSize: 10.0,
             fontWeight: FontWeight.w400,
             height: 1.6,
-            color: AppColors.whiteTextColor),
+            color: AppColors.ffd7dde8),
         onTap: (index) {},
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(

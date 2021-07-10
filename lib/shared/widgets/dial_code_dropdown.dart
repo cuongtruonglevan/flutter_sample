@@ -102,14 +102,14 @@ class _DialCodeDropdownState extends State<DialCodeDropdown> {
                   style: GoogleFonts.montserrat(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.whiteTextColor),
+                      color: AppColors.ffd7dde8),
                 )
               ],
             ),
           ),
           Container(
             height: 1.w,
-            color: AppColors.borderColor,
+            color: AppColors.ff505d75,
           ),
         ],
       ),

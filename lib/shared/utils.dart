@@ -15,17 +15,17 @@ InputDecoration getInputOutlineDecoration(String label,
     {bool showHint = true, bool showLabel = false}) {
   final _defaultBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(40.w)),
-    borderSide: BorderSide(color: AppColors.greyColor, width: 1.0),
+    borderSide: BorderSide(color: AppColors.ff7889a9, width: 1.0),
   );
 
   final _focusedBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(40.w)),
-    borderSide: BorderSide(color: AppColors.whiteColor, width: 1.0),
+    borderSide: BorderSide(color: AppColors.ffd7dde8, width: 1.0),
   );
 
   final _errorBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(40.w)),
-    borderSide: BorderSide(color: AppColors.redButtonColor, width: 1.0),
+    borderSide: BorderSide(color: AppColors.ffec0000, width: 1.0),
   );
   return InputDecoration(
     contentPadding: EdgeInsets.symmetric(horizontal: 27.w, vertical: 15.w),
@@ -35,15 +35,15 @@ InputDecoration getInputOutlineDecoration(String label,
       fontSize: 14.0,
       fontWeight: FontWeight.w400,
       height: 18 / 14,
-      color: AppColors.greyTextColor,
+      color: AppColors.ff7889a9,
     ),
     hintStyle: GoogleFonts.montserrat(
       fontSize: 14.0,
       fontWeight: FontWeight.w400,
       height: 18 / 14,
-      color: AppColors.greyTextColor,
+      color: AppColors.ff7889a9,
     ),
-    fillColor: AppColors.textFieldFillColor,
+    fillColor: AppColors.ff2e394e,
     filled: true,
     enabledBorder: _defaultBorder,
     disabledBorder: _defaultBorder,

@@ -16,8 +16,23 @@ class AppTopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final topPadding = (MediaQuery.of(context).padding.top + 18.0).w;
     return Container(
-      padding: EdgeInsets.fromLTRB(10.w, topPadding, 10.w, 10.w),
+      padding: EdgeInsets.fromLTRB(5.w, topPadding, 5.w, 10.w),
       child: Stack(children: [
+        Container(
+          height: 40.w,
+          child: Center(
+            child: Text(
+              '$title',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.montserrat(
+                fontSize: 20.0,
+                fontWeight: FontWeight.w600,
+                height: 28 / 20,
+                color: AppColors.ffd7dde8,
+              ),
+            ),
+          ),
+        ),
         AppCircularButton(
           onPressed: () {
             if (title == 'LiveWallet') {
@@ -37,21 +52,6 @@ class AppTopBar extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          height: 40.w,
-          child: Center(
-            child: Text(
-              '$title',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.montserrat(
-                fontSize: 20.0,
-                fontWeight: FontWeight.w600,
-                height: 28 / 20,
-                color: AppColors.whiteTextColor,
-              ),
-            ),
-          ),
-        )
       ]),
     );
   }

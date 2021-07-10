@@ -46,7 +46,7 @@ class AnnouncementItem extends StatelessWidget {
                 fontWeight: FontWeight.w700,
                 height: 0.9,
                 color:
-                    isOdd ? AppColors.whiteTextColor : AppColors.blackTextColor,
+                    isOdd ? AppColors.ffd7dde8 : AppColors.ff151a24,
                 letterSpacing: 1.0,
               ),
             ),

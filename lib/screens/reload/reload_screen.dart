@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_sample/shared/app_assets.dart';
 import 'package:flutter_sample/shared/app_colors.dart';
+import 'package:flutter_sample/shared/routes/routes.dart';
 import 'package:flutter_sample/shared/widgets/app_button.dart';
 import 'package:flutter_sample/shared/widgets/app_toggle_button.dart';
 import 'package:flutter_sample/shared/widgets/app_top_bar.dart';
@@ -46,7 +47,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.ff252c39,
       body: Column(
         children: [
           AppTopBar(title: 'Reload'),
@@ -55,7 +56,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
             child: Container(
               padding: EdgeInsets.fromLTRB(20.w, 17.w, 20.w, 44.w),
               decoration: BoxDecoration(
-                color: AppColors.darkBackGroundColor,
+                color: AppColors.ff181e28,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20.0),
                   topRight: Radius.circular(20.0),
@@ -89,7 +90,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                 fontWeight: FontWeight.w600,
                 height: 18 / 16,
                 letterSpacing: -0.17,
-                color: AppColors.whiteTextColor,
+                color: AppColors.ffd7dde8,
               ),
             ),
           ),
@@ -133,7 +134,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                                     fontSize: 30.0,
                                     height: 1.15,
                                     fontWeight: FontWeight.w400,
-                                    color: AppColors.whiteTextColor,
+                                    color: AppColors.ffd7dde8,
                                   ),
                                 ),
                               ),
@@ -156,7 +157,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                             fontWeight: FontWeight.w400,
                             height: 22.4 / 16,
                             letterSpacing: -0.17,
-                            color: AppColors.whiteTextColor,
+                            color: AppColors.ffd7dde8,
                           ),
                         ),
                       ],
@@ -172,7 +173,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
             child: Obx(
               () => Icon(
                 up.value ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
-                color: AppColors.greyColor,
+                color: AppColors.ff7889a9,
                 size: 24.w,
               ),
             ),
@@ -193,7 +194,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
             fontWeight: FontWeight.w600,
             height: 18 / 16,
             letterSpacing: -0.17,
-            color: AppColors.whiteTextColor,
+            color: AppColors.ffd7dde8,
           ),
         ),
         SizedBox(height: 20.w),
@@ -224,7 +225,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                         fontSize: 16.0,
                         fontWeight: FontWeight.w600,
                         height: 22.4 / 16,
-                        color: AppColors.whiteTextColor,
+                        color: AppColors.ffd7dde8,
                       ),
                     ),
                   ],
@@ -246,7 +247,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                     fontSize: 16.0,
                     height: 22.4 / 16,
                     fontWeight: FontWeight.w600,
-                    color: AppColors.whiteTextColor,
+                    color: AppColors.ffd7dde8,
                   ),
                 ),
               ),
@@ -263,13 +264,15 @@ class _ReloadScreenState extends State<ReloadScreen> {
                     fontSize: 16.0,
                     height: 22.4 / 16,
                     fontWeight: FontWeight.w600,
-                    color: AppColors.greyTextColor,
+                    color: AppColors.ff7889a9,
                   ),
                 ),
               ),
               SizedBox(height: 20.w),
               AppInfiniteButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(Routes.addPayment);
+                },
                 gradient: AppColors.infiniteGreyGradient,
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(40.w, 7.w, 40.w, 7.w),
@@ -288,7 +291,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                           fontSize: 16.0,
                           fontWeight: FontWeight.w600,
                           height: 22.4 / 16,
-                          color: AppColors.whiteTextColor,
+                          color: AppColors.ffd7dde8,
                         ),
                       ),
                     ],
@@ -307,7 +310,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
         children: [
           Container(
             height: 0.5.w,
-            color: AppColors.borderColor,
+            color: AppColors.ff505d75,
           ),
           SizedBox(height: 20.w),
           AppInfiniteButton(
@@ -323,7 +326,7 @@ class _ReloadScreenState extends State<ReloadScreen> {
                   fontSize: 16.0,
                   fontWeight: FontWeight.w600,
                   height: 22.4 / 16,
-                  color: AppColors.whiteTextColor,
+                  color: AppColors.ffd7dde8,
                 ),
               ),
             ),

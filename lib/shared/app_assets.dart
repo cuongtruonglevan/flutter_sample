@@ -14,6 +14,8 @@ class AppAssets {
   static const String icApple = 'assets/icons/ic_apple.png';
   static const String icFacebook = 'assets/icons/ic_facebook.png';
   static const String icGoogle = 'assets/icons/ic_google.png';
+  static const String icSearch = 'assets/icons/ic_search.png';
+  static const String icNoUserFound = 'assets/icons/ic_no_user_found.png';
 
   /// Images
   static const String imAppLogo = 'assets/images/im_app_logo.png';
@@ -32,4 +34,5 @@ class AppAssets {
       'assets/images/im_splash_background.png';
   static const String imCheckCircle = 'assets/images/im_check_circle.png';
   static const String imWavingHand = 'assets/images/im_waving_hand.png';
+  static const String imAvatarSample = 'assets/images/im_avatar_sample.png';
 }

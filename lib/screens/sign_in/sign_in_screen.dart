@@ -28,7 +28,7 @@ class SignInScreen extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
-        backgroundColor: AppColors.backgroundColor,
+        backgroundColor: AppColors.ff252c39,
         body: SingleChildScrollView(
           padding: EdgeInsets.zero,
           child: SizedBox(
@@ -53,7 +53,7 @@ class SignInScreen extends StatelessWidget {
                       fontSize: 16.0,
                       fontWeight: FontWeight.w400,
                       height: 1.25,
-                      color: AppColors.whiteTextColor1,
+                      color: AppColors.ffe5e5e5,
                     ),
                   ),
                 ),
@@ -76,7 +76,7 @@ class SignInScreen extends StatelessWidget {
                           blurRadius: 20.w,
                           spreadRadius: 7.w,
                           offset: Offset(-7.w, -7.w),
-                          color: AppColors.borderColor.withOpacity(0.2),
+                          color: AppColors.ff505d75.withOpacity(0.2),
                         ),
                       ]),
                   child: Form(
@@ -94,7 +94,7 @@ class SignInScreen extends StatelessWidget {
                             fontSize: 14.0,
                             fontWeight: FontWeight.w400,
                             height: 18 / 14,
-                            color: AppColors.whiteColor,
+                            color: AppColors.ffd7dde8,
                           ),
                           validator: (value) =>
                               EmailFieldValidator.validate(context, value!),
@@ -111,7 +111,7 @@ class SignInScreen extends StatelessWidget {
                                 fontSize: 14.0,
                                 fontWeight: FontWeight.w400,
                                 height: 18 / 14,
-                                color: AppColors.whiteColor,
+                                color: AppColors.ffd7dde8,
                               ),
                               validator: (value) =>
                                   RequiredFieldValidator.validate(
@@ -123,7 +123,7 @@ class SignInScreen extends StatelessWidget {
                                 icon: Icon(_obscureText.value
                                     ? Icons.remove_red_eye_outlined
                                     : Icons.remove_red_eye),
-                                color: AppColors.greyColor,
+                                color: AppColors.ff7889a9,
                                 onPressed: () {
                                   _obscureText.value = !_obscureText.value;
                                 },
@@ -160,7 +160,7 @@ class SignInScreen extends StatelessWidget {
                                 fontSize: 15.0,
                                 fontWeight: FontWeight.w500,
                                 height: 19.6 / 14,
-                                color: AppColors.whiteTextColor,
+                                color: AppColors.ffd7dde8,
                               ),
                             ),
                           ),
@@ -183,7 +183,7 @@ class SignInScreen extends StatelessWidget {
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 1.2,
-                              color: AppColors.whiteTextColor1,
+                              color: AppColors.ffe5e5e5,
                             ),
                           ),
                         ),
@@ -201,7 +201,7 @@ class SignInScreen extends StatelessWidget {
                         child: Container(
                           width: double.infinity,
                           height: 1.0,
-                          color: AppColors.greyColor,
+                          color: AppColors.ff7889a9,
                         ),
                       ),
                       Padding(
@@ -213,7 +213,7 @@ class SignInScreen extends StatelessWidget {
                             fontSize: 12.0,
                             fontWeight: FontWeight.w400,
                             height: 1.25,
-                            color: AppColors.greyColor,
+                            color: AppColors.ff7889a9,
                           ),
                         ),
                       ),
@@ -221,7 +221,7 @@ class SignInScreen extends StatelessWidget {
                         child: Container(
                           width: double.infinity,
                           height: 1.0,
-                          color: AppColors.greyColor,
+                          color: AppColors.ff7889a9,
                         ),
                       ),
                     ],
@@ -290,7 +290,7 @@ class SignInScreen extends StatelessWidget {
                       fontSize: 12.0,
                       fontWeight: FontWeight.w400,
                       height: 20 / 12,
-                      color: AppColors.whiteColor,
+                      color: AppColors.ffd7dde8,
                       decoration: TextDecoration.underline,
                     ),
                   ),

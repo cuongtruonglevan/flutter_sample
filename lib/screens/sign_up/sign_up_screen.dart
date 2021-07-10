@@ -74,7 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           }
         },
         child: Scaffold(
-          backgroundColor: AppColors.backgroundColor,
+          backgroundColor: AppColors.ff252c39,
           body: Stack(
             children: [
               SingleChildScrollView(
@@ -98,7 +98,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           fontSize: 16.0,
                           fontWeight: FontWeight.w400,
                           height: 1.25,
-                          color: AppColors.whiteTextColor1,
+                          color: AppColors.ffe5e5e5,
                         ),
                       ),
                     ),
@@ -121,7 +121,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               blurRadius: 20.w,
                               spreadRadius: 7.w,
                               offset: Offset(-7.w, -7.w),
-                              color: AppColors.borderColor.withOpacity(0.2),
+                              color: AppColors.ff505d75.withOpacity(0.2),
                             ),
                           ]),
                       child: Form(
@@ -138,7 +138,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 fontSize: 14.0,
                                 fontWeight: FontWeight.w400,
                                 height: 18 / 14,
-                                color: AppColors.whiteColor,
+                                color: AppColors.ffd7dde8,
                               ),
                               validator: (value) =>
                                   EmailFieldValidator.validate(context, value!),
@@ -150,12 +150,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               () => Container(
                                 key: phoneFieldKey,
                                 decoration: BoxDecoration(
-                                  color: AppColors.textFieldFillColor,
+                                  color: AppColors.ff2e394e,
                                   borderRadius: BorderRadius.circular(40.w),
                                   border: Border.all(
                                       color: mobileEditing.value
-                                          ? AppColors.whiteColor
-                                          : AppColors.greyColor,
+                                          ? AppColors.ffd7dde8
+                                          : AppColors.ff7889a9,
                                       width: 1.0),
                                 ),
                                 child: Row(
@@ -183,7 +183,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                             SizedBox(width: 8.w),
                                             Icon(
                                               Icons.keyboard_arrow_down_rounded,
-                                              color: AppColors.whiteColor,
+                                              color: AppColors.ffd7dde8,
                                             ),
                                             Text(
                                               '+60',
@@ -191,7 +191,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                                 fontSize: 14.0,
                                                 fontWeight: FontWeight.w400,
                                                 height: 18 / 14,
-                                                color: AppColors.whiteTextColor,
+                                                color: AppColors.ffd7dde8,
                                               ),
                                             ),
                                           ],
@@ -211,7 +211,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w400,
                                           height: 18 / 14,
-                                          color: AppColors.whiteColor,
+                                          color: AppColors.ffd7dde8,
                                         ),
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
@@ -220,7 +220,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                             fontSize: 14.0,
                                             fontWeight: FontWeight.w400,
                                             height: 18 / 14,
-                                            color: AppColors.greyTextColor,
+                                            color: AppColors.ff7889a9,
                                           ),
                                           contentPadding: EdgeInsets.symmetric(
                                               vertical: 15.w),
@@ -241,7 +241,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.w400,
                                     height: 18 / 14,
-                                    color: AppColors.whiteColor,
+                                    color: AppColors.ffd7dde8,
                                   ),
                                   validator: (value) =>
                                       PasswordFieldValidator.validate(
@@ -255,7 +255,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     icon: Icon(_obscureText.value
                                         ? Icons.remove_red_eye_outlined
                                         : Icons.remove_red_eye),
-                                    color: AppColors.greyColor,
+                                    color: AppColors.ff7889a9,
                                     onPressed: () {
                                       _obscureText.value = !_obscureText.value;
                                     },
@@ -277,7 +277,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.w400,
                                     height: 18 / 14,
-                                    color: AppColors.whiteColor,
+                                    color: AppColors.ffd7dde8,
                                   ),
                                   validator: (value) =>
                                       RequiredConfirmFieldValidator.validate(
@@ -293,7 +293,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     icon: Icon(_currentObscureText.value
                                         ? Icons.remove_red_eye_outlined
                                         : Icons.remove_red_eye),
-                                    color: AppColors.greyColor,
+                                    color: AppColors.ff7889a9,
                                     onPressed: () {
                                       _currentObscureText.value =
                                           !_currentObscureText.value;
@@ -318,7 +318,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     fontSize: 15.0,
                                     fontWeight: FontWeight.w500,
                                     height: 19.6 / 14,
-                                    color: AppColors.whiteTextColor,
+                                    color: AppColors.ffd7dde8,
                                   ),
                                 ),
                               ),
@@ -337,7 +337,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             child: Container(
                               width: double.infinity,
                               height: 1.0,
-                              color: AppColors.greyColor,
+                              color: AppColors.ff7889a9,
                             ),
                           ),
                           Padding(
@@ -349,7 +349,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 fontSize: 12.0,
                                 fontWeight: FontWeight.w400,
                                 height: 1.25,
-                                color: AppColors.greyColor,
+                                color: AppColors.ff7889a9,
                               ),
                             ),
                           ),
@@ -357,7 +357,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             child: Container(
                               width: double.infinity,
                               height: 1.0,
-                              color: AppColors.greyColor,
+                              color: AppColors.ff7889a9,
                             ),
                           ),
                         ],
@@ -426,7 +426,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           fontSize: 12.0,
                           fontWeight: FontWeight.w400,
                           height: 5 / 3,
-                          color: AppColors.whiteTextColor,
+                          color: AppColors.ffd7dde8,
                           letterSpacing: -0.17,
                           decoration: TextDecoration.underline,
                         ),
@@ -455,7 +455,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           height: 163.w,
                           child: RawScrollbar(
                             thickness: 5.w,
-                            thumbColor: AppColors.greyColor,
+                            thumbColor: AppColors.ff7889a9,
                             child: ListView.separated(
                               padding: EdgeInsets.zero,
                               itemCount: 20,
@@ -481,7 +481,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       style: GoogleFonts.montserrat(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
-                                          color: AppColors.whiteTextColor),
+                                          color: AppColors.ffd7dde8),
                                     )
                                   ],
                                 ),
@@ -491,7 +491,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       Container(
                                 margin: EdgeInsets.symmetric(horizontal: 5.w),
                                 height: 0.5.w,
-                                color: AppColors.borderColor,
+                                color: AppColors.ff505d75,
                               ),
                             ),
                           ),

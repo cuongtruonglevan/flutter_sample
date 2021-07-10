@@ -101,7 +101,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                             blurRadius: 20.w,
                             spreadRadius: 7.w,
                             offset: Offset(-7.w, -7.w),
-                            color: AppColors.borderColor.withOpacity(0.2),
+                            color: AppColors.ff505d75.withOpacity(0.2),
                           ),
                         ],
                         gradient: AppColors.lightGreyGradient,
@@ -118,7 +118,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                                 fontSize: 28.0,
                                 fontWeight: FontWeight.w600,
                                 height: 1.0,
-                                color: AppColors.whiteColor,
+                                color: AppColors.ffd7dde8,
                               ),
                             ),
                           ),
@@ -129,7 +129,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                               fontSize: 16.0,
                               fontWeight: FontWeight.w400,
                               height: 20 / 16,
-                              color: AppColors.greyColor,
+                              color: AppColors.ff7889a9,
                             ),
                           ),
                           SizedBox(height: 30.w),
@@ -141,7 +141,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
-                              color: AppColors.whiteColor,
+                              color: AppColors.ffd7dde8,
                             ),
                             validator: (value) =>
                                 RequiredFieldValidator.validate(
@@ -159,7 +159,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
-                              color: AppColors.whiteColor,
+                              color: AppColors.ffd7dde8,
                             ),
                             validator: (value) =>
                                 RequiredFieldValidator.validate(
@@ -184,12 +184,12 @@ class WelcomeDetailScreen extends StatelessWidget {
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                color: AppColors.textFieldFillColor,
+                                color: AppColors.ff2e394e,
                                 borderRadius: BorderRadius.circular(40.w),
                                 border: Border.all(
                                     color: countryText.value == 'Country'
-                                        ? AppColors.greyColor
-                                        : AppColors.whiteColor,
+                                        ? AppColors.ff7889a9
+                                        : AppColors.ffd7dde8,
                                     width: 1.0),
                               ),
                               child: Padding(
@@ -208,8 +208,8 @@ class WelcomeDetailScreen extends StatelessWidget {
                                             height: 18 / 14,
                                             color:
                                                 countryText.value == 'Country'
-                                                    ? AppColors.greyColor
-                                                    : AppColors.whiteColor,
+                                                    ? AppColors.ff7889a9
+                                                    : AppColors.ffd7dde8,
                                           ),
                                         ),
                                       ),
@@ -217,7 +217,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                                         quarterTurns: 3,
                                         child: Image.asset(
                                           AppAssets.icBack,
-                                          color: AppColors.greyColor,
+                                          color: AppColors.ff7889a9,
                                         ),
                                       )
                                     ]),
@@ -240,12 +240,12 @@ class WelcomeDetailScreen extends StatelessWidget {
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                color: AppColors.textFieldFillColor,
+                                color: AppColors.ff2e394e,
                                 borderRadius: BorderRadius.circular(40.w),
                                 border: Border.all(
                                     color: stateText.value == 'State'
-                                        ? AppColors.greyColor
-                                        : AppColors.whiteColor,
+                                        ? AppColors.ff7889a9
+                                        : AppColors.ffd7dde8,
                                     width: 1.0),
                               ),
                               child: Padding(
@@ -263,8 +263,8 @@ class WelcomeDetailScreen extends StatelessWidget {
                                             fontWeight: FontWeight.w400,
                                             height: 18 / 14,
                                             color: stateText.value == 'State'
-                                                ? AppColors.greyColor
-                                                : AppColors.whiteColor,
+                                                ? AppColors.ff7889a9
+                                                : AppColors.ffd7dde8,
                                           ),
                                         ),
                                       ),
@@ -272,7 +272,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                                         quarterTurns: 3,
                                         child: Image.asset(
                                           AppAssets.icBack,
-                                          color: AppColors.greyColor,
+                                          color: AppColors.ff7889a9,
                                         ),
                                       )
                                     ]),
@@ -288,7 +288,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
-                              color: AppColors.whiteColor,
+                              color: AppColors.ffd7dde8,
                             ),
                             validator: (value) =>
                                 RequiredFieldValidator.validate(
@@ -305,7 +305,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
-                              color: AppColors.whiteColor,
+                              color: AppColors.ffd7dde8,
                             ),
                             validator: (value) =>
                                 RequiredFieldValidator.validate(
@@ -322,7 +322,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                               height: 18 / 14,
-                              color: AppColors.whiteColor,
+                              color: AppColors.ffd7dde8,
                             ),
                             decoration: getInputOutlineDecoration(
                                     'Referal Code (Optional)')
@@ -348,7 +348,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                                       fontSize: 15.0,
                                       fontWeight: FontWeight.w500,
                                       height: 19.6 / 14,
-                                      color: AppColors.whiteColor,
+                                      color: AppColors.ffd7dde8,
                                     ),
                                   ),
                                 ),
@@ -359,7 +359,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w500,
                                         height: 19.6 / 14,
-                                        color: AppColors.whiteColor,
+                                        color: AppColors.ffd7dde8,
                                       ),
                                     ),
                                     gradient: AppColors.redGradient,
@@ -394,7 +394,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                             height: 206.w,
                             child: RawScrollbar(
                               thickness: 5.w,
-                              thumbColor: AppColors.greyColor,
+                              thumbColor: AppColors.ff7889a9,
                               child: ListView.separated(
                                 padding: EdgeInsets.zero,
                                 itemCount: countryList.length,
@@ -415,7 +415,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                                         style: GoogleFonts.montserrat(
                                             fontSize: 14,
                                             fontWeight: FontWeight.w600,
-                                            color: AppColors.whiteTextColor),
+                                            color: AppColors.ffd7dde8),
                                       ),
                                     ),
                                   ),
@@ -426,7 +426,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                                   margin:
                                       EdgeInsets.symmetric(horizontal: 17.w),
                                   height: 0.5.w,
-                                  color: AppColors.borderColor,
+                                  color: AppColors.ff505d75,
                                 ),
                               ),
                             ),
@@ -454,7 +454,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                             height: 206.w,
                             child: RawScrollbar(
                               thickness: 5.w,
-                              thumbColor: AppColors.greyColor,
+                              thumbColor: AppColors.ff7889a9,
                               child: ListView.separated(
                                 padding: EdgeInsets.zero,
                                 itemCount: stateList.length,
@@ -475,7 +475,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                                         style: GoogleFonts.montserrat(
                                             fontSize: 14,
                                             fontWeight: FontWeight.w600,
-                                            color: AppColors.whiteTextColor),
+                                            color: AppColors.ffd7dde8),
                                       ),
                                     ),
                                   ),
@@ -486,7 +486,7 @@ class WelcomeDetailScreen extends StatelessWidget {
                                   margin:
                                       EdgeInsets.symmetric(horizontal: 17.w),
                                   height: 0.5.w,
-                                  color: AppColors.borderColor,
+                                  color: AppColors.ff505d75,
                                 ),
                               ),
                             ),

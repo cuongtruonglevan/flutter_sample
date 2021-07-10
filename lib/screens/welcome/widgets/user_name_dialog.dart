@@ -35,7 +35,7 @@ class UserNameDialog extends StatelessWidget {
                     fontSize: 12.0,
                     fontWeight: FontWeight.w400,
                     height: 18 / 12.0,
-                    color: AppColors.whiteTextColor,
+                    color: AppColors.ffd7dde8,
                   ),
                 ),
               ),

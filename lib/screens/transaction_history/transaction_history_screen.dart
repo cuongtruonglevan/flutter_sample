@@ -13,18 +13,19 @@ class TransactionHistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.ff252c39,
       body: Column(
         children: [
           AppTopBar(title: 'Transaction History'),
+          SizedBox(height: 8.w),
           Expanded(
               child: Container(
             padding: EdgeInsets.fromLTRB(10.w, 8.w, 10.w, 10.w),
             decoration: BoxDecoration(
-              color: AppColors.darkBackGroundColor,
+              color: AppColors.ff181e28,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20.0),
-                topRight: Radius.circular(20.0),
+                topLeft: Radius.circular(10.w),
+                topRight: Radius.circular(10.w),
               ),
             ),
             child: _buildTransactionHistory(),

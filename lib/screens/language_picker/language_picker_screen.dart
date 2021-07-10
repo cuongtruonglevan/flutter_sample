@@ -74,7 +74,7 @@ class LanguagePickerScreen extends StatelessWidget {
                               blurRadius: 20.w,
                               spreadRadius: 7.w,
                               offset: Offset(-7.w, -7.w),
-                              color: AppColors.borderColor.withOpacity(0.2),
+                              color: AppColors.ff505d75.withOpacity(0.2),
                             ),
                           ],
                           gradient: AppColors.lightGreyGradient,
@@ -89,7 +89,7 @@ class LanguagePickerScreen extends StatelessWidget {
                               fontSize: 28.0,
                               fontWeight: FontWeight.w600,
                               height: 1.0,
-                              color: AppColors.whiteTextColor,
+                              color: AppColors.ffd7dde8,
                             ),
                           ),
                           ...languages
@@ -126,7 +126,7 @@ class LanguagePickerScreen extends StatelessWidget {
                                                       height: 18 / 14,
                                                       letterSpacing: -0.17,
                                                       color: AppColors
-                                                          .whiteTextColor,
+                                                          .ffd7dde8,
                                                     ),
                                                   ),
                                                   Spacer(),
@@ -137,7 +137,7 @@ class LanguagePickerScreen extends StatelessWidget {
                                                       child: Icon(
                                                           Icons.check_rounded,
                                                           color: AppColors
-                                                              .whiteColor),
+                                                              .ffd7dde8),
                                                     ),
                                                   ),
                                                 ],
@@ -145,7 +145,7 @@ class LanguagePickerScreen extends StatelessWidget {
                                             ),
                                             Container(
                                               height: 1.0,
-                                              color: AppColors.borderColor,
+                                              color: AppColors.ff505d75,
                                             )
                                           ],
                                         ),
@@ -166,7 +166,7 @@ class LanguagePickerScreen extends StatelessWidget {
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
                                   height: 19.6 / 14,
-                                  color: AppColors.whiteTextColor,
+                                  color: AppColors.ffd7dde8,
                                 ),
                               ),
                             ),
